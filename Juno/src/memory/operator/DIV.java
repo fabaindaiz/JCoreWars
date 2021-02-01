@@ -1,7 +1,7 @@
-package Memory.operator;
+package memory.operator;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class DIV extends _AOperator{
 
@@ -29,7 +29,7 @@ public class DIV extends _AOperator{
     public boolean executeA(Memory[] core, Address addr) {
         if (addr.addrAAValue == 0)
         {
-            executer.killProc(addr.report);
+            addr.executer.killProc(addr.report);
             return false;
         }
         core[addr.addrB].aValue = addr.addrBAValue / addr.addrAAValue;
@@ -40,7 +40,7 @@ public class DIV extends _AOperator{
     public boolean executeB(Memory[] core, Address addr) {
         if (addr.addrABValue == 0)
         {
-            executer.killProc(addr.report);
+            addr.executer.killProc(addr.report);
             return false;
         }
         core[addr.addrB].bValue = addr.addrBBValue / addr.addrABValue;
@@ -51,7 +51,7 @@ public class DIV extends _AOperator{
     public boolean executeAB(Memory[] core, Address addr) {
         if (addr.addrAAValue == 0)
         {
-            executer.killProc(addr.report);
+            addr.executer.killProc(addr.report);
             return false;
         }
         core[addr.addrB].bValue = addr.addrBBValue / addr.addrAAValue;
@@ -62,7 +62,7 @@ public class DIV extends _AOperator{
     public boolean executeBA(Memory[] core, Address addr) {
         if (addr.addrABValue == 0)
         {
-            executer.killProc(addr.report);
+            addr.executer.killProc(addr.report);
             return false;
         }
         core[addr.addrB].aValue = addr.addrBAValue / addr.addrABValue;
@@ -76,7 +76,7 @@ public class DIV extends _AOperator{
             core[addr.addrB].aValue = addr.addrBAValue / addr.addrAAValue;
             if (addr.addrABValue == 0)
             {
-                executer.killProc(addr.report);
+                addr.executer.killProc(addr.report);
                 return false;
             }
             core[addr.addrB].bValue = addr.addrBBValue / addr.addrABValue;
@@ -84,12 +84,12 @@ public class DIV extends _AOperator{
         } else {
             if (addr.addrABValue == 0)
             {
-                executer.killProc(addr.report);
+                addr.executer.killProc(addr.report);
                 return false;
             }
             core[addr.addrB].bValue = addr.addrBBValue / addr.addrABValue;
             addr.report.write(addr.addrB);
-            executer.killProc(addr.report);
+            addr.executer.killProc(addr.report);
             return false;
         }
     }
@@ -101,7 +101,7 @@ public class DIV extends _AOperator{
             core[addr.addrB].aValue = addr.addrBAValue / addr.addrABValue;
             if (addr.addrAAValue == 0)
             {
-                executer.killProc(addr.report);
+                addr.executer.killProc(addr.report);
                 return false;
             }
             core[addr.addrB].bValue = addr.addrBBValue / addr.addrAAValue;
@@ -109,12 +109,12 @@ public class DIV extends _AOperator{
         } else {
             if (addr.addrAAValue == 0)
             {
-                executer.killProc(addr.report);
+                addr.executer.killProc(addr.report);
                 return false;
             }
             core[addr.addrB].bValue = addr.addrBBValue / addr.addrAAValue;
             addr.report.write(addr.addrB);
-            executer.killProc(addr.report);
+            addr.executer.killProc(addr.report);
             return false;
         }
     }

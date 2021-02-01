@@ -1,8 +1,12 @@
-package Memory;
+package memory;
 
-import Memory.modifier._IModifier;
-import Memory.operand._IOperand;
-import Memory.operator._IOperator;
+import memory.modifier._IModifier;
+import memory.operand.Hash;
+import memory.operand._IOperand;
+import memory.operator._IOperator;
+
+import memory.operator.DAT;
+import memory.modifier.F;
 
 public class Memory {
 
@@ -14,12 +18,15 @@ public class Memory {
     public int aValue, bValue;
 
     public Memory() {
+        operator = new DAT();
+        modifier = new F();
+        operandA = new Hash();
+        operandB = new Hash();
         aValue = 0;
         bValue = 0;
     }
 
     public void copy(Memory src) {
-        //POR MODIFICAR
         operator = src.operator;
         modifier = src.modifier;
         operandA = src.operandA;
@@ -30,20 +37,14 @@ public class Memory {
 
     public boolean equals(Memory comp)
     {
-        /*if ((opcode != comp.opcode) ||
-                (modifier != comp.modifier) ||
-                (aIndir != comp.aIndir) ||
-                (aAction != comp.aAction) ||
-                (aTarget != comp.aTarget) ||
-                (aTiming != comp.aTiming) ||
-                (aValue != comp.aValue) ||
-                (bIndir != comp.bIndir) ||
-                (bAction != comp.bAction) ||
-                (bTarget != comp.bTarget) ||
-                (bTiming != comp.bTiming) ||
-                (bValue != comp.bValue))
+        if ((operator.toString() != comp.operator.toString()) ||
+            (modifier.toString() != comp.modifier.toString()) ||
+            (operandA.toString() != comp.operandA.toString()) ||
+            (operandB.toString() != comp.operandB.toString()) ||
+            (aValue != comp.aValue) ||
+            (bValue != comp.bValue))
             return false;
-            */
+
         return true;
     }
 

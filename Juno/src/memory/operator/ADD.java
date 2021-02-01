@@ -1,7 +1,7 @@
-package Memory.operator;
+package memory.operator;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class ADD extends _AOperator {
 
@@ -28,39 +28,39 @@ public class ADD extends _AOperator {
 
     @Override
     public boolean executeA(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (addr.addrAAValue + addr.addrBAValue) % addr.coreSize;
+        core[addr.addrB].aValue = (addr.addrAAValue + addr.addrBAValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeB(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (addr.addrABValue + addr.addrBBValue) % addr.coreSize;
+        core[addr.addrB].bValue = (addr.addrABValue + addr.addrBBValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (addr.addrAAValue + addr.addrBBValue) % addr.coreSize;
+        core[addr.addrB].bValue = (addr.addrAAValue + addr.addrBBValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (addr.addrABValue + addr.addrBAValue) % addr.coreSize;
+        core[addr.addrB].aValue = (addr.addrABValue + addr.addrBAValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (addr.addrAAValue + addr.addrBAValue) % addr.coreSize;
-        return true;
+        core[addr.addrB].aValue = (addr.addrAAValue + addr.addrBAValue) % addr.executer.coreSize;
         // fallthrough for rest
+        return true;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (addr.addrAAValue + addr.addrBBValue) % addr.coreSize;
-        return true;
+        core[addr.addrB].bValue = (addr.addrAAValue + addr.addrBBValue) % addr.executer.coreSize;
         // fallthrough for rest
+        return true;
     }
 }

@@ -1,7 +1,7 @@
-package Memory.operand;
+package memory.operand;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class Less extends _AOperand {
 
@@ -13,10 +13,10 @@ public class Less extends _AOperand {
     @Override
     public void executeA(Memory[] core, Address addr) {
         if (--core[addr.tempAddr].bValue < 0)
-            core[addr.tempAddr].bValue = addr.coreSize - 1;
+            core[addr.tempAddr].bValue = addr.executer.coreSize - 1;
         addr.report.decrement(addr.tempAddr);
 
-        addr.addrA = (core[addr.tempAddr].bValue + addr.tempAddr) % addr.coreSize;
+        addr.addrA = (core[addr.tempAddr].bValue + addr.tempAddr) % addr.executer.coreSize;
 
         addr.instrA.copy(core[addr.addrA]);
         addr.addrAAValue = core[addr.addrA].aValue;
@@ -28,11 +28,11 @@ public class Less extends _AOperand {
     @Override
     public void executeB(Memory[] core, Address addr) {
         if (--core[addr.tempAddr].bValue < 0)
-                core[addr.tempAddr].bValue = addr.coreSize - 1;
+                core[addr.tempAddr].bValue = addr.executer.coreSize - 1;
 
         addr.report.decrement(addr.tempAddr);
 
-        addr.addrB = (core[addr.tempAddr].bValue + addr.tempAddr) % addr.coreSize;
+        addr.addrB = (core[addr.tempAddr].bValue + addr.tempAddr) % addr.executer.coreSize;
 
         addr.instrB.copy(core[addr.addrB]);
         addr.addrBAValue = core[addr.addrB].aValue;

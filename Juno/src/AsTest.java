@@ -24,29 +24,59 @@
  * SUCH DAMAGE.
  *
  */
- 
-package old.frontend;
 
 /**
- * Interface for the object managing the old.frontend components.
+ * reads in the file specified on the command line and
+ * produces a listing.
  */
-public interface FrontEndManager
+
+import java.io.*;
+
+import memory.Memory;
+import assambler.Assembler;
+
+public class AsTest
 {
-	/**
-	 * Called to register a StepListener to receive step results
-	 * @param StepListener l - StepListener to register.
-	 */
-	public void registerStepListener(StepListener l);
-	
-	/**
-	 * Called to register a CycleListener to receive cycle results
-	 * @param CycleListener c - CycleListener to register.
-	 */
-	public void registerCycleListener(CycleListener c);
-	
-	/**
-	 * Called to register a RoundListener to receive round results
-	 * @param RoundListener r - RoundListener to register.
-	 */
-	public void registerRoundListener(RoundListener r);
-}
+	public static void main(String args[])
+	{
+		if (args.length < 1)
+		{
+			System.out.println("usage: AsTest filename");
+			return;
+		}
+		
+		try
+		{
+			FileReader file = new FileReader(args[0]);
+			
+			Assembler parser = new Assembler(file, 100);
+			
+			Memory warrior[];
+			
+			if (!parser.assemble())
+			{
+				System.out.println("error in warrior file, possibly near instruction " + parser.length());
+				warrior = parser.getWarrior();
+				System.out.println("last instruction " + warrior[warrior.length-1]);
+				return;
+			}
+			
+			System.out.println(";name " + parser.getName());
+			System.out.println(";author " + parser.getAuthor() + "\n");
+			System.out.println("ORG	" + parser.getOffset());
+			warrior = parser.getWarrior();
+			
+			for (int i=0; i<warrior.length; i++)
+			{
+				System.out.println(warrior[i]);
+			}
+			
+		} catch (FileNotFoundException e)
+		{
+			System.out.println("file could not be opened");
+			return;
+		}
+		
+		return;
+	}
+};

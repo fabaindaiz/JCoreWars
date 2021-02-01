@@ -1,7 +1,7 @@
-package Memory.operand;
+package memory.operand;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public interface _IOperand {
 

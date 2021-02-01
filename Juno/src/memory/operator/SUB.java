@@ -1,7 +1,7 @@
-package Memory.operator;
+package memory.operator;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class SUB extends _AOperator {
 
@@ -29,44 +29,44 @@ public class SUB extends _AOperator {
     @Override
     public boolean executeA(Memory[] core, Address addr) {
         if ((core[addr.addrB].aValue = addr.addrBAValue - addr.addrAAValue) < 0)
-            core[addr.addrB].aValue += addr.coreSize;
+            core[addr.addrB].aValue += addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeB(Memory[] core, Address addr) {
         if ((core[addr.addrB].bValue = addr.addrBBValue - addr.addrABValue) < 0)
-            core[addr.addrB].bValue += addr.coreSize;
+            core[addr.addrB].bValue += addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
         if ((core[addr.addrB].bValue = addr.addrBBValue - addr.addrAAValue) < 0)
-            core[addr.addrB].bValue += addr.coreSize;
+            core[addr.addrB].bValue += addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
         if ((core[addr.addrB].aValue = addr.addrBAValue - addr.addrABValue) < 0)
-            core[addr.addrB].aValue += addr.coreSize;
+            core[addr.addrB].aValue += addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
         if ((core[addr.addrB].aValue = addr.addrBAValue - addr.addrAAValue) < 0)
-            core[addr.addrB].aValue += addr.coreSize;
-        return true;
+            core[addr.addrB].aValue += addr.executer.coreSize;
         // fallthrough for rest
+        return true;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
         if ((core[addr.addrB].bValue = addr.addrBBValue - addr.addrAAValue) < 0)
-            core[addr.addrB].aValue += addr.coreSize;
+            core[addr.addrB].aValue += addr.executer.coreSize;
+        // fallthrough for rest
         return true;
-        // falthrough for rest
     }
 }

@@ -32,7 +32,7 @@
  
 package marsVM;
 
-import Memory.Memory;
+import memory.Memory;
 import assambler.Assembler;
 
 import java.awt.*;

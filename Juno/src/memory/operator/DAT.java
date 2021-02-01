@@ -1,7 +1,7 @@
-package Memory.operator;
+package memory.operator;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class DAT extends _AOperator {
 
@@ -23,43 +23,43 @@ public class DAT extends _AOperator {
 
     @Override
     public boolean executeI(Memory[] core, Address addr) {
-        executer.killProc(addr.report);
+        addr.executer.killProc(addr.report);
         return false;
     }
 
     @Override
     public boolean executeA(Memory[] core, Address addr) {
-        executer.killProc(addr.report);
+        addr.executer.killProc(addr.report);
         return false;
     }
 
     @Override
     public boolean executeB(Memory[] core, Address addr) {
-        executer.killProc(addr.report);
+        addr.executer.killProc(addr.report);
         return false;
     }
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
-        executer.killProc(addr.report);
+        addr.executer.killProc(addr.report);
         return false;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
-        executer.killProc(addr.report);
+        addr.executer.killProc(addr.report);
         return false;
     }
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
-        executer.killProc(addr.report);
+        addr.executer.killProc(addr.report);
         return false;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        executer.killProc(addr.report);
+        addr.executer.killProc(addr.report);
         return false;
     }
 }

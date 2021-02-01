@@ -25,7 +25,7 @@
  *
  */
 
-package old.frontend;
+package frontend;
 
 import java.awt.*;
 

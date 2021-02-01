@@ -27,10 +27,10 @@
  
 package assambler;
 
-import Memory.Memory;
-import Memory.modifier.*;
-import Memory.operand.*;
-import Memory.operator.*;
+import memory.Memory;
+import memory.modifier.*;
+import memory.operand.*;
+import memory.operator.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;

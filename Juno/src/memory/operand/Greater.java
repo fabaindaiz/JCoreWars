@@ -1,7 +1,7 @@
-package Memory.operand;
+package memory.operand;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class Greater extends _AOperand {
 
@@ -12,7 +12,7 @@ public class Greater extends _AOperand {
 
     @Override
     public void executeA(Memory[] core, Address addr) {
-        addr.addrA = (core[addr.tempAddr].bValue + addr.tempAddr) % addr.coreSize;
+        addr.addrA = (core[addr.tempAddr].bValue + addr.tempAddr) % addr.executer.coreSize;
 
         addr.instrA.copy(core[addr.addrA]);
         addr.addrAAValue = core[addr.addrA].aValue;
@@ -20,13 +20,13 @@ public class Greater extends _AOperand {
 
         addr.report.increment(addr.tempAddr);
 
-        core[addr.tempAddr].bValue = (++core[addr.tempAddr].bValue) % addr.coreSize;
+        core[addr.tempAddr].bValue = (++core[addr.tempAddr].bValue) % addr.executer.coreSize;
         addr.report.increment(addr.tempAddr);
     }
 
     @Override
     public void executeB(Memory[] core, Address addr) {
-        addr.addrB = (core[addr.tempAddr].bValue + addr.tempAddr) % addr.coreSize;
+        addr.addrB = (core[addr.tempAddr].bValue + addr.tempAddr) % addr.executer.coreSize;
 
         addr.instrB.copy(core[addr.addrB]);
         addr.addrBAValue = core[addr.addrB].aValue;
@@ -34,7 +34,7 @@ public class Greater extends _AOperand {
 
         addr.report.increment(addr.tempAddr);
 
-        core[addr.tempAddr].bValue = (++core[addr.tempAddr].bValue) % addr.coreSize;
+        core[addr.tempAddr].bValue = (++core[addr.tempAddr].bValue) % addr.executer.coreSize;
         addr.report.increment(addr.tempAddr);
     }
 }

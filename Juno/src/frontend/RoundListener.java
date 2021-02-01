@@ -25,7 +25,7 @@
  *
  */
  
-package old.frontend;
+package frontend;
 
 /**
  * The listener interface for receiving round results.

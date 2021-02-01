@@ -1,7 +1,7 @@
-package Memory.operator;
+package memory.operator;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class MUL extends _AOperator {
 
@@ -28,39 +28,39 @@ public class MUL extends _AOperator {
 
     @Override
     public boolean executeA(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrAAValue % addr.coreSize);
+        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrAAValue % addr.executer.coreSize);
         return true;
     }
 
     @Override
     public boolean executeB(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrABValue % addr.coreSize);
+        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrABValue % addr.executer.coreSize);
         return true;
     }
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrAAValue % addr.coreSize);
+        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrAAValue % addr.executer.coreSize);
         return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrABValue % addr.coreSize);
+        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrABValue % addr.executer.coreSize);
         return true;
     }
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrAAValue % addr.coreSize);
-        return true;
+        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrAAValue % addr.executer.coreSize);
         // fallthrough for rest
+        return true;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrAAValue % addr.coreSize);
-        return true;
+        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrAAValue % addr.executer.coreSize);
         // fallthrough for rest
+        return true;
     }
 }

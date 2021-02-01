@@ -1,12 +1,9 @@
-package Memory.operator;
+package memory.operator;
 
-import Memory.Address;
-import Memory.Memory;
-import marsVM.MarsVM;
+import memory.Address;
+import memory.Memory;
 
 public interface _IOperator {
-
-    public void setExecuter(MarsVM vm);
 
     public void preExecute(Address addr);
 

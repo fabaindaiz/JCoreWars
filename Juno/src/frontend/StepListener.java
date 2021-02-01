@@ -25,16 +25,16 @@
  *
  */
 
-package old.frontend;
+package frontend;
 
 /**
- * The listener interface for receiving cycle results.
+ * The listener interface for receiving step results.
  */
-public interface CycleListener
+public interface StepListener
 {
 	/**
-	 * called after completion of a cycle.
-	 * @param int cycle - number of cycles completed in this round.
+	 * Method called after every step with the results.
+	 * @param StepReport report - results of last step.
 	 */
-	public void cycleFinished(int cycle);
+	public void stepProcess(StepReport report);
 }

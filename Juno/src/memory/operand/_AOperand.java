@@ -1,4 +1,4 @@
-package Memory.operand;
+package memory.operand;
 
 public abstract class _AOperand implements _IOperand {
 }

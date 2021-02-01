@@ -25,7 +25,7 @@
  *
  */
  
-package old.frontend;
+package frontend;
 
 import java.awt.*;
 
@@ -39,7 +39,7 @@ public class RoundCycleCounter extends Label implements CycleListener, RoundList
 	
 	/**
 	 * Creates a new Round/Cycle counter and places it in a container.
-	 * @param frontend.FrontEndManager man - old.frontend manager to register, as a round and cycle listener, with.
+	 * @param frontend.FrontEndManager man - frontend manager to register, as a round and cycle listener, with.
 	 * @param java.awt.Container con - container to place in.
 	 */
 	public RoundCycleCounter(FrontEndManager man, Container con)

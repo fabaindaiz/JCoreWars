@@ -1,7 +1,7 @@
-package Memory.operator;
+package memory.operator;
 
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class MOV extends _AOperator {
 
@@ -54,14 +54,14 @@ public class MOV extends _AOperator {
     @Override
     public boolean executeF(Memory[] core, Address addr) {
         core[addr.addrB].aValue = addr.addrAAValue;
-        return true;
         // fallthrough for rest
+        return true;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
         core[addr.addrB].bValue = addr.addrAAValue;
-        return true;
         // fallthrough for rest
+        return true;
     }
 }

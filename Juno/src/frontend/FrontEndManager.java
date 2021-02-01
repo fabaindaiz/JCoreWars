@@ -24,17 +24,29 @@
  * SUCH DAMAGE.
  *
  */
-
-package old.frontend;
+ 
+package frontend;
 
 /**
- * The listener interface for receiving step results.
+ * Interface for the object managing the frontend components.
  */
-public interface StepListener
+public interface FrontEndManager
 {
 	/**
-	 * Method called after every step with the results.
-	 * @param StepReport report - results of last step.
+	 * Called to register a StepListener to receive step results
+	 * @param StepListener l - StepListener to register.
 	 */
-	public void stepProcess(StepReport report);
+	public void registerStepListener(StepListener l);
+	
+	/**
+	 * Called to register a CycleListener to receive cycle results
+	 * @param CycleListener c - CycleListener to register.
+	 */
+	public void registerCycleListener(CycleListener c);
+	
+	/**
+	 * Called to register a RoundListener to receive round results
+	 * @param RoundListener r - RoundListener to register.
+	 */
+	public void registerRoundListener(RoundListener r);
 }

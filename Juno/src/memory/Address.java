@@ -1,6 +1,7 @@
-package Memory;
+package memory;
 
 import frontend.StepReport;
+import marsVM.MarsVM;
 
 public class Address {
 
@@ -17,8 +18,7 @@ public class Address {
     public int addrBAValue = 0;	// address B's A Value
     public int addrBBValue = 0;	// address B's B Value
 
-    public int coreSize = 8000; //TEMPORAL
-
+    public MarsVM executer;
     public int IP;
 
 }

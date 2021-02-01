@@ -1,16 +1,16 @@
 package marsVM;
 
 import frontend.StepReport;
-import Memory.Address;
-import Memory.Memory;
+import memory.Address;
+import memory.Memory;
 
 public class MarsVM {
 
     public final Memory core[];
-    protected WarriorRT currentW;		// current warrior
+    public WarriorRT currentW;		// current warrior
     int numWarriors;
-    protected final int maxProc;
-    protected final int coreSize;
+    public final int maxProc;
+    public final int coreSize;
 
     public MarsVM(int coreS, int maxP)
     {
@@ -84,6 +84,8 @@ public class MarsVM {
     {
         Address addr = new Address();
 
+        addr.executer = this;
+
         // get instruction pointer
         addr.IP = currentW.getProc();
         addr.report.warrior(currentW.warrior());
@@ -105,7 +107,13 @@ public class MarsVM {
         // execute instruction
         addr.report.execute(addr.IP);
 
-        //addr.instr.modifier
+        addr.instr.operator.preExecute(addr);
+
+        if (!addr.instr.modifier.execute(addr.instr.operator, core, addr)) {
+            return addr.report;
+        }
+
+        addr.instr.operator.postExecute(addr);
 
         // point the IP to the next instruction
         currentW.addProc((addr.IP + 1) % coreSize);

@@ -1,4 +1,4 @@
-package Memory.modifier;
+package memory.modifier;
 
-public class _AModifier implements _IModifier{
+public abstract class _AModifier implements _IModifier{
 }
