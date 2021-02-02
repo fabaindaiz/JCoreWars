@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bdf04468-e044-4107-b9fc-0167c2fd5da9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juno.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/AsTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/assambler/Assembler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/CoreDisplay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/CycleListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/FrontEndManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/RoundCycleCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/RoundListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/StepListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/StepReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/jMARS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/marsVM/MarsVM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/marsVM/WarriorObj.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/marsVM/WarriorRT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/Memory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/AB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/BA.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/F.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/I.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/X.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/_AModifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/_IModifier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Asterisk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/At.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Close.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Greater.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Hash.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Less.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Open.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Peso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/_AOperand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/_IOperand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/ADD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/CMP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/DAT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/DIV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/DJN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/JMN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/JMP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/JMZ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/LDP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/MOD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/MOV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/MUL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/NOP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SEQ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SLT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SNE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SPL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/STP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SUB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/_AOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/_IOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/ElectricHead.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/Validate.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/clp.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/dwarf.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/imp.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/rave.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/rose.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/test.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/test1.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/twister.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assambler/Assembler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/CycleListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/RoundListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/StepListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/StepReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsVM/MarsVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/Memory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/A.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/AB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/B.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/BA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/F.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/I.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/X.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/_AModifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/_IModifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Asterisk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/At.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Close.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Greater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Hash.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Less.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Open.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Peso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/_AOperand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/_IOperand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/ADD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/CMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/DAT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/DIV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/DJN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/JMN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/JMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/JMZ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/LDP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/MOD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/MOV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/MUL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/NOP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SEQ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SLT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SNE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SPL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/STP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SUB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/_AOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/_IOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/ElectricHead.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/Validate.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/clp.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/dwarf.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/imp.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/rave.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/rose.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/test.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/test1.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/war/twister.red" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1nlAXVJKKCMyHeFWgYpZGgSuefy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\informatica\Core Wars\Juno\src\marsVM" />
+      <recent name="C:\informatica\Core Wars\Juno\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\informatica\Core Wars\JCoreWars\Juno\src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="assambler" />
+      <recent name="frontend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="jMARS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jMARS" />
+      <module name="Juno" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.jMARS" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdf04468-e044-4107-b9fc-0167c2fd5da9" name="Default Changelist" comment="" />
+      <created>1611954345759</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611954345759</updated>
+      <workItem from="1611954347075" duration="1199000" />
+      <workItem from="1612129517963" duration="21541000" />
+      <workItem from="1612184366633" duration="7703000" />
+      <workItem from="1612194205059" duration="162000" />
+      <workItem from="1612212470866" duration="4269000" />
+      <workItem from="1612226709933" duration="642000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/old/marsVM/MarsVM.java</url>
+          <line>720</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

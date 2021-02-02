@@ -61,9 +61,7 @@ public class Memory {
         StringBuffer str = new StringBuffer();
 
         str.append(operator.toString());
-
         str.append(modifier.toString());
-
         str.append(operandA);
 
         int i = 6 - Integer.toString(aValue).length();
