@@ -37,8 +37,9 @@ import java.util.*;
 import java.net.URL;
 import java.io.*;
 
-import marsVM.*;
 import frontend.*;
+import marsVM.*;
+import frontend.CoreDisplay;
 
 public class jMARS extends java.applet.Applet implements Runnable, WindowListener, FrontEndManager
 {
@@ -101,6 +102,10 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 	 */
 	public static void main(String a[])
 	{
+		// a = new String[2];
+		// a[0] = "C:/informatica/Core Wars/JCoreWars/out/production/Juno/war/dwarf.red";
+		// a[1] = "C:/informatica/Core Wars/JCoreWars/out/production/Juno/war/imp.red";
+
 		if (a.length == 0)
 		{
 			System.out.println("usage: jMARS [options] warrior1.red [warrior2.red ...]");
@@ -110,7 +115,7 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 		inApplet = false;
 		
 		myFrame = new Frame("jMARS");
-		myFrame.setSize(new Dimension(500, 300));
+		myFrame.setSize(new Dimension(500, 600));
 		
 		myApp = new jMARS();
 		myApp.args = a;
@@ -206,7 +211,7 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 			}
 		}
 				
-		coreDisplay = new CoreDisplay(this, this, coreSize, 402);
+		coreDisplay = new CoreDisplay(this, this, coreSize);
 		roundCycleCounter = new RoundCycleCounter(this, this);
 		
 		validate();
@@ -315,7 +320,7 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 			}
 		}
 				
-		coreDisplay = new CoreDisplay(this, this, coreSize, 402);
+		coreDisplay = new CoreDisplay(this, this, coreSize);
 		roundCycleCounter = new RoundCycleCounter(this, this);
 		
 		validate();
@@ -349,28 +354,26 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 
 		for (; roundNum<rounds; roundNum++)
 		{
-			for (; cycleNum<cycles; cycleNum++)
-			{
-				for (; warRun < runWarriors; warRun++)
-				{
+			for (; cycleNum<cycles; cycleNum++) {
+				for (; warRun < runWarriors; warRun++) {
 					StepReport stats = MARS.executeInstr();
-					
+
 					WarriorObj war = stats.warrior();
 					war.numProc = stats.numProc();
-									
-					if (stats.wDeath())
-					{
+
+					if (stats.wDeath()) {
 						war.Alive = false;
 						runWarriors--;
 					}
-					
-					notifyStepListeners(stats); 
-					
+
+					notifyStepListeners(stats);
+
 				}
-				
+
 				notifyCycleListeners(cycleNum);
-				repaint();
-				
+
+				roundCycleCounter.paint(getGraphics());
+
 				if (runWarriors <= minWarriors)
 					break;
 					
@@ -388,10 +391,13 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 			MARS.reset();
 			loadWarriors();
 			runWarriors = numWarriors;
-			coreDisplay.clear();
-			
+
+			//coreDisplay.clear();
 			
 			cycleNum = 0;
+
+			return;
+
 		}
 	}
 	

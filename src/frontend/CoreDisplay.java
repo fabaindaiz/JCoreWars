@@ -27,6 +27,10 @@
 
 package frontend;
 
+import frontend.FrontEndManager;
+import frontend.StepListener;
+import frontend.StepReport;
+
 import java.awt.*;
 
 /**
@@ -42,6 +46,8 @@ public class CoreDisplay extends Canvas implements StepListener
 
 	protected int width;
 	protected int height;
+	protected int dimW;
+	protected int dimH;
 	
 	protected Image offScreen;
 	protected Graphics buffer;
@@ -53,11 +59,13 @@ public class CoreDisplay extends Canvas implements StepListener
 	 * @param int coreS - Size of core to be displayed.
 	 * @param int w - desired width of display.
 	 */
-	public CoreDisplay(FrontEndManager man, Container con, int coreS, int w)
+	public CoreDisplay(FrontEndManager man, Container con, int coreS)
 	{
 		coreSize = coreS;
-		width = w;
-		height = ((coreSize / (width /3)) +1) *3;
+		width = 400;
+		height = coreSize/16;
+		dimW = width/80;
+		dimH = height/(coreSize/80);
 		
 		background = Color.black;
 		
@@ -75,57 +83,58 @@ public class CoreDisplay extends Canvas implements StepListener
 		int i;
 		int x,y;
 		int addr[];
-		
+
 		if (offScreen == null)
 			return;
 
 		buffer.setColor(report.warrior().getColor());
-		
+
 		addr = report.addrRead();
 		for (i=0; i < addr.length; i++)
 		{
-			y = (addr[i] / (width /3)) * 3;
-			x = (addr[i] % (width /3)) * 3;
-			
-			buffer.drawLine(x, y, x, y);
+			x = addr[i] % 80;
+			y = addr[i] / 80;
+
+			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
-		
+
 		addr = report.addrWrite();
 		for (i=0; i < addr.length; i++)
 		{
-			y = (addr[i] / (width /3)) * 3;
-			x = (addr[i] % (width /3)) * 3;
-			
-			buffer.drawLine(x+1, y, x, y+1);
+			x = addr[i] % 80;
+			y = addr[i] / 80;
+
+			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
 
 		addr = report.addrDec();
 		for (i=0; i < addr.length; i++)
 		{
-			y = (addr[i] / (width /3)) * 3;
-			x = (addr[i] % (width /3)) * 3;
-			
-			buffer.drawLine(x, y, x+1, y);
+			x = addr[i] % 80;
+			y = addr[i] / 80;
+
+			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
-		
+
 		addr = report.addrInc();
 		for (i=0; i < addr.length; i++)
 		{
-			y = (addr[i] / (width /3)) * 3;
-			x = (addr[i] % (width /3)) * 3;
-			
-			buffer.drawLine(x, y, x+1, y);
+			x = addr[i] % 80;
+			y = addr[i] / 80;
+
+			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
-		
+
 		if ((i = report.addrExec()) != -1)
 		{
-			y = (i / (width /3)) * 3;
-			x = (i % (width /3)) * 3;
-			
+			x = i % 80;
+			y = i / 80;
+
 			if (report.pDeath()) buffer.setColor(report.warrior().getDColor());
-			buffer.drawLine(x, y, x+1, y);
-			buffer.drawLine(x, y+1, x+1, y+1);
+			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
+
+		paint(getGraphics());
 		
 		return;
 	}
@@ -158,8 +167,7 @@ public class CoreDisplay extends Canvas implements StepListener
 
 
 		screen.drawImage(offScreen, 0, 0, this);
-		
-		System.out.println("paint size =" + getSize());
+
 		return;
 	}
 	

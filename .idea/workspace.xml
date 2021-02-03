@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdf04468-e044-4107-b9fc-0167c2fd5da9" name="Default Changelist" comment="">
+    <list default="true" id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Juno.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juno.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JCoreWars.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juno/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Juno/AsTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Juno/assambler/Assembler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/CoreDisplay.class" beforeDir="false" />
@@ -73,90 +74,23 @@
       <change beforePath="$PROJECT_DIR$/out/production/Juno/war/test.red" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Juno/war/test1.red" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Juno/war/twister.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assambler/Assembler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CycleListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/RoundListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/StepListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/StepReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/MarsVM.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/Address.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/Memory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/A.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/AB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/B.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/BA.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/F.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/I.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/X.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/_AModifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/_IModifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/Asterisk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/At.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/Close.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/Greater.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/Hash.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/Less.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/Open.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/Peso.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/_AOperand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/_IOperand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/ADD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/CMP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/DAT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/DIV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/DJN.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/JMN.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/JMP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/JMZ.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/LDP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/MOD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/MOV.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/MUL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/NOP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/SEQ.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/SLT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/SNE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/SPL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/STP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/SUB.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/_AOperator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/_IOperator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/ElectricHead.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/Validate.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/clp.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/dwarf.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/imp.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/rave.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/rose.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/test.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/test1.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/war/twister.red" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/StepListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/StepListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jMARS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsVM/MarsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Memory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1nlAXVJKKCMyHeFWgYpZGgSuefy" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1nx9e1On5xBkXGvJzYnfHzmICBk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -167,42 +101,25 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\informatica\Core Wars\Juno\src\marsVM" />
-      <recent name="C:\informatica\Core Wars\Juno\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\informatica\Core Wars\JCoreWars\Juno\src" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="assambler" />
-      <recent name="frontend" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="jMARS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jMARS" />
-      <module name="Juno" />
+      <module name="JCoreWars" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -216,17 +133,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bdf04468-e044-4107-b9fc-0167c2fd5da9" name="Default Changelist" comment="" />
-      <created>1611954345759</created>
+      <changelist id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="" />
+      <created>1612320968828</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1611954345759</updated>
-      <workItem from="1611954347075" duration="1199000" />
-      <workItem from="1612129517963" duration="21541000" />
-      <workItem from="1612184366633" duration="7703000" />
-      <workItem from="1612194205059" duration="162000" />
-      <workItem from="1612212470866" duration="4269000" />
-      <workItem from="1612226709933" duration="642000" />
+      <updated>1612320968828</updated>
+      <workItem from="1612320972861" duration="39000" />
     </task>
     <servers />
   </component>
@@ -243,17 +155,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/old/marsVM/MarsVM.java</url>
-          <line>720</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -109,7 +109,7 @@ public class MarsVM {
 
         addr.instr.operator.preExecute(addr);
 
-        if (!addr.instr.modifier.execute(addr.instr.operator, core, addr)) {
+        if (! addr.instr.modifier.execute(addr.instr.operator, core, addr)) {
             return addr.report;
         }
 

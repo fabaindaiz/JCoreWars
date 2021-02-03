@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Juno.iml" filepath="$PROJECT_DIR$/Juno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JCoreWars.iml" filepath="$PROJECT_DIR$/JCoreWars.iml" />
     </modules>
   </component>
 </project>

@@ -1,7 +1,7 @@
 package memory;
 
 import memory.modifier._IModifier;
-import memory.operand.Hash;
+import memory.operand.Peso;
 import memory.operand._IOperand;
 import memory.operator._IOperator;
 
@@ -20,8 +20,8 @@ public class Memory {
     public Memory() {
         operator = new DAT();
         modifier = new F();
-        operandA = new Hash();
-        operandB = new Hash();
+        operandA = new Peso();
+        operandB = new Peso();
         aValue = 0;
         bValue = 0;
     }

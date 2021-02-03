@@ -28,7 +28,7 @@
 package frontend;
 
 /**
- * Interface for the object managing the frontend components.
+ * Interface for the object managing the old.frontend components.
  */
 public interface FrontEndManager
 {

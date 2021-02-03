@@ -27,6 +27,8 @@
 
 package frontend;
 
+import frontend.StepReport;
+
 /**
  * The listener interface for receiving step results.
  */
