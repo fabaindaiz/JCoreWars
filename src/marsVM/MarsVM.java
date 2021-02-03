@@ -39,8 +39,8 @@ public class MarsVM {
 
     /**
      * Load a warrior into the core.
-     * @param WarriorObj warrior - warrior to load
-     * @param int startPosition - first memory location occupied by warrior
+     * @param warrior - warrior to load
+     * @param startPosition - first memory location occupied by warrior
      * @returns boolean - false if couldn't load warrior
      */
     public boolean loadWarrior(WarriorObj warrior, int startPosition)
@@ -140,7 +140,6 @@ public class MarsVM {
         currentW.setPCell(0, numWarriors);
         currentW = currentW.getNextWarrior();
         currentW.getPrevWarrior().Remove();
-        return;
     }
 
 }

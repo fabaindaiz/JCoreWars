@@ -36,7 +36,7 @@ public interface RoundListener
 {
 	/**
 	 * Called after completion of each round.
-	 * @param int round - number of rounds completed in this game.
+	 * @param round - number of rounds completed in this game.
 	 */
-	public void roundResults(int round);
+	void roundResults(int round);
 }

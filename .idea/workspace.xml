@@ -2,85 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Juno.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JCoreWars.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Juno/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/AsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/assambler/Assembler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/CoreDisplay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/CycleListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/FrontEndManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/RoundCycleCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/RoundListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/StepListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/frontend/StepReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/jMARS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/marsVM/MarsVM.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/marsVM/WarriorObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/marsVM/WarriorRT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/Address.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/Memory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/A.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/AB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/B.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/BA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/F.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/I.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/X.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/_AModifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/modifier/_IModifier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Asterisk.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/At.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Close.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Greater.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Hash.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Less.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Open.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/Peso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/_AOperand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operand/_IOperand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/ADD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/CMP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/DAT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/DIV.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/DJN.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/JMN.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/JMP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/JMZ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/LDP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/MOD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/MOV.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/MUL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/NOP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SEQ.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SLT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SNE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SPL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/STP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/SUB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/_AOperator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/memory/operator/_IOperator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/ElectricHead.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/Validate.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/clp.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/dwarf.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/imp.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/rave.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/rose.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/test.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/test1.red" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Juno/war/twister.red" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/AsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/AsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/assambler/Assembler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/assambler/Assembler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/RoundCycleCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/RoundCycleCounter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/StepReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/StepReport.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorRT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorRT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/Memory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/Memory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assambler/Assembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assambler/Assembler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/CycleListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CycleListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/RoundListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/RoundListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/StepListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/StepListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/StepReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/StepReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jMARS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsVM/MarsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Memory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/modifier/_IModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/modifier/_IModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/_IOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/_IOperand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/_IOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/_IOperator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612320968828</updated>
-      <workItem from="1612320972861" duration="39000" />
+      <workItem from="1612320972861" duration="3315000" />
     </task>
     <servers />
   </component>
@@ -155,5 +104,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/frontend/StepReport.java</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

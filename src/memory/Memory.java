@@ -37,15 +37,12 @@ public class Memory {
 
     public boolean equals(Memory comp)
     {
-        if ((operator.toString() != comp.operator.toString()) ||
-            (modifier.toString() != comp.modifier.toString()) ||
-            (operandA.toString() != comp.operandA.toString()) ||
-            (operandB.toString() != comp.operandB.toString()) ||
-            (aValue != comp.aValue) ||
-            (bValue != comp.bValue))
-            return false;
-
-        return true;
+        return (operator.toString().equals(comp.operator.toString())) &&
+                (modifier.toString().equals(comp.modifier.toString())) &&
+                (operandA.toString().equals(comp.operandA.toString())) &&
+                (operandB.toString().equals(comp.operandB.toString())) &&
+                (aValue == comp.aValue) &&
+                (bValue == comp.bValue);
     }
 
     public boolean equals(Object obj)
@@ -58,7 +55,7 @@ public class Memory {
 
     public String toString()
     {
-        StringBuffer str = new StringBuffer();
+        StringBuilder str = new StringBuilder();
 
         str.append(operator.toString());
         str.append(modifier.toString());
@@ -70,7 +67,7 @@ public class Memory {
             str.append(" ");
         }
 
-        str.append(" " + aValue + ", ");
+        str.append(" ").append(aValue).append(", ");
 
         str.append(operandB.toString());
 
@@ -80,9 +77,9 @@ public class Memory {
             str.append(" ");
         }
 
-        str.append(" " + bValue);
+        str.append(" ").append(bValue);
 
         return str.toString();
     }
 
-};
+}

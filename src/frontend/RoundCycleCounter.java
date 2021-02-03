@@ -39,8 +39,7 @@ public class RoundCycleCounter extends Label implements CycleListener, RoundList
 	
 	/**
 	 * Creates a new Round/Cycle counter and places it in a container.
-	 * @param frontend.FrontEndManager man - old.frontend manager to register, as a round and cycle listener, with.
-	 * @param java.awt.Container con - container to place in.
+	 * @param man - old.frontend manager to register, as a round and cycle listener, with.
 	 */
 	public RoundCycleCounter(FrontEndManager man, Container con)
 	{
@@ -49,40 +48,36 @@ public class RoundCycleCounter extends Label implements CycleListener, RoundList
 		man.registerCycleListener(this);
 		man.registerRoundListener(this);
 		
-		con.add(this);
-		
 		cycle = 1;
 		round = 1;
 		changed = true;
-				
-		return;
+
+		con.add(this);
 	}
 	
 	/**
 	 * CycleListener method.
-	 * @param int c - number of cycles completed.
+	 * @param c - number of cycles completed.
 	 */
 	public void cycleFinished(int c)
 	{
 		cycle = c+1;
 		changed = true;
-		return;
 	}
 	
 	/**
 	 * RoundListener method.
-	 * @param int r - number of rounds completed.
+	 * @param r - number of rounds completed.
 	 */
 	public void roundResults(int r)
 	{
 		round = r+2;
 		changed = true;
-		return;
 	}
 	
 	/**
 	 * java.awt.Component method overwridden to display round and cycle number.
-	 * @param java.awt.Graphics g - graphics context to draw to.
+	 * @param g - graphics context to draw to.
 	 */
 	public void paint(Graphics g)
 	{
@@ -92,7 +87,6 @@ public class RoundCycleCounter extends Label implements CycleListener, RoundList
 			changed = false;
 		}
 		
-		super.paint(g);		
-		return;
+		super.paint(g);
 	} 
 }

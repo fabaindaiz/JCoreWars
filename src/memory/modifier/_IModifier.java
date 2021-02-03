@@ -6,5 +6,5 @@ import memory.operator._IOperator;
 
 public interface _IModifier {
 
-    public boolean execute(_IOperator operator, Memory[] core, Address addr);
+    boolean execute(_IOperator operator, Memory[] core, Address addr);
 }

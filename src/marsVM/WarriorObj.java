@@ -25,9 +25,9 @@
  *
  */
 
-/**
- * Reads a warrior from a stream and sends it to the assembler. Then holds
- * Compiled warrior and all warrior stats.
+/*
+  Reads a warrior from a stream and sends it to the assembler. Then holds
+  Compiled warrior and all warrior stats.
  */
  
 package marsVM;
@@ -77,17 +77,16 @@ public class WarriorObj
 	
 	public Memory[] getMemory(int coreSize)
 	{
-		for (int i=0; i<wInst.length; i++)
-		{
-			while (wInst[i].aValue < 0)
-				wInst[i].aValue += coreSize;
+		for (Memory memory : wInst) {
+			while (memory.aValue < 0)
+				memory.aValue += coreSize;
 
-			wInst[i].aValue %= coreSize;
-			
-			while (wInst[i].bValue < 0)
-				wInst[i].bValue += coreSize;
+			memory.aValue %= coreSize;
 
-			wInst[i].bValue %= coreSize;
+			while (memory.bValue < 0)
+				memory.bValue += coreSize;
+
+			memory.bValue %= coreSize;
 		}
 
 		return wInst;
@@ -121,8 +120,6 @@ public class WarriorObj
 	public void initPSpace(int length)
 	{
 		pSpace = new int[length];
-		
-		return;
 	}
 	
 	public int[] getPSpace()
@@ -141,14 +138,11 @@ public class WarriorObj
 			
 			pSpace[i] %= coreSize;
 		}
-		
-		return;
 	}
 	
 	public void setPSpace(int[] p)
 	{
 		pSpace = p;
-		return;
 	}
 	
 	public int getPCell(int index)

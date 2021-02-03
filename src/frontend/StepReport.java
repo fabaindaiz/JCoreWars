@@ -25,10 +25,6 @@
  *
  */
 
-/**
- * report for changes made during one step
- */
-
 package frontend;
 
 import marsVM.WarriorObj;
@@ -77,101 +73,83 @@ public class StepReport
 		execAddr = -1;
 		pDie = false;
 		wDeath = false;
-		
-		return;
 	}
 	
 	/**
 	 * Set the Warrior object
-	 * @param marsVM.WarriorObj warr - Warrior object of currently executing warrior.
+	 * @param warr - Warrior object of currently executing warrior.
 	 */
 	public void warrior(WarriorObj warr)
 	{
 		warrior = warr;
-		
-		return;
 	}
 	
 	/**
 	 * Set a location read from.
-	 * @param int addr - address of location read
+	 * @param addr - address of location read
 	 */
 	public void read(int addr)
 	{
 		readAddr[numRead] = addr;
 		numRead++;
-		
-		return;
 	}
 	
 	/**
 	 * Set a location read from indirection
-	 * @param int addr - address of location read
+	 * @param addr - address of location read
 	 */
 	public void indirRead(int addr)
 	{
 		indirReadAddr[numIndirRead] = addr;
 		numIndirRead++;
-		
-		return;
 	}
 	
 	/**
 	 * Set a location that was written to
-	 * @param int addr - address written to
+	 * @param addr - address written to
 	 */
 	public void write(int addr)
 	{
 		writeAddr[numWrite] = addr;
 		numWrite++;
-		
-		return;
 	}
 	
 	/**
 	 * Set a location that was decremented
-	 * @param int addr - address that was decremented
+	 * @param addr - address that was decremented
 	 */
 	public void decrement(int addr)
 	{
 		decAddr[numDec] = addr;
 		numDec++;
-		
-		return;
 	}
 		
 	/**
 	 * Set a location that was incremented
-	 * @param int addr - address that was incremented
+	 * @param addr - address that was incremented
 	 */
 	public void increment(int addr)
 	{
 		incAddr[numInc] = addr;
 		numInc++;
-		
-		return;
 	}
 	
 	/**
 	 * Set the location that was executed
-	 * @param int addr - address that was executed
+	 * @param addr - address that was executed
 	 */
 	public void execute(int addr)
 	{
 		execAddr = addr;
-		
-		return;
 	}
 	
 	/**
 	 * set the number of processes in the current warrior.
-	 * @param int numP - number of processes
+	 * @param numP - number of processes
 	 */
 	public void numProc(int numP)
 	{
 		numProc = numP;
-		
-		return;
 	}
 	
 	/**
@@ -180,8 +158,6 @@ public class StepReport
 	public void pDie()
 	{
 		pDie = true;
-	
-		return;
 	}
 	
 	/**
@@ -190,8 +166,6 @@ public class StepReport
 	public void wDie()
 	{
 		wDeath = true;
-		
-		return;
 	}
 	
 	/**
@@ -209,10 +183,9 @@ public class StepReport
 	 */
 	public int[] addrRead()
 	{
-		int value[] = new int[numRead];
-		
-		for (int i=0; i<numRead; i++)
-			value[i] = readAddr[i];
+		int[] value = new int[numRead];
+
+		if (numRead >= 0) System.arraycopy(readAddr, 0, value, 0, numRead);
 		
 		return value;
 	}
@@ -223,10 +196,9 @@ public class StepReport
 	 */
 	public int[] addrIndirRead()
 	{
-		int value[] = new int[numIndirRead];
-		
-		for (int i=0; i<numIndirRead; i++)
-			value[i] = indirReadAddr[i];
+		int[] value = new int[numIndirRead];
+
+		if (numIndirRead >= 0) System.arraycopy(indirReadAddr, 0, value, 0, numIndirRead);
 			
 		return value;
 	}
@@ -237,10 +209,9 @@ public class StepReport
 	 */
 	public int[] addrWrite()
 	{
-		int value[] = new int[numWrite];
-		
-		for (int i=0; i<numWrite; i++)
-			value[i] = writeAddr[i];
+		int[] value = new int[numWrite];
+
+		if (numWrite >= 0) System.arraycopy(writeAddr, 0, value, 0, numWrite);
 		
 		return value;
 	}
@@ -251,10 +222,9 @@ public class StepReport
 	 */
 	public int[] addrDec()
 	{
-		int	value[] = new int[numDec];
-		
-		for (int i=0; i<numDec; i++)
-			value[i] = decAddr[i];
+		int[] value = new int[numDec];
+
+		if (numDec >= 0) System.arraycopy(decAddr, 0, value, 0, numDec);
 		
 		return value;
 	}
@@ -265,10 +235,9 @@ public class StepReport
 	 */
 	public int[] addrInc()
 	{
-		int	value[] = new int[numInc];
-		
-		for (int i=0; i<numInc; i++)
-			value[i] = incAddr[i];
+		int[] value = new int[numInc];
+
+		if (numInc >= 0) System.arraycopy(incAddr, 0, value, 0, numInc);
 		
 		return value;
 	}

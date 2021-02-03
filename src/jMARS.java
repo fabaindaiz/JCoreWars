@@ -25,23 +25,22 @@
  *
  */
 
-/**
- * jMARS is a corewars interpreter in which programs (warriors)
- * battle in the memory of a virtual machine (the MARS) and try to disable
- * the other program.
+/*
+  jMARS is a corewars interpreter in which programs (warriors)
+  battle in the memory of a virtual machine (the MARS) and try to disable
+  the other program.
  */
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import java.net.URL;
 import java.io.*;
 
 import frontend.*;
 import marsVM.*;
 import frontend.CoreDisplay;
 
-public class jMARS extends java.applet.Applet implements Runnable, WindowListener, FrontEndManager
+public class jMARS extends java.awt.Panel implements Runnable, WindowListener, FrontEndManager
 {
 	// constants
 	static final int numDefinedColors = 4;
@@ -98,13 +97,13 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 	
 	/**
 	 * Starting function for the application. It sets up a frame and adds the applet to it.
-	 * @param java.lang.String[] a - array of command line arguments
+	 * @param a - array of command line arguments
 	 */
 	public static void main(String a[])
 	{
 		// a = new String[2];
-		// a[0] = "C:/informatica/Core Wars/JCoreWars/out/production/Juno/war/dwarf.red";
-		// a[1] = "C:/informatica/Core Wars/JCoreWars/out/production/Juno/war/imp.red";
+		// a[0] = "C:/informatica/Core Wars/JCoreWars/src/war/dwarf.red";
+		// a[1] = "C:/informatica/Core Wars/JCoreWars/src/war/imp.red";
 
 		if (a.length == 0)
 		{
@@ -129,124 +128,6 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 	}
 	
 	/**
-	 * Initialization function for the applet, this automatically called by the browser.
-	 */
-	public void init()
-	{
-		// Set up various constants
-		String temp;
-		if ((temp = getParameter("max_length")) != null)
-		{
-			maxWarriorLength = Integer.parseInt(temp);
-		} else {
-			maxWarriorLength = 100;
-		}
-		
-		if ((temp = getParameter("min_distance")) != null)
-		{
-			minWarriorDistance = Integer.parseInt(temp);
-		} else {
-			minWarriorDistance = 100;
-		}
-		
-		if ((temp = getParameter("max_proc")) != null)
-		{
-			maxProc = Integer.parseInt(temp);
-		} else {
-			maxProc = 8000;
-		}
-		
-		if ((temp = getParameter("core_size")) != null)
-		{
-			coreSize = Integer.parseInt(temp);
-		} else {
-			coreSize = 8000;
-		}
-		
-		if ((temp = getParameter("pspace_size")) != null)
-		{
-			pSpaceSize = Integer.parseInt(temp);
-		} else {
-			pSpaceSize = coreSize / 16;
-		}
-		
-		if ((temp = getParameter("num_cycles")) != null)
-		{
-			cycles = Integer.parseInt(temp);
-		} else {
-			cycles = 80000;
-		}
-		
-		if ((temp = getParameter("num_rounds")) != null)
-		{
-			rounds = Integer.parseInt(temp);
-		} else {
-			rounds = 10;
-		}
-		
-		if ((temp = getParameter("num_warriors")) != null)
-		{
-			numWarriors = Integer.parseInt(temp);
-		} else {
-			System.out.println("Number of warriors not specified");
-			return;
-		}
-		
-		warriors = new WarriorObj[numWarriors];
-		
-		for (int i=0; i<numWarriors; i++)
-		{
-			try
-			{
-				URL wURL = new URL(getCodeBase(), getParameter("warrior" + (i+1)));
-				BufferedReader warRead = new BufferedReader(new InputStreamReader(wURL.openStream()));
-
-				warriors[i] = new WarriorObj(warRead, maxWarriorLength, wColors[i % numDefinedColors][0], wColors[i % numDefinedColors][1]);
-				warriors[i].initPSpace(pSpaceSize);
-				warriors[i].setPCell(0, -1);
-			} catch (IOException e)
-			{
-				System.out.println(e.toString());
-				System.exit(0);
-			}
-		}
-				
-		coreDisplay = new CoreDisplay(this, this, coreSize);
-		roundCycleCounter = new RoundCycleCounter(this, this);
-		
-		validate();
-		repaint();
-//		update(getGraphics());
-		
-		MARS = new MarsVM(coreSize, maxProc);
-		
-		loadWarriors();
-		
-		runWarriors = numWarriors;
-		minWarriors = (numWarriors == 1) ? 0 : 1;
-		roundNum = 0;
-		cycleNum = 0;
-		warRun = 0;
-
-		myThread = new Thread(this);
-		
-		myThread.setPriority(Thread.NORM_PRIORITY-1); 
-				
-		myThread.start();
-		
-		return;
-	}
-	
-	
-	/**
-	 * called by browser to shutdown the applet
-	 */
-	public void destroy()
-	{
-		myThread.stop();
-	}
-	
-	/**
 	 * Initialization function for the application.
 	 */
 	void application_init()
@@ -266,34 +147,35 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 		{
 			if (args[i].charAt(0) == '-')
 			{
-				if (args[i].equals("-r"))
-				{
-					rounds = Integer.parseInt(args[++i]);
-				} else if (args[i].equals("-s"))
-				{
-					coreSize = Integer.parseInt(args[++i]);
-				} else if (args[i].equals("-c"))
-				{
-					cycles = Integer.parseInt(args[++i]);
-				} else if (args[i].equals("-p"))
-				{
-					maxProc = Integer.parseInt(args[++i]);
-				} else if (args[i].equals("-l"))
-				{
-					maxWarriorLength = Integer.parseInt(args[++i]);
-				} else if (args[i].equals("-d"))
-				{
-					minWarriorDistance = Integer.parseInt(args[++i]);
-				} else if (args[i].equals("-S"))
-				{
-					pSpaceSize = Integer.parseInt(args[++i]);
-					pspaceChanged = true;
+				switch (args[i]) {
+					case "-r":
+						rounds = Integer.parseInt(args[++i]);
+						break;
+					case "-s":
+						coreSize = Integer.parseInt(args[++i]);
+						break;
+					case "-c":
+						cycles = Integer.parseInt(args[++i]);
+						break;
+					case "-p":
+						maxProc = Integer.parseInt(args[++i]);
+						break;
+					case "-l":
+						maxWarriorLength = Integer.parseInt(args[++i]);
+						break;
+					case "-d":
+						minWarriorDistance = Integer.parseInt(args[++i]);
+						break;
+					case "-S":
+						pSpaceSize = Integer.parseInt(args[++i]);
+						pspaceChanged = true;
+						break;
 				}
 			} else
 			{
 				numWarriors++;
 				
-				wArgs.addElement(new Integer(i));
+				wArgs.addElement(i);
 			}
 		}
 		
@@ -309,7 +191,7 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 		{
 			try
 			{
-				FileReader wFile = new FileReader(args[(((Integer) wArgs.elementAt(i)).intValue())]);
+				FileReader wFile = new FileReader(args[((Integer) wArgs.elementAt(i))]);
 				warriors[i] = new WarriorObj(wFile, maxWarriorLength, wColors[i % numDefinedColors][0], wColors[i % numDefinedColors][1]);
 				warriors[i].initPSpace(pSpaceSize);
 				warriors[i].setPCell(0, -1);
@@ -342,7 +224,6 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 		myThread.setPriority(Thread.NORM_PRIORITY-1);
 				
 		myThread.start();
-		return;
 	}
 	
 	/**
@@ -423,10 +304,12 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 				
 				if (r < minWarriorDistance || r > (coreSize - minWarriorDistance))
 					validSpot = false;
-					
-				for (int j=0; j<location.length; j++)
-					if (r < (minWarriorDistance + location[j]) && r > (minWarriorDistance + location[j]))
+
+				for (int k : location)
+					if (r < (minWarriorDistance + k) && r > (minWarriorDistance + k)) {
 						validSpot = false;
+						break;
+					}
 			} while (!validSpot);
 			
 			if (!MARS.loadWarrior(warriors[i], r))
@@ -438,13 +321,11 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 	
 	/**
 	 * update the display
-	 * @param java.awt.Graphics g - Graphics context
+	 * @param g - Graphics context
 	 */
 	public void update(Graphics g)
 	{
 		paintComponents(g);
-		
-		return;
 	}
 	
 	public void registerStepListener(StepListener l)
@@ -469,8 +350,6 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 			StepListener j = (StepListener) e.nextElement();
 			j.stepProcess(step);
 		}
-		
-		return;
 	}
 	
 	protected void notifyCycleListeners(int cycle)
@@ -480,8 +359,6 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 			CycleListener j = (CycleListener) e.nextElement();
 			j.cycleFinished(cycle);
 		}
-		
-		return;
 	}
 
 	protected void notifyRoundListeners(int round)
@@ -491,8 +368,6 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
 			RoundListener j = (RoundListener) e.nextElement();
 			j.roundResults(round);
 		}
-		
-		return;
 	}
 
 
@@ -503,7 +378,6 @@ public class jMARS extends java.applet.Applet implements Runnable, WindowListene
      */
 	public void windowClosing(WindowEvent e)
 	{
-		myApp.stop();
 		System.exit(0);
 	} 
 

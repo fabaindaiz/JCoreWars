@@ -27,10 +27,6 @@
 
 package frontend;
 
-import frontend.FrontEndManager;
-import frontend.StepListener;
-import frontend.StepReport;
-
 import java.awt.*;
 
 /**
@@ -54,10 +50,8 @@ public class CoreDisplay extends Canvas implements StepListener
 	
 	/**
 	 * Create a new core display for a specified core size and width.
-	 * @param FrontEndManager man - Object managing the front end components.
-	 * @param Container con - Display container for this component.
-	 * @param int coreS - Size of core to be displayed.
-	 * @param int w - desired width of display.
+	 * @param man - Object managing the front end components.
+	 * @param coreS - Size of core to be displayed.
 	 */
 	public CoreDisplay(FrontEndManager man, Container con, int coreS)
 	{
@@ -70,26 +64,26 @@ public class CoreDisplay extends Canvas implements StepListener
 		background = Color.black;
 		
 		man.registerStepListener(this);
-		con.add(this);
 		System.out.println("Constructor end size=" + getSize());
+
+		con.add(this);
 	}
 	
 	/**
 	 * Update display with info from a round.
-	 * @param marsVM.StatReport report - info from round
+	 * @param report - info from round
 	 */
 	public void stepProcess(StepReport report)
 	{
 		int i;
 		int x,y;
-		int addr[];
 
 		if (offScreen == null)
 			return;
 
 		buffer.setColor(report.warrior().getColor());
 
-		addr = report.addrRead();
+		int[] addr = report.addrRead();
 		for (i=0; i < addr.length; i++)
 		{
 			x = addr[i] % 80;
@@ -135,8 +129,6 @@ public class CoreDisplay extends Canvas implements StepListener
 		}
 
 		paint(getGraphics());
-		
-		return;
 	}
 	
 	/**
@@ -153,7 +145,7 @@ public class CoreDisplay extends Canvas implements StepListener
 
 	/**
 	 * paint the display on the screen
-	 * @param java.awt.Graphics screen - Graphics context to paint to
+	 * @param screen - Graphics context to paint to
 	 */
 	public void paint(Graphics screen)
 	{
@@ -165,10 +157,7 @@ public class CoreDisplay extends Canvas implements StepListener
 			buffer.fillRect(0, 0, width, height);
 		}
 
-
 		screen.drawImage(offScreen, 0, 0, this);
-
-		return;
 	}
 	
 	/**

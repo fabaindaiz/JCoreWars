@@ -75,11 +75,8 @@ public class Assembler
 	public Memory[] getWarrior()
 	{
 		Memory wMem[] = new Memory[IP];
-		
-		for (int i=0; i<IP; i++)
-		{
-			wMem[i] = war[i];
-		}
+
+		if (IP >= 0) System.arraycopy(war, 0, wMem, 0, IP);
 		
 		return wMem;
 	}
@@ -92,7 +89,7 @@ public class Assembler
 	public String getName()
 	{
 		if (name != null)
-			return new String(name);
+			return name;
 			
 		return "";
 	}
@@ -100,7 +97,7 @@ public class Assembler
 	public String getAuthor()
 	{
 		if (author != null)
-			return new String(author);
+			return author;
 			
 		return "";
 	}
@@ -114,7 +111,6 @@ public class Assembler
 	{
 		try
 		{
-			begin:
 			while(tok.nextToken() != StreamTokenizer.TT_EOF)
 			{
 				if(tok.ttype == ';')
@@ -133,53 +129,72 @@ public class Assembler
 						
 				} else if (tok.ttype == StreamTokenizer.TT_WORD)
 				{
-					if (tok.sval.equals("mov"))
-						war[IP].operator = new MOV();
-					else if (tok.sval.equals("add"))
-						war[IP].operator = new ADD();
-					else if (tok.sval.equals("sub"))
-						war[IP].operator = new SUB();
-					else if (tok.sval.equals("mul"))
-						war[IP].operator = new MUL();
-					else if (tok.sval.equals("div"))
-						war[IP].operator = new DIV();
-					else if (tok.sval.equals("mod"))
-						war[IP].operator = new MOD();
-					else if (tok.sval.equals("jmz"))
-						war[IP].operator = new JMZ();
-					else if (tok.sval.equals("jmn"))
-						war[IP].operator = new JMN();
-					else if (tok.sval.equals("djn"))
-						war[IP].operator = new DJN();
-					else if (tok.sval.equals("cmp"))
-						war[IP].operator = new CMP();
-					else if (tok.sval.equals("seq"))
-						war[IP].operator = new SEQ();
-					else if (tok.sval.equals("slt"))
-						war[IP].operator = new SLT();
-					else if (tok.sval.equals("spl"))
-						war[IP].operator = new SPL();
-					else if (tok.sval.equals("dat"))
-						war[IP].operator = new DAT();
-					else if (tok.sval.equals("jmp"))
-						war[IP].operator = new JMP();
-					else if (tok.sval.equals("sne"))
-						war[IP].operator = new SNE();
-					else if (tok.sval.equals("nop"))
-						war[IP].operator = new NOP();
-					else if (tok.sval.equals("ldp"))
-						war[IP].operator = new LDP();
-					else if (tok.sval.equals("stp"))
-						war[IP].operator = new STP();
-					else if (tok.sval.equals("end"))
-					{
-						if (tok.nextToken() == tok.TT_NUMBER)
-							start = (int) tok.nval;
-							
-						return true;
+					switch (tok.sval) {
+						case "mov":
+							war[IP].operator = new MOV();
+							break;
+						case "add":
+							war[IP].operator = new ADD();
+							break;
+						case "sub":
+							war[IP].operator = new SUB();
+							break;
+						case "mul":
+							war[IP].operator = new MUL();
+							break;
+						case "div":
+							war[IP].operator = new DIV();
+							break;
+						case "mod":
+							war[IP].operator = new MOD();
+							break;
+						case "jmz":
+							war[IP].operator = new JMZ();
+							break;
+						case "jmn":
+							war[IP].operator = new JMN();
+							break;
+						case "djn":
+							war[IP].operator = new DJN();
+							break;
+						case "cmp":
+							war[IP].operator = new CMP();
+							break;
+						case "seq":
+							war[IP].operator = new SEQ();
+							break;
+						case "slt":
+							war[IP].operator = new SLT();
+							break;
+						case "spl":
+							war[IP].operator = new SPL();
+							break;
+						case "dat":
+							war[IP].operator = new DAT();
+							break;
+						case "jmp":
+							war[IP].operator = new JMP();
+							break;
+						case "sne":
+							war[IP].operator = new SNE();
+							break;
+						case "nop":
+							war[IP].operator = new NOP();
+							break;
+						case "ldp":
+							war[IP].operator = new LDP();
+							break;
+						case "stp":
+							war[IP].operator = new STP();
+							break;
+						case "end":
+							if (tok.nextToken() == tok.TT_NUMBER)
+								start = (int) tok.nval;
+
+							return true;
+						default:
+							return false;
 					}
-					else 
-						return false;
 
 					if (!pModifier())
 						return false;
@@ -230,10 +245,7 @@ public class Assembler
 		} catch (IOException e)
 		{
 			System.out.println(e.toString());
-			return;
 		}
-
-		return;
 	}
 	
 	boolean pModifier()
@@ -244,22 +256,31 @@ public class Assembler
 				return pAOperand();
 			else if (tok.nextToken() == tok.TT_WORD)
 			{
-				if (tok.sval.equals("a"))
-					war[IP].modifier = new A();
-				else if (tok.sval.equals("b"))
-					war[IP].modifier = new B();
-				else if (tok.sval.equals("ab"))
-					war[IP].modifier = new AB();
-				else if (tok.sval.equals("ba"))
-					war[IP].modifier = new BA();
-				else if (tok.sval.equals("f"))
-					war[IP].modifier = new F();
-				else if (tok.sval.equals("x"))
-					war[IP].modifier = new X();
-				else if (tok.sval.equals("i"))
-					war[IP].modifier = new I();
-				else 
-					return false;
+				switch (tok.sval) {
+					case "a":
+						war[IP].modifier = new A();
+						break;
+					case "b":
+						war[IP].modifier = new B();
+						break;
+					case "ab":
+						war[IP].modifier = new AB();
+						break;
+					case "ba":
+						war[IP].modifier = new BA();
+						break;
+					case "f":
+						war[IP].modifier = new F();
+						break;
+					case "x":
+						war[IP].modifier = new X();
+						break;
+					case "i":
+						war[IP].modifier = new I();
+						break;
+					default:
+						return false;
+				}
 
 				tok.nextToken();
 
@@ -328,11 +349,8 @@ public class Assembler
 			return false;
 		}
 
-		if (!pAValue())
-			return false;
-			
-		return true;
-		
+		return pAValue();
+
 	}
 
 	boolean pAValue()

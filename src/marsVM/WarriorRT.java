@@ -66,8 +66,6 @@ public class WarriorRT
 		
 		prevWarr.next = this;
 		nextWarr.prev = this;
-		
-		return;
 	}
 	
 	public void Remove()
@@ -77,8 +75,6 @@ public class WarriorRT
 		
 		prev = this;
 		next = this;
-		
-		return;
 	}
 	
 	public WarriorObj warrior()
@@ -109,8 +105,6 @@ public class WarriorRT
 		}
 		
 		numProc++;
-		
-		return;
 	}
 	
 	public int getProc()
@@ -122,31 +116,25 @@ public class WarriorRT
 		
 		return i;
 	}
-	
-	
+
 	public WarriorRT getPrevWarrior()
 	{
 		return prev;
 	}
-	
 	
 	public WarriorRT getNextWarrior()
 	{
 		return next;
 	}
 	
-	
 	public int numProc()
 	{
 		return numProc;
 	}
 
-
 	public void setPCell(int addr, int value)
 	{
 		pspace[addr%pspace.length] = value;
-		
-		return;
 	}
 	
 	public int getPCell(int addr)

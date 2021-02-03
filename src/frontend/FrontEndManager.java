@@ -34,19 +34,19 @@ public interface FrontEndManager
 {
 	/**
 	 * Called to register a StepListener to receive step results
-	 * @param StepListener l - StepListener to register.
+	 * @param l - StepListener to register.
 	 */
-	public void registerStepListener(StepListener l);
+	void registerStepListener(StepListener l);
 	
 	/**
 	 * Called to register a CycleListener to receive cycle results
-	 * @param CycleListener c - CycleListener to register.
+	 * @param c - CycleListener to register.
 	 */
-	public void registerCycleListener(CycleListener c);
+	void registerCycleListener(CycleListener c);
 	
 	/**
 	 * Called to register a RoundListener to receive round results
-	 * @param RoundListener r - RoundListener to register.
+	 * @param r - RoundListener to register.
 	 */
-	public void registerRoundListener(RoundListener r);
+	void registerRoundListener(RoundListener r);
 }

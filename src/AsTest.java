@@ -25,9 +25,9 @@
  *
  */
 
-/**
- * reads in the file specified on the command line and
- * produces a listing.
+/*
+  reads in the file specified on the command line and
+  produces a listing.
  */
 
 import java.io.*;
@@ -65,18 +65,14 @@ public class AsTest
 			System.out.println(";author " + parser.getAuthor() + "\n");
 			System.out.println("ORG	" + parser.getOffset());
 			warrior = parser.getWarrior();
-			
-			for (int i=0; i<warrior.length; i++)
-			{
-				System.out.println(warrior[i]);
+
+			for (Memory memory : warrior) {
+				System.out.println(memory);
 			}
 			
 		} catch (FileNotFoundException e)
 		{
 			System.out.println("file could not be opened");
-			return;
 		}
-		
-		return;
 	}
-};
+}
