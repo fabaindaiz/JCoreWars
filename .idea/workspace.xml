@@ -3,18 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/ADD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/ADD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/CMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/CMP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DIV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DIV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DJN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DJN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/JMN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/JMN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/JMZ.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/JMZ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MOD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MOD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MOV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MOV.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MUL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MUL.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SEQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SEQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SLT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SLT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SNE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SNE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SUB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SUB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jMARS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/ADD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/ADD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/CMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/CMP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/DIV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/DIV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/DJN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/DJN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/JMN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/JMN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/JMZ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/JMZ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/MOD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/MOD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/MOV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/MOV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/MUL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/MUL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/SEQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/SEQ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/SLT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/SLT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/SNE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/SNE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/operator/SUB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/SUB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +65,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="memory.operator._AOperatorTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jMARS02" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -72,21 +86,10 @@
       <recent name="marsVM" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in JCoreWars">
+  <component name="RunManager" selected="Application.jMARS">
     <configuration name="jMARS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jMARS" />
       <module name="JCoreWars" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -101,8 +104,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in JCoreWars" />
         <item itemvalue="Application.jMARS" />
+        <item itemvalue="JUnit.All in JCoreWars" />
       </list>
     </recent_temporary>
   </component>
@@ -116,7 +119,9 @@
       <updated>1612320968828</updated>
       <workItem from="1612320972861" duration="3315000" />
       <workItem from="1612628610589" duration="3698000" />
-      <workItem from="1612634722280" duration="6442000" />
+      <workItem from="1612634722280" duration="11007000" />
+      <workItem from="1612647494543" duration="1185000" />
+      <workItem from="1612649053856" duration="1007000" />
     </task>
     <servers />
   </component>
@@ -141,6 +146,11 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/frontend/StepReport.java</url>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/jMARS.java</url>
+          <line>249</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

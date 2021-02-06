@@ -75,13 +75,22 @@ public class CoreDisplay extends Canvas implements StepListener
 	 */
 	public void stepProcess(StepReport report)
 	{
+		if (report.warrior.lastReport != null)
+			reportProcess(report, report.warrior.getMyColor());
+		report.warrior.lastReport = report;
+
+		reportProcess(report, report.warrior.getColors());
+	}
+
+	private void reportProcess(StepReport report, Color[] colors)
+	{
 		int i;
 		int x,y;
 
 		if (offScreen == null)
 			return;
 
-		buffer.setColor(report.warrior().getRColor());
+		buffer.setColor(colors[0]);
 
 		int[] addr = report.addrRead();
 		for (i=0; i < addr.length; i++)
@@ -92,7 +101,7 @@ public class CoreDisplay extends Canvas implements StepListener
 			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
 
-		buffer.setColor(report.warrior().getWColor());
+		buffer.setColor(colors[1]);
 
 		addr = report.addrWrite();
 		for (i=0; i < addr.length; i++)
@@ -121,7 +130,7 @@ public class CoreDisplay extends Canvas implements StepListener
 			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
 
-		buffer.setColor(report.warrior().getColor());
+		buffer.setColor(colors[2]);
 
 		if ((i = report.addrExec()) != -1)
 		{
@@ -134,6 +143,8 @@ public class CoreDisplay extends Canvas implements StepListener
 
 		paint(getGraphics());
 	}
+
+
 	
 	/**
 	 * clear the display

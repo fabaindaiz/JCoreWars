@@ -33,12 +33,12 @@ public class DJN extends _AOperator {
 
     @Override
     public boolean executeA(Memory[] core, Address addr) {
-        return true;
+        return executeBA(core, addr);
     }
 
     @Override
     public boolean executeB(Memory[] core, Address addr) {
-        return true;
+        return executeAB(core, addr);
     }
 
     @Override
@@ -61,12 +61,12 @@ public class DJN extends _AOperator {
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
-        return true;
+        return executeI(core, addr);
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        return true;
+        return executeI(core, addr);
     }
 
     private boolean execute(Address addr) {

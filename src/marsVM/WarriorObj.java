@@ -32,6 +32,7 @@
  
 package marsVM;
 
+import frontend.StepReport;
 import memory.Memory;
 import assambler.Assembler;
 
@@ -47,21 +48,21 @@ public class WarriorObj
 	protected String name;
 	protected String author;
 
-	public Color myColor;
 	public Color dColor;
-	public Color writeColor;
-	public Color readColor;
+	public Color[] MyColor;
+	public Color[] colors;
 	public int numProc;
 	public boolean Alive;
+
+	public StepReport lastReport;
 	
 	public WarriorObj(Reader file, int maxLength, Color c, Color d)
 	{
-		myColor = c;
 		dColor = d;
 
-		writeColor = c.brighter();
-		readColor = c.darker();
-		
+		MyColor = new Color[] {c, c, c};
+		colors = new Color[] {c, c.darker(), c.brighter()};
+
 		Assembler parser = new Assembler(file, maxLength);
 		
 		if (parser.assemble())
@@ -97,19 +98,20 @@ public class WarriorObj
 		return wInst;
 	}
 	
-	public Color getColor()
-	{
-		return myColor;
-	}
-	
 	public Color getDColor()
 	{
 		return dColor;
 	}
 
-	public Color getWColor() { return writeColor; }
+	public Color[] getMyColor()
+	{
+		return MyColor;
+	}
 
-	public Color getRColor() { return readColor; }
+	public Color[] getColors()
+	{
+		return colors;
+	}
 	
 	public String getName()
 	{

@@ -58,7 +58,7 @@ public class SLT extends _AOperator {
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
-        return true;
+        return executeI(core, addr);
     }
 
     @Override

@@ -44,10 +44,10 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 {
 	// constants
 	static final int numDefinedColors = 4;
-	static final Color[][] wColors = {{Color.green, Color.yellow},
-									   {Color.red, Color.magenta},
-									   {Color.cyan, Color.blue},
-									   {Color.gray, Color.darkGray}};
+	static final Color[][] wColors = {{Color.green.darker(), Color.yellow},
+									   {Color.red.darker(), Color.magenta},
+									   {Color.cyan.darker(), Color.blue},
+									   {Color.gray.darker(), Color.darkGray}};
 
 	// static variables
 	static boolean inApplet = true;
@@ -101,9 +101,9 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 	 */
 	public static void main(String[] a)
 	{
-		 a = new String[2];
-		 a[0] = "C:/informatica/Core Wars/JCoreWars/src/war/dwarf.red";
-		 a[1] = "C:/informatica/Core Wars/JCoreWars/src/war/imp.red";
+		// a = new String[1];
+		// a[0] = "C:/informatica/Core Wars/JCoreWars/src/war/clp.red";
+		// a[1] = "C:/informatica/Core Wars/JCoreWars/src/war/imp.red";
 
 		if (a.length == 0)
 		{
@@ -274,7 +274,7 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 			runWarriors = numWarriors;
 
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
