@@ -40,7 +40,7 @@ import java.io.Reader;
 
 public class WarriorObj
 {
-	public Memory wInst[];
+	public Memory[] wInst;
 	public int wOffset;
 	protected int[] pSpace;
 
@@ -49,6 +49,8 @@ public class WarriorObj
 
 	public Color myColor;
 	public Color dColor;
+	public Color writeColor;
+	public Color readColor;
 	public int numProc;
 	public boolean Alive;
 	
@@ -56,6 +58,9 @@ public class WarriorObj
 	{
 		myColor = c;
 		dColor = d;
+
+		writeColor = c.brighter();
+		readColor = c.darker();
 		
 		Assembler parser = new Assembler(file, maxLength);
 		
@@ -101,6 +106,10 @@ public class WarriorObj
 	{
 		return dColor;
 	}
+
+	public Color getWColor() { return writeColor; }
+
+	public Color getRColor() { return readColor; }
 	
 	public String getName()
 	{

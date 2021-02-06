@@ -81,7 +81,7 @@ public class CoreDisplay extends Canvas implements StepListener
 		if (offScreen == null)
 			return;
 
-		buffer.setColor(report.warrior().getColor());
+		buffer.setColor(report.warrior().getRColor());
 
 		int[] addr = report.addrRead();
 		for (i=0; i < addr.length; i++)
@@ -91,6 +91,8 @@ public class CoreDisplay extends Canvas implements StepListener
 
 			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
+
+		buffer.setColor(report.warrior().getWColor());
 
 		addr = report.addrWrite();
 		for (i=0; i < addr.length; i++)
@@ -118,6 +120,8 @@ public class CoreDisplay extends Canvas implements StepListener
 
 			buffer.fillRect(x *dimW, y * dimH, dimW, dimH);
 		}
+
+		buffer.setColor(report.warrior().getColor());
 
 		if ((i = report.addrExec()) != -1)
 		{

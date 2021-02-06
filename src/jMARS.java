@@ -44,7 +44,7 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 {
 	// constants
 	static final int numDefinedColors = 4;
-	static final Color wColors[][] = {{Color.green, Color.yellow},
+	static final Color[][] wColors = {{Color.green, Color.yellow},
 									   {Color.red, Color.magenta},
 									   {Color.cyan, Color.blue},
 									   {Color.gray, Color.darkGray}};
@@ -53,7 +53,7 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 	static boolean inApplet = true;
 	
 	// Application specific variables
-	String args[];
+	String[] args;
 	static Frame myFrame;
 	static jMARS myApp;
 	
@@ -68,7 +68,7 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 	int numWarriors;
 	int minWarriors;
 	
-	WarriorObj warriors[];
+	WarriorObj[] warriors;
 	CoreDisplay coreDisplay;
 	RoundCycleCounter roundCycleCounter;
 	MarsVM MARS;
@@ -80,9 +80,9 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 	
 	static Thread myThread;
 	
-	Vector stepListeners;
-	Vector cycleListeners;
-	Vector roundListeners;
+	Vector<StepListener> stepListeners;
+	Vector<CycleListener> cycleListeners;
+	Vector<RoundListener> roundListeners;
 
 	Date startTime;
 	Date endTime;
@@ -90,20 +90,20 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 	
 	public jMARS()
 	{
-		stepListeners = new Vector();
-		cycleListeners = new Vector();
-		roundListeners = new Vector();
+		stepListeners = new Vector<>();
+		cycleListeners = new Vector<>();
+		roundListeners = new Vector<>();
 	}
 	
 	/**
 	 * Starting function for the application. It sets up a frame and adds the applet to it.
 	 * @param a - array of command line arguments
 	 */
-	public static void main(String a[])
+	public static void main(String[] a)
 	{
-		// a = new String[2];
-		// a[0] = "C:/informatica/Core Wars/JCoreWars/src/war/dwarf.red";
-		// a[1] = "C:/informatica/Core Wars/JCoreWars/src/war/imp.red";
+		 a = new String[2];
+		 a[0] = "C:/informatica/Core Wars/JCoreWars/src/war/dwarf.red";
+		 a[1] = "C:/informatica/Core Wars/JCoreWars/src/war/imp.red";
 
 		if (a.length == 0)
 		{
@@ -121,7 +121,7 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 		
 		myFrame.add(myApp);
 		myFrame.addWindowListener(myApp);
-		myFrame.show();
+		myFrame.setVisible(true);
 		
 		myApp.application_init();
 		
@@ -133,7 +133,7 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 	void application_init()
 	{
 		boolean pspaceChanged = false;
-		Vector wArgs = new Vector();
+		Vector<Integer> wArgs = new Vector<>();
 
 		// Set defaults for various constants
 		maxWarriorLength = 100;
@@ -191,7 +191,7 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 		{
 			try
 			{
-				FileReader wFile = new FileReader(args[((Integer) wArgs.elementAt(i))]);
+				FileReader wFile = new FileReader(args[(wArgs.elementAt(i))]);
 				warriors[i] = new WarriorObj(wFile, maxWarriorLength, wColors[i % numDefinedColors][0], wColors[i % numDefinedColors][1]);
 				warriors[i].initPSpace(pSpaceSize);
 				warriors[i].setPCell(0, -1);
@@ -273,11 +273,15 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 			loadWarriors();
 			runWarriors = numWarriors;
 
-			//coreDisplay.clear();
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+			coreDisplay.clear();
 			
 			cycleNum = 0;
-
-			return;
 
 		}
 	}
@@ -294,7 +298,7 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 			System.out.println("ERROR: could not load warrior 1.");
 		}
 		
-		for (int i=1, r=0; i<numWarriors; i++)
+		for (int i=1, r; i<numWarriors; i++)
 		{
 			boolean validSpot;
 			do
@@ -345,31 +349,30 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 	
 	protected void notifyStepListeners(StepReport step)
 	{
-		for (Enumeration e = stepListeners.elements(); e.hasMoreElements(); )
+		for (Enumeration<StepListener> e = stepListeners.elements(); e.hasMoreElements(); )
 		{
-			StepListener j = (StepListener) e.nextElement();
+			StepListener j = e.nextElement();
 			j.stepProcess(step);
 		}
 	}
 	
 	protected void notifyCycleListeners(int cycle)
 	{
-		for (Enumeration e = cycleListeners.elements(); e.hasMoreElements(); )
+		for (Enumeration<CycleListener> e = cycleListeners.elements(); e.hasMoreElements(); )
 		{
-			CycleListener j = (CycleListener) e.nextElement();
+			CycleListener j = e.nextElement();
 			j.cycleFinished(cycle);
 		}
 	}
 
 	protected void notifyRoundListeners(int round)
 	{
-		for (Enumeration e = roundListeners.elements(); e.hasMoreElements(); )
+		for (Enumeration<RoundListener> e = roundListeners.elements(); e.hasMoreElements(); )
 		{
-			RoundListener j = (RoundListener) e.nextElement();
+			RoundListener j = e.nextElement();
 			j.roundResults(round);
 		}
 	}
-
 
 	
     /**

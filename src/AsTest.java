@@ -37,7 +37,7 @@ import assambler.Assembler;
 
 public class AsTest
 {
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		if (args.length < 1)
 		{
@@ -51,7 +51,7 @@ public class AsTest
 			
 			Assembler parser = new Assembler(file, 100);
 			
-			Memory warrior[];
+			Memory[] warrior;
 			
 			if (!parser.assemble())
 			{

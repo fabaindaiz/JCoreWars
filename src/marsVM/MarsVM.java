@@ -6,7 +6,7 @@ import memory.Memory;
 
 public class MarsVM {
 
-    public final Memory core[];
+    public final Memory[] core;
     public WarriorRT currentW;		// current warrior
     int numWarriors;
     public final int maxProc;
@@ -46,7 +46,7 @@ public class MarsVM {
     public boolean loadWarrior(WarriorObj warrior, int startPosition)
     {
         WarriorRT newWarrior;
-        Memory wMemory[] = warrior.getMemory(coreSize);
+        Memory[] wMemory = warrior.getMemory(coreSize);
         if ((startPosition + wMemory.length-1) > coreSize) return false;	// check that warrior fits in memory
 
         numWarriors++;

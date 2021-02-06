@@ -33,15 +33,15 @@ public class StepReport
 {
 	protected WarriorObj warrior;
 	
-	protected int readAddr[];
+	protected int[] readAddr;
+	protected int[] indirReadAddr;
+	protected int[] writeAddr;
+	protected int[] decAddr;
+	protected int[] incAddr;
 	protected int numRead;
-	protected int indirReadAddr[];
 	protected int numIndirRead;
-	protected int writeAddr[];
 	protected int numWrite;
-	protected int decAddr[];
 	protected int numDec;
-	protected int incAddr[];
 	protected int numInc;
 	protected int execAddr;
 	protected boolean pDie;

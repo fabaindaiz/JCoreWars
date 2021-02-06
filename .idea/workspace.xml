@@ -2,59 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/AsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/AsTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JCoreWars.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JCoreWars.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/assambler/Assembler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/assambler/Assembler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/RoundCycleCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/RoundCycleCounter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/StepReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/StepReport.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorRT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorRT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/Memory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/Memory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assambler/Assembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assambler/Assembler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CycleListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CycleListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/RoundListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/RoundListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/StepListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/StepListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/StepReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/StepReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jMARS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsVM/MarsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Memory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/modifier/_IModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/modifier/_IModifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operand/_IOperand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/_IOperand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/operator/_IOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/_IOperator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nx9e1On5xBkXGvJzYnfHzmICBk" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="memory.operator._AOperatorTest" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="memory.operator._AOperatorTest" />
+      <recent name="memory.operator._IOperatorTest" />
+      <recent name="" />
+      <recent name="memory.operand._AOperandTest" />
+      <recent name="memory.operand._IOperandTest" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="memory.operator" />
+      <recent name="memory.operand" />
+      <recent name="memory" />
+      <recent name="" />
+      <recent name="marsVM" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in JCoreWars">
     <configuration name="jMARS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jMARS" />
       <module name="JCoreWars" />
@@ -62,19 +81,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in JCoreWars" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JCoreWars" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in JCoreWars" />
         <item itemvalue="Application.jMARS" />
       </list>
     </recent_temporary>
@@ -88,6 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612320968828</updated>
       <workItem from="1612320972861" duration="3315000" />
+      <workItem from="1612628610589" duration="3698000" />
     </task>
     <servers />
   </component>
@@ -104,6 +135,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -114,5 +146,8 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/JCoreWars$All_in_JCoreWars.ic" NAME="All in JCoreWars Coverage Results" MODIFIED="1612632300674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

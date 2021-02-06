@@ -43,7 +43,7 @@ public class Assembler
 	protected StreamTokenizer tok;
 	protected int IP;
 	protected int maxLength;
-	protected Memory war[];
+	protected Memory[] war;
 	protected int start;
 	
 	// meta values
@@ -74,7 +74,7 @@ public class Assembler
 	
 	public Memory[] getWarrior()
 	{
-		Memory wMem[] = new Memory[IP];
+		Memory[] wMem = new Memory[IP];
 
 		if (IP >= 0) System.arraycopy(war, 0, wMem, 0, IP);
 		
@@ -117,7 +117,7 @@ public class Assembler
 					pComment();
 				else if (tok.ttype == StreamTokenizer.TT_WORD && tok.sval.equals("org"))
 				{
-						if(tok.nextToken() != tok.TT_NUMBER)
+						if(tok.nextToken() != StreamTokenizer.TT_NUMBER)
 							return false;
 
 						start = (int) tok.nval;
@@ -188,7 +188,7 @@ public class Assembler
 							war[IP].operator = new STP();
 							break;
 						case "end":
-							if (tok.nextToken() == tok.TT_NUMBER)
+							if (tok.nextToken() == StreamTokenizer.TT_NUMBER)
 								start = (int) tok.nval;
 
 							return true;
@@ -205,7 +205,7 @@ public class Assembler
 						pComment();
 				} 
 				
-				if (tok.ttype != tok.TT_EOL)
+				if (tok.ttype != StreamTokenizer.TT_EOL)
 					return false;
 			}
 
@@ -223,7 +223,7 @@ public class Assembler
 		// this function is in place to get meta data
 		try
 		{
-			if (tok.nextToken() == tok.TT_WORD)
+			if (tok.nextToken() == StreamTokenizer.TT_WORD)
 			{ 
 				if (tok.sval.equals("name"))
 				{
@@ -240,7 +240,7 @@ public class Assembler
 				in.readLine();
 			}
 			
-			tok.ttype = tok.TT_EOL;
+			tok.ttype = StreamTokenizer.TT_EOL;
 			
 		} catch (IOException e)
 		{
@@ -254,7 +254,7 @@ public class Assembler
 		{
 			if (tok.nextToken() != '.')
 				return pAOperand();
-			else if (tok.nextToken() == tok.TT_WORD)
+			else if (tok.nextToken() == StreamTokenizer.TT_WORD)
 			{
 				switch (tok.sval) {
 					case "a":
@@ -355,7 +355,7 @@ public class Assembler
 
 	boolean pAValue()
 	{
-		if (tok.ttype != tok.TT_NUMBER)
+		if (tok.ttype != StreamTokenizer.TT_NUMBER)
 			return false;
 		
 		war[IP].aValue = (int) tok.nval;
@@ -437,7 +437,7 @@ public class Assembler
 
 	boolean pBValue()
 	{
-		if (tok.ttype != tok.TT_NUMBER)
+		if (tok.ttype != StreamTokenizer.TT_NUMBER)
 			return false;
 		
 		war[IP].bValue = (int) tok.nval;

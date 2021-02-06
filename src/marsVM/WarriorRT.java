@@ -35,7 +35,7 @@ package marsVM;
 public class WarriorRT
 {
 	protected WarriorObj warrior;
-	protected int pspace[];
+	protected int[] pspace;
 	protected int[] pQueue;
 	protected int pQFirst;
 	protected int pQLast;
