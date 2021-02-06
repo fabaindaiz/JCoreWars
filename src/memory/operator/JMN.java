@@ -22,9 +22,8 @@ public class JMN extends _AOperator {
 
     @Override
     public boolean executeI(Memory[] core, Address addr) {
-        if ((addr.addrBAValue == 0) && (addr.addrBBValue == 0))
-            return true;
-        addr.executer.currentW.addProc(addr.addrA);
+        if ((addr.addrBAValue != 0) || (addr.addrBBValue != 0))
+            return execute(addr);
         return true;
     }
 
@@ -40,20 +39,16 @@ public class JMN extends _AOperator {
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
-        if (addr.addrBBValue == 0)
-            return true;
-        addr.executer.currentW.addProc(addr.addrA);
-        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
-        return false;
+        if (addr.addrBBValue != 0)
+            return execute(addr);
+        return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
-        if (addr.addrBAValue == 0)
-            return true;
-        addr.executer.currentW.addProc(addr.addrA);
-        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
-        return false;
+        if (addr.addrBAValue != 0)
+            return execute(addr);
+        return true;
     }
 
     @Override
@@ -64,5 +59,11 @@ public class JMN extends _AOperator {
     @Override
     public boolean executeX(Memory[] core, Address addr) {
         return true;
+    }
+
+    private boolean execute(Address addr) {
+        addr.executer.currentW.addProc(addr.addrA);
+        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
+        return false;
     }
 }

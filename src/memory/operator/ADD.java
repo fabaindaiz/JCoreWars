@@ -23,44 +23,44 @@ public class ADD extends _AOperator {
 
     @Override
     public boolean executeI(Memory[] core, Address addr) {
+        core[addr.addrB].aValue = (addr.addrBAValue + addr.addrAAValue) % addr.executer.coreSize;
+        core[addr.addrB].bValue = (addr.addrBBValue + addr.addrABValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeA(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (addr.addrAAValue + addr.addrBAValue) % addr.executer.coreSize;
+        core[addr.addrB].aValue = (addr.addrBAValue + addr.addrAAValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeB(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (addr.addrABValue + addr.addrBBValue) % addr.executer.coreSize;
+        core[addr.addrB].bValue = (addr.addrBBValue + addr.addrABValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (addr.addrAAValue + addr.addrBBValue) % addr.executer.coreSize;
+        core[addr.addrB].bValue = (addr.addrBAValue + addr.addrABValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (addr.addrABValue + addr.addrBAValue) % addr.executer.coreSize;
+        core[addr.addrB].aValue = (addr.addrBBValue + addr.addrAAValue) % addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (addr.addrAAValue + addr.addrBAValue) % addr.executer.coreSize;
-        // fallthrough for rest
         return true;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (addr.addrAAValue + addr.addrBBValue) % addr.executer.coreSize;
-        // fallthrough for rest
+        core[addr.addrB].bValue = (addr.addrBAValue + addr.addrABValue) % addr.executer.coreSize;
+        core[addr.addrB].aValue = (addr.addrBBValue + addr.addrAAValue) % addr.executer.coreSize;
         return true;
     }
 }

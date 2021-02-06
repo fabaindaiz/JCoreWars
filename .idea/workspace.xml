@@ -3,20 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JCoreWars.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JCoreWars.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/assambler/Assembler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/assambler/Assembler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/StepReport.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/StepReport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assambler/Assembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assambler/Assembler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/StepReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/StepReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jMARS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/MarsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/ADD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/ADD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/CMP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/CMP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/DIV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/DIV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/DJN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/DJN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/JMN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/JMN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/JMZ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/JMZ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/MOD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/MOD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/MOV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/MOV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/MUL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/MUL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SEQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/SEQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SLT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/SLT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SNE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/SNE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operator/SUB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operator/SUB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,15 +80,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,6 +116,7 @@
       <updated>1612320968828</updated>
       <workItem from="1612320972861" duration="3315000" />
       <workItem from="1612628610589" duration="3698000" />
+      <workItem from="1612634722280" duration="6442000" />
     </task>
     <servers />
   </component>

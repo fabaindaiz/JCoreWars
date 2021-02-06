@@ -23,46 +23,37 @@ public class SLT extends _AOperator {
 
     @Override
     public boolean executeI(Memory[] core, Address addr) {
-        if (addr.addrBAValue <= addr.addrAAValue)
-            return true;
-        // fallthrough for rest
+        if ((addr.addrAAValue < addr.addrBAValue) && (addr.addrABValue < addr.addrBBValue))
+            return execute(addr);
         return true;
     }
 
     @Override
     public boolean executeA(Memory[] core, Address addr) {
-        if (addr.addrBAValue <= addr.addrAAValue)
-            return true;
-        addr.executer.currentW.addProc((addr.IP + 2) % addr.executer.coreSize);
-        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
-        return false;
+        if (addr.addrAAValue < addr.addrBAValue)
+            return execute(addr);
+        return true;
     }
 
     @Override
     public boolean executeB(Memory[] core, Address addr) {
-        if (addr.addrBBValue <= addr.addrABValue)
-            return true;
-        addr.executer.currentW.addProc((addr.IP + 2) % addr.executer.coreSize);
-        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
-        return false;
+        if (addr.addrABValue < addr.addrBBValue)
+            return execute(addr);
+        return true;
     }
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
-        if (addr.addrBBValue <= addr.addrAAValue)
-            return true;
-        addr.executer.currentW.addProc((addr.IP + 2) % addr.executer.coreSize);
-        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
-        return false;
+        if (addr.addrAAValue < addr.addrBBValue)
+            return execute(addr);
+        return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
-        if (addr.addrBAValue <= addr.addrABValue)
-            return true;
-        addr.executer.currentW.addProc((addr.IP + 2) % addr.executer.coreSize);
-        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
-        return false;
+        if (addr.addrABValue <= addr.addrBAValue)
+            return execute(addr);
+        return true;
     }
 
     @Override
@@ -72,9 +63,14 @@ public class SLT extends _AOperator {
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        if (addr.addrBBValue <= addr.addrAAValue)
-            return true;
-        // fallthrough for rest
+        if ((addr.addrAAValue < addr.addrBBValue) && (addr.addrABValue < addr.addrBAValue))
+            return execute(addr);
         return true;
+    }
+
+    private boolean execute(Address addr) {
+        addr.executer.currentW.addProc((addr.IP + 2) % addr.executer.coreSize);
+        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
+        return false;
     }
 }

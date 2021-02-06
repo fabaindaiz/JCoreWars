@@ -22,6 +22,12 @@ public class DJN extends _AOperator {
 
     @Override
     public boolean executeI(Memory[] core, Address addr) {
+        if (--core[addr.addrB].aValue < 0)
+            core[addr.addrB].aValue = addr.executer.coreSize - 1;
+        if (--core[addr.addrB].bValue < 0)
+            core[addr.addrB].bValue = addr.executer.coreSize - 1;
+        if ((addr.addrBAValue != 1) || (addr.addrBBValue != 1))
+            return execute(addr);
         return true;
     }
 
@@ -39,22 +45,18 @@ public class DJN extends _AOperator {
     public boolean executeAB(Memory[] core, Address addr) {
         if (--core[addr.addrB].bValue < 0)
             core[addr.addrB].bValue = addr.executer.coreSize - 1;
-        if (addr.addrBBValue == 1)
-            return true;
-        addr.executer.currentW.addProc(addr.addrA);
-        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
-        return false;
+        if (addr.addrBBValue != 1)
+            return execute(addr);
+        return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
         if (--core[addr.addrB].aValue < 0)
             core[addr.addrB].aValue = addr.executer.coreSize - 1;
-        if (addr.addrBAValue == 1)
-            return true;
-        addr.executer.currentW.addProc(addr.addrA);
-        addr.executer.currentW = addr.executer.currentW.getNextWarrior();
-        return false;
+        if (addr.addrBAValue != 1)
+            return execute(addr);
+        return true;
     }
 
     @Override
@@ -64,12 +66,10 @@ public class DJN extends _AOperator {
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        if (--core[addr.addrB].bValue < 0)
-            core[addr.addrB].bValue = addr.executer.coreSize - 1;
-        if (--core[addr.addrB].aValue < 0)
-            core[addr.addrB].aValue = addr.executer.coreSize - 1;
-        if ((addr.addrBAValue == 1) && (addr.addrBBValue == 1))
-            return true;
+        return true;
+    }
+
+    private boolean execute(Address addr) {
         addr.executer.currentW.addProc(addr.addrA);
         addr.executer.currentW = addr.executer.currentW.getNextWarrior();
         return false;

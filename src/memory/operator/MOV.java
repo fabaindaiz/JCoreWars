@@ -54,14 +54,14 @@ public class MOV extends _AOperator {
     @Override
     public boolean executeF(Memory[] core, Address addr) {
         core[addr.addrB].aValue = addr.addrAAValue;
-        // fallthrough for rest
+        core[addr.addrB].bValue = addr.addrABValue;
         return true;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
         core[addr.addrB].bValue = addr.addrAAValue;
-        // fallthrough for rest
+        core[addr.addrB].aValue = addr.addrABValue;
         return true;
     }
 }

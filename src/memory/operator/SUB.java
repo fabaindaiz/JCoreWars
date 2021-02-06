@@ -23,6 +23,10 @@ public class SUB extends _AOperator {
 
     @Override
     public boolean executeI(Memory[] core, Address addr) {
+        if ((core[addr.addrB].aValue = addr.addrBAValue - addr.addrAAValue) < 0)
+            core[addr.addrB].aValue += addr.executer.coreSize;
+        if ((core[addr.addrB].bValue = addr.addrBBValue - addr.addrABValue) < 0)
+            core[addr.addrB].bValue += addr.executer.coreSize;
         return true;
     }
 
@@ -42,31 +46,29 @@ public class SUB extends _AOperator {
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
-        if ((core[addr.addrB].bValue = addr.addrBBValue - addr.addrAAValue) < 0)
+        if ((core[addr.addrB].bValue = addr.addrBAValue - addr.addrABValue) < 0)
             core[addr.addrB].bValue += addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
-        if ((core[addr.addrB].aValue = addr.addrBAValue - addr.addrABValue) < 0)
+        if ((core[addr.addrB].aValue = addr.addrBBValue - addr.addrAAValue) < 0)
             core[addr.addrB].aValue += addr.executer.coreSize;
         return true;
     }
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
-        if ((core[addr.addrB].aValue = addr.addrBAValue - addr.addrAAValue) < 0)
-            core[addr.addrB].aValue += addr.executer.coreSize;
-        // fallthrough for rest
         return true;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        if ((core[addr.addrB].bValue = addr.addrBBValue - addr.addrAAValue) < 0)
+        if ((core[addr.addrB].bValue = addr.addrBAValue - addr.addrABValue) < 0)
+            core[addr.addrB].bValue += addr.executer.coreSize;
+        if ((core[addr.addrB].aValue = addr.addrBBValue - addr.addrAAValue) < 0)
             core[addr.addrB].aValue += addr.executer.coreSize;
-        // fallthrough for rest
         return true;
     }
 }

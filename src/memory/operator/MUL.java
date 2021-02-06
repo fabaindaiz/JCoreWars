@@ -23,6 +23,8 @@ public class MUL extends _AOperator {
 
     @Override
     public boolean executeI(Memory[] core, Address addr) {
+        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrAAValue % addr.executer.coreSize);
+        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrABValue % addr.executer.coreSize);
         return true;
     }
 
@@ -40,27 +42,25 @@ public class MUL extends _AOperator {
 
     @Override
     public boolean executeAB(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrAAValue % addr.executer.coreSize);
+        core[addr.addrB].bValue = (int) ((long) addr.addrBAValue * addr.addrABValue % addr.executer.coreSize);
         return true;
     }
 
     @Override
     public boolean executeBA(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrABValue % addr.executer.coreSize);
+        core[addr.addrB].aValue = (int) ((long) addr.addrBBValue * addr.addrAAValue % addr.executer.coreSize);
         return true;
     }
 
     @Override
     public boolean executeF(Memory[] core, Address addr) {
-        core[addr.addrB].aValue = (int) ((long) addr.addrBAValue * addr.addrAAValue % addr.executer.coreSize);
-        // fallthrough for rest
         return true;
     }
 
     @Override
     public boolean executeX(Memory[] core, Address addr) {
-        core[addr.addrB].bValue = (int) ((long) addr.addrBBValue * addr.addrAAValue % addr.executer.coreSize);
-        // fallthrough for rest
+        core[addr.addrB].bValue = (int) ((long) addr.addrBAValue * addr.addrABValue % addr.executer.coreSize);
+        core[addr.addrB].aValue = (int) ((long) addr.addrBBValue * addr.addrAAValue % addr.executer.coreSize);
         return true;
     }
 }
