@@ -266,18 +266,19 @@ public class jMARS extends java.awt.Panel implements Runnable, WindowListener, F
 			
 			endTime = new Date();
 			totalTime = ((double) endTime.getTime() - (double) startTime.getTime()) / 1000;
-			System.out.println("Total time="+ totalTime +" Cycles="+ cycleNum +" avg. time/cycle="+ (totalTime/cycleNum));
-			startTime = new Date();
-			
-			MARS.reset();
-			loadWarriors();
-			runWarriors = numWarriors;
+			System.out.println("Round="+ (roundNum+1) +"  Total time="+ totalTime +"  Cycles="+ cycleNum +"  Avg. time/cycle="+ (totalTime/cycleNum));
 
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+
+			startTime = new Date();
+			
+			MARS.reset();
+			loadWarriors();
+			runWarriors = numWarriors;
 
 			coreDisplay.clear();
 			
