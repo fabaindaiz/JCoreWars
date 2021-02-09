@@ -15,11 +15,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/fabaindaiz/JCoreWars" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1nx9e1On5xBkXGvJzYnfHzmICBk" />
   <component name="ProjectLevelVcsManager">
@@ -42,7 +50,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="memory.operator._AOperatorTest" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jMARS02" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -54,6 +62,9 @@
       <recent name="memory.operand._AOperandTest" />
       <recent name="memory.operand._IOperandTest" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="memory.operator" />
       <recent name="memory.operand" />
@@ -63,6 +74,39 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.jMARS">
+    <configuration name="DisplayCore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.DisplayCore" />
+      <module name="JCoreWars" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Juno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Juno" />
+      <module name="JCoreWars" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MarsCore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="marsVM.MarsCore" />
+      <module name="JCoreWars" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value=".*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="jMARS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jMARS" />
       <module name="JCoreWars" />
@@ -71,13 +115,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,11 +138,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.jMARS" />
+      <item itemvalue="Application.MarsCore" />
       <item itemvalue="JUnit.All in JCoreWars" />
+      <item itemvalue="Application.DisplayCore" />
+      <item itemvalue="Application.Juno" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.jMARS" />
+        <item itemvalue="Application.Juno" />
+        <item itemvalue="Application.DisplayCore" />
+        <item itemvalue="Application.MarsCore" />
         <item itemvalue="JUnit.All in JCoreWars" />
       </list>
     </recent_temporary>
@@ -114,7 +166,10 @@
       <workItem from="1612634722280" duration="11007000" />
       <workItem from="1612647494543" duration="1185000" />
       <workItem from="1612649053856" duration="1007000" />
-      <workItem from="1612651091152" duration="1910000" />
+      <workItem from="1612651091152" duration="2503000" />
+      <workItem from="1612711689141" duration="1075000" />
+      <workItem from="1612721465571" duration="6118000" />
+      <workItem from="1612882230020" duration="5071000" />
     </task>
     <servers />
   </component>
@@ -139,11 +194,6 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/frontend/StepReport.java</url>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/jMARS.java</url>
-          <line>249</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
