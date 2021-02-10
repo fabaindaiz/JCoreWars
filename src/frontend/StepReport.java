@@ -28,9 +28,11 @@
 package frontend;
 
 import marsVM.WarriorObj;
+import memory.Memory;
 
 public class StepReport
 {
+	protected Memory[] core;
 	protected WarriorObj warrior;
 	
 	protected int[] readAddr;
@@ -47,7 +49,6 @@ public class StepReport
 	protected boolean pDie;
 	protected int numProc;
 	protected boolean wDeath;
-	
 
 	protected final static int MAX_READS = 4;
 	protected final static int MAX_WRITES = 4;
@@ -73,6 +74,10 @@ public class StepReport
 		execAddr = -1;
 		pDie = false;
 		wDeath = false;
+	}
+
+	public void setCore(Memory[] c) {
+		core = c;
 	}
 	
 	/**

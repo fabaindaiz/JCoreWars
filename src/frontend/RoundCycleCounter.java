@@ -52,7 +52,7 @@ public class RoundCycleCounter extends Label implements CycleListener, RoundList
 		round = 1;
 		changed = true;
 
-		con.add(this);
+		con.add(this, BorderLayout.SOUTH);
 	}
 	
 	/**
@@ -63,6 +63,8 @@ public class RoundCycleCounter extends Label implements CycleListener, RoundList
 	{
 		cycle = c+1;
 		changed = true;
+
+		paint(getGraphics());
 	}
 	
 	/**

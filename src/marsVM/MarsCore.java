@@ -1,6 +1,8 @@
 package marsVM;
 
 import frontend.*;
+
+import javax.swing.*;
 import java.awt.*;
 
 import java.io.FileNotFoundException;
@@ -9,7 +11,7 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.Vector;
 
-public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManager {
+public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndManager {
 
     // constants
     static final int numDefinedColors = 4;
@@ -27,6 +29,7 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
     int minWarriorDistance;
     int pSpaceSize;
 
+    boolean usingInterface = false;
     boolean pSpaceChanged = false;
     boolean pausedMode = false;
 
@@ -38,6 +41,8 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
     CoreDisplay coreDisplay;
     RoundCycleCounter roundCycleCounter;
     MarsVM MARS;
+
+    CoreList coreList;
 
     int roundNum;
     int cycleNum;
@@ -55,6 +60,15 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
     double totalTime;
 
     public MarsCore() {
+
+        stepListeners = new Vector<>();
+        cycleListeners = new Vector<>();
+        roundListeners = new Vector<>();
+    }
+
+    public MarsCore(LayoutManager man) {
+        super(man);
+
         stepListeners = new Vector<>();
         cycleListeners = new Vector<>();
         roundListeners = new Vector<>();
@@ -94,6 +108,10 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
         pathWarriors = i;
     }
 
+    public void application_coreList(JSplitPane con) {
+        coreList = new CoreList(this, con);
+    }
+
     /**
      * Initialization function for the application.
      */
@@ -108,6 +126,23 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
         maxWarriorLength = 100;
         minWarriorDistance = 100;
 
+    }
+
+    public void application_display() {
+        coreDisplay = new CoreDisplay(this, this, coreSize);
+        roundCycleCounter = new RoundCycleCounter(this, this);
+
+        validate();
+        repaint();
+    }
+
+    public void interface_display() {
+        coreDisplay = new CoreDisplay(this, this, coreSize);
+
+        usingInterface = true;
+
+        validate();
+        repaint();
     }
 
     public void application_start() {
@@ -132,15 +167,14 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
             }
         }
 
-        coreDisplay = new CoreDisplay(this, this, coreSize);
-        roundCycleCounter = new RoundCycleCounter(this, this);
-
-        validate();
-        repaint();
-
         MARS = new MarsVM(coreSize, maxProc);
 
         loadWarriors();
+
+        if (usingInterface)
+        {
+            coreList.loadCore(MARS.core);
+        }
 
         runWarriors = numWarriors;
         minWarriors = (numWarriors == 1) ? 0 : 1;
@@ -191,13 +225,17 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
             } catch (InterruptedException e) {
                 e.printStackTrace(); }
 
+            coreDisplay.clear();
             startTime = new Date();
 
             MARS.reset();
-            loadWarriors();
             runWarriors = numWarriors;
+            loadWarriors();
 
-            coreDisplay.clear();
+            if (usingInterface)
+            {
+                coreList.loadCore(MARS.core);
+            }
 
             cycleNum = 0;
         }
@@ -219,7 +257,6 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
         }
 
         notifyCycleListeners(cycleNum);
-        roundCycleCounter.paint(getGraphics());
 
         warRun = 0;
     }
@@ -254,8 +291,11 @@ public class MarsCore extends java.awt.Panel implements Runnable, FrontEndManage
                     }
             } while (!validSpot);
 
-            if (!MARS.loadWarrior(warriors[i], r))
-            {
+
+
+            if (MARS.loadWarrior(warriors[i], r)) {
+                coreDisplay.paintWarrior(warriors[i], r);
+            } else {
                 System.out.println("ERROR: could not load warrior " + (i+1) + ".");
             }
         }

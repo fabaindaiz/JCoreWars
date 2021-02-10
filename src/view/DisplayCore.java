@@ -1,26 +1,53 @@
 package view;
 
+import marsVM.MarsCore;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class DisplayCore {
 
-    public DisplayCore() {
+    MarsCore marsCore;
+
+    public DisplayCore(MarsCore core) {
         JFrame frame = new JFrame("Juno");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new FlowLayout());
 
-        JPanel left = new JPanel();
-        JPanel centre = new JPanel();
-        JPanel right = new JPanel();
+        marsCore = core;
+        marsCore.application_init();
+        marsCore.interface_display();
 
-        frame.getContentPane().add(left);
-        frame.getContentPane().add(centre);
-        frame.getContentPane().add(right);
+        JSplitPane mainPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+        mainPanel.setLeftComponent(getLeftPanel());
+        mainPanel.setRightComponent(getRightPanel());
+
         frame.setJMenuBar(getMenuBar());
+        frame.getContentPane().add(mainPanel);
 
         frame.setSize(920, 700);
         frame.setVisible(true);
+        frame.repaint();
+    }
+
+    private JPanel getLeftPanel() {
+        JPanel panel = new JPanel();
+        panel.setSize(400, 1000);
+
+        panel.add(marsCore);
+
+        return panel;
+    }
+
+    private JSplitPane getRightPanel() {
+        JSplitPane panel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+        panel.setLeftComponent(getProcList());
+        panel.setRightComponent(getCoreList());
+
+        panel.setDividerSize(0);
+        panel.setDividerLocation(160);
+        panel.setPreferredSize(new Dimension(460, 600));
+        return panel;
     }
 
     private JMenuBar getMenuBar() {
@@ -75,5 +102,19 @@ public class DisplayCore {
         menu.add(windMenu);
         menu.add(helpMenu);
         return menu;
+    }
+
+    private JSplitPane getProcList() {
+        JSplitPane procList = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+
+        return procList;
+    }
+
+    private JSplitPane getCoreList() {
+        JSplitPane coreList = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+
+        marsCore.application_coreList(coreList);
+
+        return coreList;
     }
 }

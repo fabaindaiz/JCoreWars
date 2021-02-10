@@ -27,6 +27,8 @@
 
 package frontend;
 
+import marsVM.WarriorObj;
+
 import java.awt.*;
 
 /**
@@ -56,7 +58,7 @@ public class CoreDisplay extends Canvas implements StepListener
 	public CoreDisplay(FrontEndManager man, Container con, int coreS)
 	{
 		coreSize = coreS;
-		width = 400;
+		width = 420;
 		height = coreSize/16;
 		dimW = width/80;
 		dimH = height/(coreSize/80);
@@ -66,13 +68,14 @@ public class CoreDisplay extends Canvas implements StepListener
 		man.registerStepListener(this);
 		System.out.println("Constructor end size=" + getSize());
 
-		con.add(this);
+		con.add(this, BorderLayout.NORTH);
 	}
 	
 	/**
 	 * Update display with info from a round.
 	 * @param report - info from round
 	 */
+	@Override
 	public void stepProcess(StepReport report)
 	{
 		if (report.warrior.lastReport != null)
@@ -144,7 +147,16 @@ public class CoreDisplay extends Canvas implements StepListener
 		paint(getGraphics());
 	}
 
+	public void paintWarrior(WarriorObj warrior, int startPosition)
+	{
+		buffer.setColor(warrior.getNColor());
 
+		for (int i = startPosition; i < warrior.getSize(); i++) {
+			buffer.fillRect((i % 80) *dimW, (i / 80) * dimH, dimW, dimH);
+		}
+
+		paint(getGraphics());
+	}
 	
 	/**
 	 * clear the display

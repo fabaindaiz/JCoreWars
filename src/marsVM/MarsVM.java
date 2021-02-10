@@ -85,6 +85,7 @@ public class MarsVM {
         Address addr = new Address();
 
         addr.executer = this;
+        addr.report.setCore(core);
 
         // get instruction pointer
         addr.IP = currentW.getProc();

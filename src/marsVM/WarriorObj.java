@@ -48,6 +48,7 @@ public class WarriorObj
 	protected String name;
 	protected String author;
 
+	public Color nColor;
 	public Color dColor;
 	public Color[] MyColor;
 	public Color[] colors;
@@ -58,6 +59,7 @@ public class WarriorObj
 	
 	public WarriorObj(Reader file, int maxLength, Color c, Color d)
 	{
+		nColor = c;
 		dColor = d;
 
 		MyColor = new Color[] {c, c, c};
@@ -96,6 +98,15 @@ public class WarriorObj
 		}
 
 		return wInst;
+	}
+
+	public int getSize()
+	{
+		return wInst.length;
+	}
+
+	public Color getNColor() {
+		return nColor;
 	}
 	
 	public Color getDColor()

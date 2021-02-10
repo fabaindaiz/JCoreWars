@@ -58,13 +58,14 @@ public class jMARS
 
 		JFrame frame = new JFrame("jMARS");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(new Dimension(500, 600));
+		frame.setSize(new Dimension(520, 600));
 
 		MarsCore app = new MarsCore();
 		frame.add(app);
 		frame.setVisible(true);
 
 		app.application_init();
+		app.application_display();
 
 		for (int i=0; i<args.length; i++)
 		{

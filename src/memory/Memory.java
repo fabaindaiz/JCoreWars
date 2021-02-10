@@ -57,27 +57,19 @@ public class Memory {
     {
         StringBuilder str = new StringBuilder();
 
-        str.append(operator.toString());
-        str.append(modifier.toString());
-        str.append(operandA);
+        str.append("   ");
+        str.append(String.format("%6s", operator.toString()));
+        str.append(String.format("%8s", modifier.toString()));
 
-        int i = 6 - Integer.toString(aValue).length();
-        for (;i > 0; i--)
-        {
-            str.append(" ");
-        }
+        str.append(String.format("%6s", operandA.toString()));
+        str.append("   ");
+        str.append(String.format("%04d", aValue));
 
-        str.append(" ").append(aValue).append(", ");
+        str.append("   ,");
 
-        str.append(operandB.toString());
-
-        i = 6 - Integer.toString(bValue).length();
-        for (;i > 0; i--)
-        {
-            str.append(" ");
-        }
-
-        str.append(" ").append(bValue);
+        str.append(String.format("%5s", operandB.toString()));
+        str.append("   ");
+        str.append(String.format("%04d", bValue));
 
         return str.toString();
     }
