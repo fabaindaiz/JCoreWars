@@ -7,21 +7,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Vector;
 
-public class CoreList extends JScrollPane implements StepListener
+public class ProcList extends JScrollPane implements StepListener
 {
 
     static JPanel panel = new JPanel();
 
-    CustomListModel<String> instr;
-    Vector<Color> instrColor;
+    CustomListModel<String> procs;
+    Vector<Color> procsColor;
 
-    JList<String> coreList;
+    JList<String> procList;
 
     /**
      * Create a new core display for a specified core size and width.
      * @param man - Object managing the front end components.
      */
-    public CoreList(FrontEndManager man, JSplitPane con)
+    public ProcList(FrontEndManager man, JSplitPane con)
     {
         super(panel);
 
@@ -31,22 +31,22 @@ public class CoreList extends JScrollPane implements StepListener
     }
 
     public void loadCore(Memory[] core) {
-        instr = new CustomListModel<>();
-        instrColor = new Vector<>();
+        procs = new CustomListModel<>();
+        procsColor = new Vector<>();
         panel.removeAll();
 
         int i = 0;
 
         for (Memory mem: core) {
-            instr.addElement(String.format("%04d", i) + mem.toString());
-            instrColor.add(Color.white);
+            procs.addElement(String.format("%04d", i) + mem.toString());
+            procsColor.add(Color.white);
             i++;
         }
-        coreList = new JList<>(instr);
-        coreList.setCellRenderer(new coreListCellRenderer(instrColor));
-        coreList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        procList = new JList<>(procs);
+        procList.setCellRenderer(new ProcListCellRenderer(procsColor));
+        procList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-        panel.add(coreList);
+        panel.add(procList);
         update(getGraphics());
     }
 
@@ -68,60 +68,60 @@ public class CoreList extends JScrollPane implements StepListener
         int[] addr = report.addrRead();
         for (i=0; i < addr.length; i++)
         {
-            instr.set(i, String.format("%04d", i) + core[i].toString());
-            instrColor.set(i, colors[0]);
+            procs.set(i, String.format("%04d", i) + core[i].toString());
+            procsColor.set(i, colors[0]);
         }
 
         addr = report.addrWrite();
         for (i=0; i < addr.length; i++)
         {
-            instr.set(i, String.format("%04d", i) + core[i].toString());
-            instrColor.set(i, colors[1]);
+            procs.set(i, String.format("%04d", i) + core[i].toString());
+            procsColor.set(i, colors[1]);
         }
 
         addr = report.addrDec();
         for (i=0; i < addr.length; i++)
         {
-            instr.set(i, String.format("%04d", i) + core[i].toString());
-            instrColor.set(i, colors[1]);
+            procs.set(i, String.format("%04d", i) + core[i].toString());
+            procsColor.set(i, colors[1]);
         }
 
         addr = report.addrInc();
         for (i=0; i < addr.length; i++)
         {
-            instr.set(i, String.format("%04d", i) + core[i].toString());
-            instrColor.set(i, colors[1]);
+            procs.set(i, String.format("%04d", i) + core[i].toString());
+            procsColor.set(i, colors[1]);
         }
 
         if ((i = report.addrExec()) != -1)
         {
-            instr.set(i, String.format("%04d", i) + core[i].toString());
+            procs.set(i, String.format("%04d", i) + core[i].toString());
             if (report.pDeath()) {
-                instrColor.set(i, report.warrior.getDColor());
+                procsColor.set(i, report.warrior.getDColor());
             } else {
-                instrColor.set(i, colors[2]);
+                procsColor.set(i, colors[2]);
             }
 
         }
 
-        instr.update(0);
+        procs.update(0);
     }
 
     public void paintWarrior(WarriorObj warrior, int startPosition)
     {
         for (int i = startPosition; i < warrior.getSize(); i++) {
-            instrColor.set(i, warrior.getNColor());
+            procsColor.set(i, warrior.getNColor());
         }
 
-        instr.update(0);
+        procs.update(0);
     }
 }
 
-class coreListCellRenderer extends DefaultListCellRenderer {
+class ProcListCellRenderer extends DefaultListCellRenderer {
 
     Vector<Color> instrColor;
 
-    public coreListCellRenderer(Vector<Color> c) {
+    public ProcListCellRenderer(Vector<Color> c) {
         instrColor = c;
     }
 

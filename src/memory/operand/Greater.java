@@ -7,7 +7,7 @@ public class Greater extends _AOperand {
 
     @Override
     public String toString(){
-        return ">";
+        return " >";
     }
 
     @Override

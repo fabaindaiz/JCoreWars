@@ -7,7 +7,7 @@ public class Asterisk extends _AOperand {
 
     @Override
     public String toString(){
-        return "*";
+        return " *";
     }
 
     @Override

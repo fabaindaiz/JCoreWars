@@ -7,7 +7,7 @@ public class Open extends _AOperand {
 
     @Override
     public String toString(){
-        return "{";
+        return " {";
     }
 
     @Override

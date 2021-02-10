@@ -162,19 +162,6 @@ public class WarriorObj
 		}
 	}
 	
-	public void setPSpace(int[] p)
-	{
-		pSpace = p;
-	}
-	
-	public int getPCell(int index)
-	{
-		if (pSpace == null || index < 0 || index >= pSpace.length)
-			return 0;
-			
-		return pSpace[index];
-	}
-	
 	public boolean setPCell(int index, int value)
 	{
 		if (index < 0 || index >= pSpace.length)

@@ -5,11 +5,11 @@ import marsVM.MarsCore;
 import javax.swing.*;
 import java.awt.*;
 
-public class DisplayCore {
+public class DisplayManager {
 
     MarsCore marsCore;
 
-    public DisplayCore(MarsCore core) {
+    public DisplayManager(MarsCore core) {
         JFrame frame = new JFrame("Juno");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new FlowLayout());

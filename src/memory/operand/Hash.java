@@ -7,7 +7,7 @@ public class Hash extends _AOperand{
 
     @Override
     public String toString(){
-        return "#";
+        return " #";
     }
 
     @Override

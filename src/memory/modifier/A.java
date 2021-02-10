@@ -8,7 +8,7 @@ public class A extends _AModifier {
 
     @Override
     public String toString(){
-        return ".A ";
+        return " .A";
     }
 
     @Override

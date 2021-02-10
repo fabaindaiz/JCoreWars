@@ -3,22 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/Juno.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/Juno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/RoundCycleCounter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/RoundCycleCounter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CustomListModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CustomListModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/MarsCore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/MarsCore.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/view/DisplayCore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/view/DisplayCore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/view/DisplayCore.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Juno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Juno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/StepReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/StepReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jMARS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/CoreList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/CoreList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsVM/MarsCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/MarsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Address.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Memory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/modifier/A.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/modifier/A.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/modifier/AB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/modifier/AB.java" afterDir="false" />
@@ -27,7 +22,14 @@
       <change beforePath="$PROJECT_DIR$/src/memory/modifier/F.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/modifier/F.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/modifier/I.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/modifier/I.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/memory/modifier/X.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/modifier/X.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DisplayCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DisplayCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Asterisk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/Asterisk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Close.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/Close.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Greater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/Greater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/Hash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Less.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/Less.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Open.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/Open.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/operand/Peso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/operand/Peso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/DisplayCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/DisplayManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +74,15 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="memory.operator._AOperatorTest" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../jMARS02" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/frontend" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\informatica\Core Wars\JCoreWars\src\frontend" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="memory.operator._AOperatorTest" />
       <recent name="memory.operator._IOperatorTest" />
@@ -113,15 +118,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,6 +169,7 @@
       <workItem from="1612882230020" duration="6577000" />
       <workItem from="1612899588815" duration="5742000" />
       <workItem from="1612921330104" duration="10852000" />
+      <workItem from="1612960240314" duration="4234000" />
     </task>
     <servers />
   </component>

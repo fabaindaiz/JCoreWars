@@ -7,7 +7,7 @@ public class Less extends _AOperand {
 
     @Override
     public String toString(){
-        return "<";
+        return " <";
     }
 
     @Override

@@ -43,6 +43,7 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
     MarsVM MARS;
 
     CoreList coreList;
+    ProcList procList;
 
     int roundNum;
     int cycleNum;
@@ -110,6 +111,10 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
 
     public void application_coreList(JSplitPane con) {
         coreList = new CoreList(this, con);
+    }
+
+    public void application_procList(JSplitPane con) {
+        procList = new ProcList(this, con);
     }
 
     /**

@@ -59,7 +59,7 @@ public class Memory {
 
         str.append("   ");
         str.append(String.format("%6s", operator.toString()));
-        str.append(String.format("%8s", modifier.toString()));
+        str.append(String.format("%6s", modifier.toString()));
 
         str.append(String.format("%6s", operandA.toString()));
         str.append("   ");

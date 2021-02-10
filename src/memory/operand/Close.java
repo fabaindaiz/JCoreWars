@@ -7,7 +7,7 @@ public class Close extends _AOperand {
 
     @Override
     public String toString(){
-        return "}";
+        return " }";
     }
 
     @Override
