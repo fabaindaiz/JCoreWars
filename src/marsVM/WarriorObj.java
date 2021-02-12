@@ -32,7 +32,7 @@
  
 package marsVM;
 
-import frontend.StepReport;
+import steplistener.StepReport;
 import memory.Memory;
 import assambler.Assembler;
 
@@ -41,6 +41,8 @@ import java.io.Reader;
 
 public class WarriorObj
 {
+	public WarriorRT warriorRT;
+
 	public Memory[] wInst;
 	public int wOffset;
 	protected int[] pSpace;
@@ -162,13 +164,15 @@ public class WarriorObj
 		}
 	}
 	
-	public boolean setPCell(int index, int value)
+	public void setPCell(int index, int value)
 	{
 		if (index < 0 || index >= pSpace.length)
-		 return false;
+		 return;
 		 
 		pSpace[index] = value;
-		
-		return true;
+	}
+
+	public void setWarriorRT(WarriorRT war) {
+		warriorRT = war;
 	}
 }

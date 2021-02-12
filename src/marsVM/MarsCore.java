@@ -1,6 +1,10 @@
 package marsVM;
 
-import frontend.*;
+import steplistener.*;
+import listener.CycleListener;
+import listener.RoundCycleCounter;
+import listener.RoundListener;
+import steplistener.StepListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,14 +15,14 @@ import java.util.Date;
 import java.util.Enumeration;
 import java.util.Vector;
 
-public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndManager {
+public class MarsCore implements Runnable, FrontEndManager {
 
     // constants
     static final int numDefinedColors = 4;
     static final Color[][] wColors = {{Color.green.darker(), Color.yellow},
-            {Color.red.darker(), Color.magenta},
             {Color.cyan.darker(), Color.blue},
-            {Color.gray.darker(), Color.darkGray}};
+            {Color.red.darker(), Color.magenta},
+            {Color.lightGray.darker(), Color.gray}};
 
     // Common variables
     int rounds;
@@ -33,15 +37,16 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
     boolean pSpaceChanged = false;
     boolean pausedMode = false;
 
+
     Vector<String> pathWarriors;
     int numWarriors;
     int minWarriors;
 
     WarriorObj[] warriors;
-    CoreDisplay coreDisplay;
     RoundCycleCounter roundCycleCounter;
     MarsVM MARS;
 
+    CoreDisplay coreDisplay;
     CoreList coreList;
     ProcList procList;
 
@@ -61,14 +66,6 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
     double totalTime;
 
     public MarsCore() {
-
-        stepListeners = new Vector<>();
-        cycleListeners = new Vector<>();
-        roundListeners = new Vector<>();
-    }
-
-    public MarsCore(LayoutManager man) {
-        super(man);
 
         stepListeners = new Vector<>();
         cycleListeners = new Vector<>();
@@ -104,7 +101,7 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
         pSpaceChanged = true;
     }
 
-    public void setWarriors(Vector i){
+    public void setWarriors(Vector<String> i){
         numWarriors = i.size();
         pathWarriors = i;
     }
@@ -115,6 +112,20 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
 
     public void application_procList(JSplitPane con) {
         procList = new ProcList(this, con);
+    }
+
+    public void application_update() {
+        if (usingInterface)
+        {
+            coreList.loadCore(MARS.core);
+
+            Vector<CustomListModel<Integer>> procs = new Vector<>();
+            for (WarriorObj war:warriors) {
+                procs.add(war.warriorRT.procQueue);
+            }
+            procList.loadProc(procs);
+
+        }
     }
 
     /**
@@ -133,21 +144,16 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
 
     }
 
-    public void application_display() {
-        coreDisplay = new CoreDisplay(this, this, coreSize);
-        roundCycleCounter = new RoundCycleCounter(this, this);
-
-        validate();
-        repaint();
+    public void application_display(Container con) {
+        coreDisplay = new CoreDisplay(this, con, coreSize);
+        roundCycleCounter = new RoundCycleCounter(this, con);
     }
 
-    public void interface_display() {
-        coreDisplay = new CoreDisplay(this, this, coreSize);
+    public void interface_display(Container con) {
+        coreDisplay = new CoreDisplay(this, con, coreSize);
+        roundCycleCounter = new RoundCycleCounter(this, con);
 
         usingInterface = true;
-
-        validate();
-        repaint();
     }
 
     public void application_start() {
@@ -176,10 +182,7 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
 
         loadWarriors();
 
-        if (usingInterface)
-        {
-            coreList.loadCore(MARS.core);
-        }
+        application_update();
 
         runWarriors = numWarriors;
         minWarriors = (numWarriors == 1) ? 0 : 1;
@@ -237,10 +240,7 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
             runWarriors = numWarriors;
             loadWarriors();
 
-            if (usingInterface)
-            {
-                coreList.loadCore(MARS.core);
-            }
+            application_update();
 
             cycleNum = 0;
         }
@@ -273,8 +273,9 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
     {
         int[] location = new int[warriors.length];
 
-        if (!MARS.loadWarrior(warriors[0], 0))
-        {
+        if (MARS.loadWarrior(warriors[0], 0)) {
+            //coreDisplay.paintWarrior(warriors[0], 0);
+        } else {
             System.out.println("ERROR: could not load warrior 1.");
         }
 
@@ -296,10 +297,8 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
                     }
             } while (!validSpot);
 
-
-
             if (MARS.loadWarrior(warriors[i], r)) {
-                coreDisplay.paintWarrior(warriors[i], r);
+                //coreDisplay.paintWarrior(warriors[i], r);
             } else {
                 System.out.println("ERROR: could not load warrior " + (i+1) + ".");
             }
@@ -326,8 +325,12 @@ public class MarsCore extends javax.swing.JPanel implements Runnable, FrontEndMa
         for (Enumeration<StepListener> e = stepListeners.elements(); e.hasMoreElements(); )
         {
             StepListener j = e.nextElement();
+            if (step.warrior().lastReport != null)
+                j.endProcess(step.warrior().lastReport);
             j.stepProcess(step);
         }
+
+        step.warrior().lastReport = step;
     }
 
     protected void notifyCycleListeners(int cycle)

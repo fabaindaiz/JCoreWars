@@ -61,11 +61,15 @@ public class jMARS
 		frame.setSize(new Dimension(520, 600));
 
 		MarsCore app = new MarsCore();
-		frame.add(app);
-		frame.setVisible(true);
 
 		app.application_init();
-		app.application_display();
+
+		JPanel panel = new JPanel(new BorderLayout());
+
+		app.application_display(panel);
+		frame.setContentPane(panel);
+
+		frame.setVisible(true);
 
 		for (int i=0; i<args.length; i++)
 		{

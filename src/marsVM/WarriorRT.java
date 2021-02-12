@@ -32,25 +32,25 @@
  
 package marsVM;
 
+import steplistener.CustomListModel;
+
 public class WarriorRT
 {
+	protected CustomListModel<Integer> procQueue;
 	protected WarriorObj warrior;
 	protected int[] pspace;
-	protected int[] pQueue;
-	protected int pQFirst;
-	protected int pQLast;
-	protected int	numProc;		// Current number of processes
+	protected int numProc;		// Current number of processes
+
 	protected WarriorRT prev;	// previous warrior in the execute queue
 	protected WarriorRT next;	// next warrior in the execute queue
 	
 	public WarriorRT(WarriorObj war, int firstInst, int[] p)
 	{
+		war.setWarriorRT(this);
 		warrior = war;
-		
-		pQueue = new int[10000];
-		pQueue[0] = firstInst;
-		pQFirst = 0;
-		pQLast = 1;
+
+		procQueue = new CustomListModel<>();
+		procQueue.addElement(firstInst);
 		numProc = 1;
 
 		pspace = p;
@@ -81,40 +81,21 @@ public class WarriorRT
 	{
 		return warrior;
 	}
-	
+
+	public CustomListModel<Integer> getProcQueue() {
+		return procQueue;
+	}
+
 	public void addProc(int inst)
 	{
-		int l = pQueue.length;
-		
-		pQueue[pQLast] = inst;
-		
-		pQLast = (pQLast + 1) % l;
-
-		if (pQLast == pQFirst)
-		{
-			int[] nQ = new int[(int) (l * 1.3)];
-			
-			for (int i=0; i < l; i++)
-			{
-				nQ[i] = pQueue[(pQFirst + i) % l];
-			}
-			
-			pQueue = nQ;
-			pQFirst = 0;
-			pQLast = l;
-		}
-		
 		numProc++;
+		procQueue.addElement(inst);
 	}
 	
 	public int getProc()
 	{
-		int i = pQueue[pQFirst];
-		pQFirst++;
-		pQFirst %= pQueue.length;
 		numProc--;
-		
-		return i;
+		return procQueue.remove(0);
 	}
 
 	public WarriorRT getPrevWarrior()

@@ -1,6 +1,6 @@
 package memory;
 
-import frontend.StepReport;
+import steplistener.StepReport;
 import marsVM.MarsVM;
 
 public class Address {
