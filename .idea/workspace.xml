@@ -2,83 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/display/DisplayManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/steplistener/ProcList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/Juno.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/Juno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreDisplay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CoreList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CustomListModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/CycleListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/FrontEndManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/ProcList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/ProcListCellRenderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/RoundCycleCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/RoundListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/StepListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/StepReport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/frontend/coreListCellRenderer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/jMARS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/MarsCore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/MarsCore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/MarsVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/MarsVM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorRT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/marsVM/WarriorRT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Asterisk.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Asterisk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/At.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/At.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Close.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Close.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Greater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Greater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Less.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Less.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Open.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operand/Open.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/ADD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/ADD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/CMP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/CMP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DAT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DAT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DIV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DIV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DJN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/DJN.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/JMN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/JMN.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/JMZ.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/JMZ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/LDP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/LDP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MOD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MOD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MOV.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MOV.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MUL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/MUL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SEQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SEQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SLT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SLT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SNE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SNE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SPL.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SPL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/STP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/STP.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SUB.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/memory/operator/SUB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JCoreWars/view/DisplayManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JCoreWars/view/DisplayManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/JCoreWars/frontend/CoreDisplayTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/JCoreWars/frontend/RoundCycleCounterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/JCoreWars/frontend/StepReportTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/JCoreWars/marsVM/MarsVMTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/JCoreWars/marsVM/WarriorObjTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/JCoreWars/marsVM/WarriorRTTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Juno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Juno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/CoreDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CoreList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/CoreList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CustomListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/CustomListModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/CycleListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener/CycleListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/FrontEndManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/FrontEndManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/ProcList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/RoundCycleCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener/RoundCycleCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/RoundListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener/RoundListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/StepListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/StepListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/StepReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/StepReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jMARS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assambler/Assembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assambler/Assembler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/DisplayManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsVM/MarsCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/MarsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/WarriorRT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/DisplayManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/frontend/CoreDisplayTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/frontend/RoundCycleCounterTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/frontend/StepReportTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/marsVM/MarsVMTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/marsVM/WarriorObjTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/marsVM/WarriorRTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memory/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Memory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/steplistener/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/CoreDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/steplistener/CoreList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/CoreList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/steplistener/ProcList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/ProcList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +56,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="memory.operator._AOperatorTest" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/frontend" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -152,7 +85,7 @@
       <recent name="marsVM" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AsTest">
+  <component name="RunManager" selected="Application.Juno">
     <configuration name="AsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AsTest" />
       <module name="JCoreWars" />
@@ -176,15 +109,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -205,9 +136,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AsTest" />
-        <item itemvalue="Application.jMARS" />
         <item itemvalue="Application.Juno" />
+        <item itemvalue="Application.jMARS" />
+        <item itemvalue="Application.AsTest" />
         <item itemvalue="JUnit.All in JCoreWars" />
       </list>
     </recent_temporary>
@@ -232,7 +163,8 @@
       <workItem from="1612899588815" duration="5742000" />
       <workItem from="1612921330104" duration="10852000" />
       <workItem from="1612960240314" duration="4234000" />
-      <workItem from="1612991038869" duration="25440000" />
+      <workItem from="1612991038869" duration="25441000" />
+      <workItem from="1614358654418" duration="6948000" />
     </task>
     <servers />
   </component>

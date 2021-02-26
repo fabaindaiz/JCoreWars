@@ -56,9 +56,9 @@ public class Assembler
 		in = new BufferedReader(reader);
 		tok = new StreamTokenizer(in);
 		tok.lowerCaseMode(true);
-		tok.ordinaryChar('/');
 		tok.eolIsSignificant(true);
 		tok.parseNumbers();
+		tok.ordinaryChar('/');
 		tok.ordinaryChar('.');
 		tok.ordinaryChar(',');
 		
@@ -90,7 +90,7 @@ public class Assembler
 	{
 		if (name != null)
 			return name;
-			
+
 		return "";
 	}
 	
@@ -98,7 +98,7 @@ public class Assembler
 	{
 		if (author != null)
 			return author;
-			
+
 		return "";
 	}
 	

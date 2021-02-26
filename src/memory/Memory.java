@@ -63,13 +63,13 @@ public class Memory {
 
         str.append(String.format("%6s", operandA.toString()));
         str.append("   ");
-        str.append(String.format("%04d", aValue));
+        str.append(String.format("%06d", aValue));
 
         str.append("   ,");
 
         str.append(String.format("%5s", operandB.toString()));
         str.append("   ");
-        str.append(String.format("%04d", bValue));
+        str.append(String.format("%06d", bValue));
 
         return str.toString();
     }

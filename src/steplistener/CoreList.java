@@ -70,34 +70,34 @@ public class CoreList extends javax.swing.JScrollPane implements StepListener
         int[] addr = report.addrRead();
         for (i=0; i < addr.length; i++)
         {
-            instr.set(addr[i], String.format("%04d", addr[i]) + core[i].toString());
+            instr.set(addr[i], String.format("%06d", addr[i]) + core[i].toString());
             instrColor.set(addr[i], colors[0]);
         }
 
         addr = report.addrWrite();
         for (i=0; i < addr.length; i++)
         {
-            instr.set(addr[i], String.format("%04d", addr[i]) + core[i].toString());
+            instr.set(addr[i], String.format("%06d", addr[i]) + core[i].toString());
             instrColor.set(addr[i], colors[1]);
         }
 
         addr = report.addrDec();
         for (i=0; i < addr.length; i++)
         {
-            instr.set(addr[i], String.format("%04d", addr[i]) + core[i].toString());
+            instr.set(addr[i], String.format("%06d", addr[i]) + core[i].toString());
             instrColor.set(addr[i], colors[1]);
         }
 
         addr = report.addrInc();
         for (i=0; i < addr.length; i++)
         {
-            instr.set(addr[i], String.format("%04d", addr[i]) + core[i].toString());
+            instr.set(addr[i], String.format("%06d", addr[i]) + core[i].toString());
             instrColor.set(addr[i], colors[1]);
         }
 
         if ((i = report.addrExec()) != -1)
         {
-            instr.set(i, String.format("%04d", i) + core[i].toString());
+            instr.set(i, String.format("%06d", i) + core[i].toString());
             if (report.pDeath()) {
                 instrColor.set(i, report.warrior.getDColor());
             } else {

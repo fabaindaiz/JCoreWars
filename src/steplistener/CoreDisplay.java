@@ -59,7 +59,7 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 	 */
 	public CoreDisplay(FrontEndManager man, Container con, int coreS) {
 		coreSize = coreS;
-		width = 400;
+		width = 420;
 		height = coreSize / 16;
 		dimW = width / 80;
 		dimH = height / (coreSize / 80);

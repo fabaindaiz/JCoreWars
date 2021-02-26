@@ -21,8 +21,11 @@ public class DisplayManager {
         marsCore.application_init();
 
         JSplitPane mainPanel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
-        mainPanel.setLeftComponent(getLeftPanel());
-        mainPanel.setRightComponent(getRightPanel());
+        mainPanel.setLeftComponent(getDataPanel());
+        mainPanel.setRightComponent(getCorePanel());
+
+        mainPanel.setDividerSize(0);
+        mainPanel.setDividerLocation(500);
 
         menuDisplay = new MenuDisplay(frame);
         frame.setContentPane(mainPanel);
@@ -32,28 +35,29 @@ public class DisplayManager {
         frame.repaint();
     }
 
-    private JPanel getLeftPanel() {
+    private JPanel getCorePanel() {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setSize(400, 1000);
+        panel.setSize(500, 1000);
 
         marsCore.interface_display(panel);
 
         return panel;
     }
 
-    private JSplitPane getRightPanel() {
+    private JSplitPane getDataPanel() {
         JSplitPane panel = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
-        panel.setLeftComponent(getProcList());
-        panel.setRightComponent(getCoreList());
+        panel.setLeftComponent(getCoreList());
+        panel.setRightComponent(getProcList());
 
         panel.setDividerSize(0);
-        panel.setDividerLocation(180);
-        panel.setPreferredSize(new Dimension(460, 600));
+        panel.setDividerLocation(340);
         return panel;
     }
 
     private JSplitPane getProcList() {
         JSplitPane procList = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+        procList.setDividerSize(0);
+        procList.setDividerLocation(50);
 
         marsCore.application_procList(procList);
 
@@ -62,6 +66,8 @@ public class DisplayManager {
 
     private JSplitPane getCoreList() {
         JSplitPane coreList = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+        coreList.setDividerSize(0);
+        coreList.setDividerLocation(100);
 
         marsCore.application_coreList(coreList);
 

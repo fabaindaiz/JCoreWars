@@ -10,8 +10,8 @@ public class Juno {
         DisplayManager mars = new DisplayManager(marsCore);
 
         Vector<String> wArgs = new Vector<>();
-        wArgs.add("C:/informatica/Core Wars/warriors/Validate.red");
-        wArgs.add("C:/informatica/Core Wars/warriors/Validate.red");
+        wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
+        wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
         marsCore.setWarriors(wArgs);
 
         marsCore.application_start();

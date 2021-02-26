@@ -120,10 +120,12 @@ public class MarsCore implements Runnable, FrontEndManager {
             coreList.loadCore(MARS.core);
 
             Vector<CustomListModel<Integer>> procs = new Vector<>();
+            Vector<Color> color = new Vector<>();
             for (WarriorObj war:warriors) {
                 procs.add(war.warriorRT.procQueue);
+                color.add(war.getNColor());
             }
-            procList.loadProc(procs);
+            procList.loadProc(procs, color);
 
         }
     }
