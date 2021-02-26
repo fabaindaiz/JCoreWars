@@ -4,12 +4,9 @@
     <list default="true" id="189b37cb-bde8-4c24-9985-33745ca79157" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Juno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Juno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assambler/Assembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assambler/Assembler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/display/DisplayManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/display/DisplayManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jMARS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jMARS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/marsVM/MarsCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/marsVM/MarsCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memory/Memory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/memory/Memory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/steplistener/CoreDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/CoreDisplay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/steplistener/CoreList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/CoreList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/steplistener/ProcList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/steplistener/ProcList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +161,7 @@
       <workItem from="1612921330104" duration="10852000" />
       <workItem from="1612960240314" duration="4234000" />
       <workItem from="1612991038869" duration="25441000" />
-      <workItem from="1614358654418" duration="6948000" />
+      <workItem from="1614358654418" duration="8969000" />
     </task>
     <servers />
   </component>

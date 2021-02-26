@@ -114,20 +114,19 @@ public class MarsCore implements Runnable, FrontEndManager {
         procList = new ProcList(this, con);
     }
 
-    public void application_update() {
-        if (usingInterface)
-        {
-            coreList.loadCore(MARS.core);
+    public void application_update()
+    {
+        coreList.loadCore(MARS.core);
 
-            Vector<CustomListModel<Integer>> procs = new Vector<>();
-            Vector<Color> color = new Vector<>();
-            for (WarriorObj war:warriors) {
-                procs.add(war.warriorRT.procQueue);
-                color.add(war.getNColor());
-            }
-            procList.loadProc(procs, color);
+        Vector<CustomListModel<Integer>> procs = new Vector<>();
+        Vector<Color> color = new Vector<>();
 
+        for (WarriorObj war:warriors) {
+            procs.add(war.warriorRT.procQueue);
+            color.add(war.getNColor());
         }
+
+        procList.loadProc(procs, color);
     }
 
     /**
@@ -149,13 +148,6 @@ public class MarsCore implements Runnable, FrontEndManager {
     public void application_display(Container con) {
         coreDisplay = new CoreDisplay(this, con, coreSize);
         roundCycleCounter = new RoundCycleCounter(this, con);
-    }
-
-    public void interface_display(Container con) {
-        coreDisplay = new CoreDisplay(this, con, coreSize);
-        roundCycleCounter = new RoundCycleCounter(this, con);
-
-        usingInterface = true;
     }
 
     public void application_start() {

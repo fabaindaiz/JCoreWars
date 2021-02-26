@@ -46,16 +46,13 @@ public class ProcList extends javax.swing.JSplitPane implements StepListener
             proc.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
             procList.add(proc);
-
-            if (i == 1) {
-                proc1.removeAll();
-                proc1.add(proc);
-            }
-            else {
-                proc2.removeAll();
-                proc2.add(proc);
-            }
         }
+
+        proc1.removeAll();
+        proc1.add(procList.get(0));
+
+        proc2.removeAll();
+        proc2.add(procList.get(1));
     }
 
     @Override

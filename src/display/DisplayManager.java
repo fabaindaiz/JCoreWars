@@ -27,7 +27,6 @@ public class DisplayManager {
         mainPanel.setDividerSize(0);
         mainPanel.setDividerLocation(500);
 
-        menuDisplay = new MenuDisplay(frame);
         frame.setContentPane(mainPanel);
 
         frame.setSize(920, 700);
@@ -35,11 +34,14 @@ public class DisplayManager {
         frame.repaint();
     }
 
+    public void setMenuDisplay() {
+        menuDisplay = new MenuDisplay(frame);
+    }
+
     private JPanel getCorePanel() {
         JPanel panel = new JPanel(new BorderLayout());
-        panel.setSize(500, 1000);
 
-        marsCore.interface_display(panel);
+        marsCore.application_display(panel);
 
         return panel;
     }

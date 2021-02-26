@@ -34,6 +34,7 @@
 import java.awt.*;
 import java.util.Vector;
 
+import display.DisplayManager;
 import marsVM.*;
 
 import javax.swing.*;
@@ -56,20 +57,8 @@ public class jMARS
 			return;
 		}
 
-		JFrame frame = new JFrame("jMARS");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(new Dimension(520, 600));
-
-		MarsCore app = new MarsCore();
-
-		app.application_init();
-
-		JPanel panel = new JPanel(new BorderLayout());
-
-		app.application_display(panel);
-		frame.setContentPane(panel);
-
-		frame.setVisible(true);
+		MarsCore marsCore = new MarsCore();
+		DisplayManager mars = new DisplayManager(marsCore);
 
 		for (int i=0; i<args.length; i++)
 		{
@@ -77,25 +66,25 @@ public class jMARS
 			{
 				switch (args[i]) {
 					case "-r":
-						app.setRounds(Integer.parseInt(args[++i]));
+						marsCore.setRounds(Integer.parseInt(args[++i]));
 						break;
 					case "-s":
-						app.setCoreSize(Integer.parseInt(args[++i]));
+						marsCore.setCoreSize(Integer.parseInt(args[++i]));
 						break;
 					case "-c":
-						app.setCycles(Integer.parseInt(args[++i]));
+						marsCore.setCycles(Integer.parseInt(args[++i]));
 						break;
 					case "-p":
-						app.setMaxProc(Integer.parseInt(args[++i]));
+						marsCore.setMaxProc(Integer.parseInt(args[++i]));
 						break;
 					case "-l":
-						app.setMaxWarriorLength(Integer.parseInt(args[++i]));
+						marsCore.setMaxWarriorLength(Integer.parseInt(args[++i]));
 						break;
 					case "-d":
-						app.setMinWarriorDistance(Integer.parseInt(args[++i]));
+						marsCore.setMinWarriorDistance(Integer.parseInt(args[++i]));
 						break;
 					case "-S":
-						app.setPSpaceSize(Integer.parseInt(args[++i]));
+						marsCore.setPSpaceSize(Integer.parseInt(args[++i]));
 						break;
 				}
 			} else
@@ -110,8 +99,8 @@ public class jMARS
 			return;
 		}
 
-		app.setWarriors(wArgs);
-		app.application_start();
+		marsCore.setWarriors(wArgs);
+		marsCore.application_start();
 
 	}
 
