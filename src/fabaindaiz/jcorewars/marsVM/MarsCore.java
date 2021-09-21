@@ -72,8 +72,7 @@ public class MarsCore implements Runnable {
             }
         }
         MARS = new MarsVM(coreSize, maxProc);
-        MARS.warriorManager.loadWarriors(warriors, minWarriorDistance);
-
+        MARS.warriorManager.loadWarriors(warriors, minWarriorDistance, maxWarriorLength);
         application.application_update();
 
         runWarriors = numWarriors;
@@ -122,10 +121,9 @@ public class MarsCore implements Runnable {
             startTime = new Date();
 
             MARS.reset();
-            runWarriors = numWarriors;
-            MARS.warriorManager.loadWarriors(warriors, minWarriorDistance);
-
+            MARS.warriorManager.loadWarriors(warriors, minWarriorDistance, maxWarriorLength);
             application.application_update();
+            runWarriors = numWarriors;
 
             cycleNum = 0;
         }

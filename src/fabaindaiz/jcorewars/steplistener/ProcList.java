@@ -53,8 +53,11 @@ public class ProcList extends JSplitPane implements StepListener {
         proc1.removeAll();
         proc1.add(procList.get(0));
 
-        //proc2.removeAll();
-        //proc2.add(procList.get(1));
+        if (procList.size() >= 2) {
+            proc2.removeAll();
+            proc2.add(procList.get(1));
+        }
+
     }
 
     @Override

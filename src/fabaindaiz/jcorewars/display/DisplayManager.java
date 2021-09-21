@@ -35,11 +35,13 @@ public class DisplayManager {
 
     public void setMenuDisplay() {
         menuDisplay = new MenuDisplay(frame);
+
+        frame.setVisible(true);
+        frame.repaint();
     }
 
     private JPanel getCorePanel() {
         JPanel panel = new JPanel(new BorderLayout());
-
         appCore.application_display(panel);
 
         return panel;

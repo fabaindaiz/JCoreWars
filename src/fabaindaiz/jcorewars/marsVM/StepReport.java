@@ -7,27 +7,25 @@ public class StepReport {
 
     public Memory[] core;
     protected WarriorExecutor warrior;
-    protected int numProc;
 
     protected int[] readAddr;
-    protected int[] indirReadAddr;
     protected int[] writeAddr;
     protected int[] decAddr;
     protected int[] incAddr;
 
     protected int numRead;
-    protected int numIndirRead;
     protected int numWrite;
     protected int numDec;
     protected int numInc;
 
+    protected int numProc;
     protected int execAddr;
+
     protected boolean pDie;
     protected boolean wDeath;
 
     protected final static int MAX_READS = 4;
     protected final static int MAX_WRITES = 4;
-    protected final static int MAX_INDIR_READS = 4;
     protected final static int MAX_DECS = 5;
     protected final static int MAX_INCS = 5;
 
@@ -39,13 +37,11 @@ public class StepReport {
         this.warrior = warrior;
 
         readAddr = new int[MAX_READS];
-        indirReadAddr = new int[MAX_INDIR_READS];
         writeAddr = new int[MAX_WRITES];
         decAddr = new int[MAX_DECS];
         incAddr = new int[MAX_INCS];
 
         numRead = 0;
-        numIndirRead = 0;
         numWrite = 0;
         numDec = 0;
         numInc = 0;
@@ -74,15 +70,6 @@ public class StepReport {
     public void read(int addr) {
         readAddr[numRead] = addr;
         numRead++;
-    }
-
-    /**
-     * Set a location read from indirection
-     * @param addr - address of location read
-     */
-    public void indirRead(int addr) {
-        indirReadAddr[numIndirRead] = addr;
-        numIndirRead++;
     }
 
     /**
@@ -157,16 +144,6 @@ public class StepReport {
     public int[] addrRead() {
         int[] value = new int[numRead];
         if (numRead >= 0) System.arraycopy(readAddr, 0, value, 0, numRead);
-        return value;
-    }
-
-    /**
-     * Get the addresses read through indirection
-     * @return int[] - array of addresses
-     */
-    public int[] addrIndirRead() {
-        int[] value = new int[numIndirRead];
-        if (numIndirRead >= 0) System.arraycopy(indirReadAddr, 0, value, 0, numIndirRead);
         return value;
     }
 

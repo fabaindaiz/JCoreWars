@@ -15,10 +15,9 @@ public class Juno {
         mars.setMenuDisplay();
 
         Vector<String> wArgs = new Vector<>();
-        wArgs.add("C:/informatica/Core Wars/warriors/Validate.red");
-        //wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
-        //wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
-        //wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
+        wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
+        wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
+        wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
         marsCore.setWarriors(wArgs);
 
         aplicationCore.application_start();

@@ -44,10 +44,11 @@ public class jMARS
 	 * Starting function for the application. It sets up a frame and adds the applet to it.
 	 * @param args - array of command line arguments
 	 */
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		Vector<String> wArgs = new Vector<>();
 		int numWarriors = 0;
+
+		args = new String[]{"C:/informatica/Core Wars/warriors/Validate.red"};
 
 		if (args.length == 0)
 		{

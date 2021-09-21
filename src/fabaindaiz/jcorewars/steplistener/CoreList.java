@@ -44,7 +44,7 @@ public class CoreList extends JScrollPane implements StepListener {
         int i = 0;
 
         for (Memory mem: core) {
-            instr.addElement(String.format("%04d", i) + mem.toString());
+            instr.addElement(String.format("%06d", i) + mem.toString());
             instrColor.add(Color.white);
             i++;
         }

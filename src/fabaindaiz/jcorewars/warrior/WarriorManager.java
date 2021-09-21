@@ -22,7 +22,7 @@ public class WarriorManager {
         this.coreSize = marsVM.coreSize;
     }
 
-    public void loadWarriors(WarriorLoader[] warriors, int minWarriorDistance) {
+    public void loadWarriors(WarriorLoader[] warriors, int minWarriorDistance, int maxWarriorLength) {
 
         loadWarrior(warriors[0], 0, 0);
         int[] location = new int[warriors.length];
@@ -37,7 +37,7 @@ public class WarriorManager {
                     validSpot = false;
                 }
                 for (int k : location) {
-                    if (r < (minWarriorDistance + k) && r > (minWarriorDistance + k)) {
+                    if (r < (k + maxWarriorLength + minWarriorDistance) && r > (k - minWarriorDistance)) {
                         validSpot = false;
                         break;
                     }
@@ -45,7 +45,7 @@ public class WarriorManager {
             } while (!validSpot);
 
             loadWarrior(warriors[i], r, i);
-            //location[i] = r;
+            location[i] = r;
         }
     }
 
