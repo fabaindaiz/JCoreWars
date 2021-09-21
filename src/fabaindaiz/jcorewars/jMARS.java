@@ -48,8 +48,6 @@ public class jMARS
 		Vector<String> wArgs = new Vector<>();
 		int numWarriors = 0;
 
-		args = new String[]{"C:/informatica/Core Wars/warriors/Validate.red"};
-
 		if (args.length == 0)
 		{
 			System.out.println("usage: jMARS [options] warrior1.red [warrior2.red ...]");
