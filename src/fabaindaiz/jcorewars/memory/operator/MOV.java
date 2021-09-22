@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * MOV replaces the B-target with the A-value
+ */
 public class MOV implements _IOperator {
 
     @Override

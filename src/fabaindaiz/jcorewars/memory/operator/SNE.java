@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * SNE compares two instructions, and skips the next instruction if they are equa
+ */
 public class SNE implements _IOperator {
 
     @Override

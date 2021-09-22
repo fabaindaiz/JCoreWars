@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operand;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * Direct address
+ */
 public class Peso implements _IOperand {
 
     @Override

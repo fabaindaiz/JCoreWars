@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operand;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * B pre decrement address
+ */
 public class Less implements _IOperand {
 
     @Override

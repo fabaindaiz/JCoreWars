@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.marsVM;
 import fabaindaiz.jcorewars.memory.Memory;
 import fabaindaiz.jcorewars.warrior.WarriorManager;
 
+/**
+ * Represents a class which manage the redcore execution
+ */
 public class MarsVM {
 
     public final Memory[] core;
@@ -11,6 +14,10 @@ public class MarsVM {
 
     public WarriorManager warriorManager;
 
+    /**
+     * @param coreSize Core size
+     * @param maxProc Max number of process
+     */
     public MarsVM(int coreSize, int maxProc) {
 
         this.core = new Memory[coreSize];
@@ -20,6 +27,9 @@ public class MarsVM {
         reset();
     }
 
+    /**
+     * Reset the redcode execution
+     */
     public void reset() {
         warriorManager = new WarriorManager(this);
         for (int i = 0; i < core.length; i++) {
@@ -27,6 +37,12 @@ public class MarsVM {
         }
     }
 
+    /**
+     * Copy warrior instructions to core
+     * @param warriorMemory Warrior instructions array
+     * @param startPosition Warrior start position
+     * @return true if copy complete, otherwise false
+     */
     public boolean copyWarrior(Memory[] warriorMemory, int startPosition) {
         if ((startPosition + warriorMemory.length - 1) > coreSize) {
             return false;
@@ -38,6 +54,10 @@ public class MarsVM {
         return true;
     }
 
+    /**
+     * Execute the current instruction from current warrior
+     * @return true if execution complete, otherwise false
+     */
     public StepReport executeInstruction() {
         StepExecutor stepExecutor = new StepExecutor(this);
         return stepExecutor.executeStep();

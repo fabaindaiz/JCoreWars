@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * JMZ tests a number and jumps to an address if it is 0
+ */
 public class JMZ implements _IOperator {
 
     @Override

@@ -1,0 +1,11 @@
+fabaindaiz.jcorewars
+fabaindaiz.jcorewars.display
+fabaindaiz.jcorewars.listener
+fabaindaiz.jcorewars.loader
+fabaindaiz.jcorewars.marsVM
+fabaindaiz.jcorewars.memory
+fabaindaiz.jcorewars.memory.modifier
+fabaindaiz.jcorewars.memory.operand
+fabaindaiz.jcorewars.memory.operator
+fabaindaiz.jcorewars.steplistener
+fabaindaiz.jcorewars.warrior

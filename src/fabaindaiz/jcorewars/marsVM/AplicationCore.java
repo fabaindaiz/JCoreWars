@@ -14,6 +14,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Vector;
 
+/**
+ * Represents a class which manage application execution
+ */
 public class AplicationCore implements FrontEndManager {
 
     static final Color[][] wColors = {{Color.green.darker(), Color.yellow},
@@ -51,27 +54,48 @@ public class AplicationCore implements FrontEndManager {
         roundListeners = new Vector<>();
     }
 
+    /**
+     * Sets core list display
+     * @param con Parent display jpane
+     */
     public void application_coreList(JSplitPane con) {
         coreList = new CoreList(this, con);
     }
 
+    /**
+     * Sets process list display
+     * @param con Parent display jpane
+     */
     public void application_procList(JSplitPane con) {
         procList = new ProcList(this, con);
     }
 
+    /**
+     * Sets application counters
+     * @param con Parent display jpane
+     */
     public void application_display(Container con) {
         coreDisplay = new CoreDisplay(this, con, core.coreSize);
         roundCycleCounter = new RoundCycleCounter(this, con);
     }
 
+    /**
+     * Start the application execution
+     */
     public void application_start() {
         core.init();
     }
 
+    /**
+     * Step the application execution
+     */
     public void application_step() {
         core.thread.notify();
     }
 
+    /**
+     * Update main application displays
+     */
     public void application_update() {
         coreList.loadCore(core.MARS.core);
 
@@ -106,21 +130,28 @@ public class AplicationCore implements FrontEndManager {
         return Colors[num];
     }
 
+    @Override
     public void registerStepListener(StepListener l)
     {
         stepListeners.addElement(l);
     }
 
+    @Override
     public void registerCycleListener(CycleListener c)
     {
         cycleListeners.addElement(c);
     }
 
+    @Override
     public void registerRoundListener(RoundListener r)
     {
         roundListeners.addElement(r);
     }
 
+    /**
+     * Execute all process before notify step listeners
+     * @param report Report of step execution
+     */
     protected void notifyStepListeners(StepReport report) {
         stepListeners.forEach((stepListener -> {
             if (report.warrior().lastReport != null) {
@@ -131,10 +162,18 @@ public class AplicationCore implements FrontEndManager {
         report.warrior().lastReport = report;
     }
 
+    /**
+     * Execute all process before notify cycle listeners
+     * @param cycle Cycle number
+     */
     protected void notifyCycleListeners(int cycle) {
         cycleListeners.forEach((cycleListener -> cycleListener.cycleFinished(cycle)));
     }
 
+    /**
+     * Execute all process before notify round listeners
+     * @param round Round number
+     */
     protected void notifyRoundListeners(int round) {
         roundListeners.forEach((roundListener -> roundListener.roundResults(round)));
     }

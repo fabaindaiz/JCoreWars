@@ -4,6 +4,9 @@ import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 import fabaindaiz.jcorewars.memory.operator._IOperator;
 
+/**
+ * Instructions use and write entire instructions.
+ */
 public class I implements _IModifier {
 
     @Override

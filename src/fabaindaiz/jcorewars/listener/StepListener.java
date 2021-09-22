@@ -36,9 +36,13 @@ public interface StepListener {
 
 	/**
 	 * Method called after every step with the results.
-	 * @param report - results of last step.
+	 * @param report Results of last step.
 	 */
 	void stepProcess(StepReport report);
 
+	/**
+	 * Method called to stop every step process from report
+	 * @param report Results of last step
+	 */
 	void endProcess(StepReport report);
 }

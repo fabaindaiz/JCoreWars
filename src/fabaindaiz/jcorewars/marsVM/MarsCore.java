@@ -8,6 +8,9 @@ import java.io.FileReader;
 import java.util.Date;
 import java.util.Vector;
 
+/**
+ * Represents a class which manage redcore execution cycles and rounds
+ */
 public class MarsCore implements Runnable {
 
     AplicationCore application;
@@ -41,6 +44,9 @@ public class MarsCore implements Runnable {
     Date endTime;
     double totalTime;
 
+    /**
+     * @param aplication Application main class
+     */
     public MarsCore(AplicationCore aplication) {
         this.application = aplication;
 
@@ -52,11 +58,13 @@ public class MarsCore implements Runnable {
         minWarriorDistance = 100;
     }
 
+    /**
+     * Initialize all variables and warriors
+     */
     public void init() {
         if (!pSpaceChanged) {
             pSpaceSize = coreSize / 16;
         }
-
         warriors = new WarriorLoader[numWarriors];
 
         for (int i=0; i<numWarriors; i++) {
@@ -86,6 +94,9 @@ public class MarsCore implements Runnable {
         thread.start();
     }
 
+    /**
+     * Run the main warriors execution program
+     */
     @Override
     public void run() {
         startTime = new Date();
@@ -129,6 +140,9 @@ public class MarsCore implements Runnable {
         }
     }
 
+    /**
+     * Execute a cycle of warriors simulation
+     */
     public void executeCycle() {
         for (; warRun < runWarriors; warRun++) {
             StepReport stats = MARS.executeInstruction();
@@ -148,35 +162,67 @@ public class MarsCore implements Runnable {
         warRun = 0;
     }
 
-    public void setRounds(int i) {
-        rounds = i;
-    }
-
+    /**
+     * Sets core size
+     * @param i Core size
+     */
     public void setCoreSize(int i) {
         coreSize = i;
     }
 
+    /**
+     * Sets max number of rounds
+     * @param i Rounds
+     */
+    public void setRounds(int i) {
+        rounds = i;
+    }
+
+    /**
+     * Sets max number of cycles
+     * @param i Cycles
+     */
     public void setCycles(int i) {
         cycles = i;
     }
 
+    /**
+     * Sets max number of warrior proces
+     * @param i Max number of process
+     */
     public void setMaxProc(int i) {
         maxProc = i;
     }
 
+    /**
+     * Sets max warrior length
+     * @param i Max warrior length
+     */
     public void setMaxWarriorLength(int i) {
         maxWarriorLength = i;
     }
 
+    /**
+     * Sets min warrior distance
+     * @param i Min warrior distance
+     */
     public void setMinWarriorDistance(int i) {
         minWarriorDistance = i;
     }
 
+    /**
+     * Sets pSpace size
+     * @param i pSpace size
+     */
     public void setPSpaceSize(int i) {
         pSpaceSize = i;
         pSpaceChanged = true;
     }
 
+    /**
+     * Sets warriors num
+     * @param i Warriors vector
+     */
     public void setWarriors(Vector<String> i){
         numWarriors = i.size();
         pathWarriors = i;

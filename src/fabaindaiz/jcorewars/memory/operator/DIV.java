@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * DIV replaces the B-target with the integral result of dividing the B-value by the A-value
+ */
 public class DIV implements _IOperator {
 
     @Override

@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * No operation takes place.
+ */
 public class NOP implements _IOperator {
 
     @Override

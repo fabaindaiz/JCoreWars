@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * DJN decrements a number by one, and jumps unless the result is 0
+ */
 public class DJN implements _IOperator {
 
     @Override

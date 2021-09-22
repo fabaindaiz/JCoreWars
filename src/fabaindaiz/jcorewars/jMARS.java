@@ -37,12 +37,14 @@ import fabaindaiz.jcorewars.marsVM.MarsCore;
 
 import java.util.Vector;
 
-public class jMARS
-{
+/**
+ * Represent a main class which start execution of warriors redcode
+ */
+public class jMARS {
 	
 	/**
 	 * Starting function for the application. It sets up a frame and adds the applet to it.
-	 * @param args - array of command line arguments
+	 * @param args array of command line arguments
 	 */
 	public static void main(String[] args) {
 		Vector<String> wArgs = new Vector<>();

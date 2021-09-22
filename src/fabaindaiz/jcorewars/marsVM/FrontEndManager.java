@@ -36,8 +36,7 @@ import java.awt.*;
 /**
  * Interface for the object managing the frontend components.
  */
-public interface FrontEndManager
-{
+public interface FrontEndManager {
 	/**
 	 * Called to register a StepListener to receive step results
 	 * @param l - StepListener to register.
@@ -56,11 +55,31 @@ public interface FrontEndManager
 	 */
 	void registerRoundListener(RoundListener r);
 
+	/**
+	 * Gets the warrior main color
+	 * @param num Warrior number reference
+	 * @return Color
+	 */
 	Color getColor(int num);
 
+	/**
+	 * Gets the warrior death color
+	 * @param num Warrior number reference
+	 * @return Color
+	 */
 	Color getDColor(int num);
 
+	/**
+	 * Gets the warrior normal colors
+	 * @param num Warrior number reference
+	 * @return Colors array
+	 */
 	Color[] getDynColors(int num);
 
+	/**
+	 * Gets the warrior execution colors
+	 * @param num Warrior number reference
+	 * @return Colors array
+	 */
 	Color[] getColors(int num);
 }

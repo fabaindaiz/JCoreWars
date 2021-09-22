@@ -29,14 +29,12 @@ package fabaindaiz.jcorewars.listener;
 
 /**
  * The listener interface for receiving round results.
- * <p>
- * Note: not the final definition.
  */
-public interface RoundListener
-{
+public interface RoundListener {
+
 	/**
 	 * Called after completion of each round.
-	 * @param round - number of rounds completed in this game.
+	 * @param round Number of rounds completed in this game.
 	 */
 	void roundResults(int round);
 }

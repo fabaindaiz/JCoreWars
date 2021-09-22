@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * MUL replaces the B-target with the product of the A-value and the B-value
+ */
 public class MUL implements _IOperator {
 
     @Override

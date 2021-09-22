@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * MOD replaces the B-target with the integral remainder of dividing the B-value by the A-value
+ */
 public class MOD implements _IOperator {
 
     @Override

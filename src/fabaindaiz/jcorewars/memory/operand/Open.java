@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operand;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * A pre decrement address
+ */
 public class Open implements _IOperand {
 
     @Override

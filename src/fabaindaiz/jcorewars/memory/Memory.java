@@ -7,6 +7,9 @@ import fabaindaiz.jcorewars.memory.operand._IOperand;
 import fabaindaiz.jcorewars.memory.operator.DAT;
 import fabaindaiz.jcorewars.memory.modifier.F;
 
+/**
+ * Represent a class which store a memory cell in core
+ */
 public class Memory {
 
     public _IOperator operator;
@@ -24,6 +27,10 @@ public class Memory {
         bValue = 0;
     }
 
+    /**
+     * Copy Memory content to this
+     * @param src Memory source
+     */
     public void copy(Memory src) {
         operator = src.operator;
         modifier = src.modifier;
@@ -33,6 +40,11 @@ public class Memory {
         bValue = src.bValue;
     }
 
+    /**
+     * Compare if Memory is equal to this
+     * @param comp Memory to compare
+     * @return true if is equal, otherwise false
+     */
     public boolean equals(Memory comp) {
         return (operator.toString().equals(comp.operator.toString())) &&
                 (modifier.toString().equals(comp.modifier.toString())) &&
@@ -42,6 +54,12 @@ public class Memory {
                 (bValue == comp.bValue);
     }
 
+    /**
+     * Compare if object is equal to this
+     * @param obj Object to compare
+     * @return true if is equal, otherwise false
+     */
+    @Override
     public boolean equals(Object obj) {
         if (obj instanceof Memory) {
             return equals((Memory) obj);
@@ -49,6 +67,11 @@ public class Memory {
         return false;
     }
 
+    /**
+     * Return string representation for operator
+     * @return String representation
+     */
+    @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
 

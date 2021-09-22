@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * SPL queues the next instruction and then queues the sum of the program counter and A-pointer.
+ */
 public class SPL implements _IOperator {
 
     @Override

@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * ADD replaces the B-target with the sum of the A-value and the B-value
+ */
 public class ADD implements _IOperator {
 
     @Override

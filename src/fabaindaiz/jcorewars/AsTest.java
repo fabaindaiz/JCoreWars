@@ -36,25 +36,28 @@ import fabaindaiz.jcorewars.memory.Memory;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-public class AsTest
-{
-	public static void main(String[] args)
-	{
-		if (args.length < 1)
-		{
+/**
+ * Represent a main class which test assembler parse of redcode
+ */
+public class AsTest {
+
+	/**
+	 * Execute a assemble parse test
+	 * @param args array of command line arguments
+	 */
+	public static void main(String[] args) {
+		if (args.length < 1) {
 			System.out.println("usage: AsTest filename");
 			return;
 		}
 		
-		try
-		{
+		try {
 			FileReader file = new FileReader(args[0]);
 			Assembler parser = new Assembler(file, 100);
 
 			Memory[] warrior;
 			
-			if (!parser.assemble())
-			{
+			if (!parser.assemble()) {
 				System.out.println("error in warrior file, possibly near instruction " + parser.length());
 				warrior = parser.getWarrior();
 				System.out.println("last instruction " + warrior[warrior.length-1]);
@@ -70,8 +73,7 @@ public class AsTest
 				System.out.println(memory);
 			}
 			
-		} catch (FileNotFoundException e)
-		{
+		} catch (FileNotFoundException e) {
 			System.out.println("file could not be opened");
 		}
 	}

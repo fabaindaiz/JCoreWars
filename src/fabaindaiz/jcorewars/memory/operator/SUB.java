@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * SUB replaces the B-target with the difference of the B-value and the A-value
+ */
 public class SUB implements _IOperator {
 
     @Override

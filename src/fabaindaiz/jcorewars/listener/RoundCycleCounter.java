@@ -34,17 +34,17 @@ import java.awt.*;
 /**
  * A label displaying the current round and cycle.
  */
-public class RoundCycleCounter extends Label implements CycleListener, RoundListener
-{
+public class RoundCycleCounter extends Label implements CycleListener, RoundListener {
+
 	protected int cycle, round;
 	private boolean changed;
 	
 	/**
 	 * Creates a new Round/Cycle counter and places it in a container.
-	 * @param man - old.frontend manager to register, as a round and cycle listener, with.
+	 * @param man frontend manager to register, as a round and cycle listener, with.
+	 * @param con Parent display jpane
 	 */
-	public RoundCycleCounter(FrontEndManager man, Container con)
-	{
+	public RoundCycleCounter(FrontEndManager man, Container con) {
 		super("Round #0000, Cycle #000000", Label.CENTER);
 		
 		man.registerCycleListener(this);
@@ -59,10 +59,9 @@ public class RoundCycleCounter extends Label implements CycleListener, RoundList
 	
 	/**
 	 * CycleListener method.
-	 * @param c - number of cycles completed.
+	 * @param c number of cycles completed.
 	 */
-	public void cycleFinished(int c)
-	{
+	public void cycleFinished(int c) {
 		cycle = c+1;
 		changed = true;
 
@@ -71,26 +70,23 @@ public class RoundCycleCounter extends Label implements CycleListener, RoundList
 	
 	/**
 	 * RoundListener method.
-	 * @param r - number of rounds completed.
+	 * @param r number of rounds completed.
 	 */
-	public void roundResults(int r)
-	{
+	public void roundResults(int r) {
 		round = r+2;
 		changed = true;
 	}
 	
 	/**
 	 * java.awt.Component method overwridden to display round and cycle number.
-	 * @param g - graphics context to draw to.
+	 * @param g graphics context to draw to.
 	 */
-	public void paint(Graphics g)
-	{
-		if (changed)
-		{
+	@Override
+	public void paint(Graphics g) {
+		if (changed) {
 			setText("Round #"+ round +", Cycle #"+ cycle);
 			changed = false;
 		}
-		
 		super.paint(g);
 	} 
 }

@@ -35,7 +35,7 @@ import fabaindaiz.jcorewars.warrior.WarriorLoader;
 import java.awt.*;
 
 /**
- * A pMARS style core display
+ * Represent a class which manage core display
  */
 public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 
@@ -43,8 +43,6 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 
 	/* core background color */
 	protected Color background;
-
-	/* size of core */
 	protected int coreSize;
 
 	protected int width;
@@ -56,10 +54,9 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 	protected Graphics buffer;
 
 	/**
-	 * Create a new core display for a specified core size and width.
-	 *
-	 * @param man   - Object managing the front end components.
-	 * @param coreS - Size of core to be displayed.
+	 * @param man Object managing the front end components.
+	 * @param con Parent display jpane
+	 * @param coreS Size of core to be displayed.
 	 */
 	public CoreDisplay(FrontEndManager man, Container con, int coreS) {
 		this.man = man;
@@ -81,22 +78,24 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 	}
 
 	/**
-	 * Update display with info from a round.
-	 *
-	 * @param report - info from round
+	 * Update display with info from a round
+	 * @param report Info from round
 	 */
 	@Override
 	public void stepProcess(StepReport report) {
 		reportProcess(report, man.getColors(report.warrior().getLoader().num));
 	}
 
+	/**
+	 * Method called to stop every step process from report
+	 * @param report Results of last step
+	 */
 	@Override
 	public void endProcess(StepReport report) {
 		reportProcess(report, man.getDynColors(report.warrior().getLoader().num));
 	}
 
-	private void reportProcess(StepReport report, Color[] colors)
-	{
+	private void reportProcess(StepReport report, Color[] colors) {
 		int i;
 		int x,y;
 
@@ -106,8 +105,7 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 		buffer.setColor(colors[0]);
 
 		int[] addr = report.addrRead();
-		for (i=0; i < addr.length; i++)
-		{
+		for (i=0; i < addr.length; i++) {
 			x = addr[i] % 80;
 			y = addr[i] / 80;
 
@@ -117,8 +115,7 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 		buffer.setColor(colors[1]);
 
 		addr = report.addrWrite();
-		for (i=0; i < addr.length; i++)
-		{
+		for (i=0; i < addr.length; i++) {
 			x = addr[i] % 80;
 			y = addr[i] / 80;
 
@@ -126,8 +123,7 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 		}
 
 		addr = report.addrDec();
-		for (i=0; i < addr.length; i++)
-		{
+		for (i=0; i < addr.length; i++) {
 			x = addr[i] % 80;
 			y = addr[i] / 80;
 
@@ -135,8 +131,7 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 		}
 
 		addr = report.addrInc();
-		for (i=0; i < addr.length; i++)
-		{
+		for (i=0; i < addr.length; i++) {
 			x = addr[i] % 80;
 			y = addr[i] / 80;
 
@@ -145,8 +140,7 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 
 		buffer.setColor(colors[2]);
 
-		if ((i = report.addrExec()) != -1)
-		{
+		if ((i = report.addrExec()) != -1) {
 			x = i % 80;
 			y = i / 80;
 
@@ -157,8 +151,12 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 		paint(getGraphics());
 	}
 
-	public void paintWarrior(WarriorLoader warrior, int startPosition)
-	{
+	/**
+	 * Paint the current warrior instructions in core
+	 * @param warrior Warrior loader reference
+	 * @param startPosition Warrior start position
+	 */
+	public void paintWarrior(WarriorLoader warrior, int startPosition) {
 		buffer.setColor(man.getColor(warrior.num));
 
 		for (int i = startPosition; i < warrior.getSize(); i++) {
@@ -171,8 +169,7 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 	/**
 	 * clear the display
 	 */
-	public void clear()
-	{
+	public void clear() {
 		if (offScreen == null)
 			return;
 		
@@ -181,13 +178,11 @@ public class CoreDisplay extends javax.swing.JPanel implements StepListener {
 	}
 
 	/**
-	 * paint the display on the screen
-	 * @param screen - Graphics context to paint to
+	 * Paint the display on the screen
+	 * @param screen Graphics context to paint to
 	 */
-	public void paint(Graphics screen)
-	{
-		if (offScreen == null)
-		{
+	public void paint(Graphics screen) {
+		if (offScreen == null) {
 			offScreen = createImage(width, height);
 			buffer = offScreen.getGraphics();
 			buffer.setColor(background);

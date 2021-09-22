@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operand;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * A indirect address
+ */
 public class Asterisk implements _IOperand {
 
     @Override

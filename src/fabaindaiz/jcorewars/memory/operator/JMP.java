@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * JMP queues the sum of the program counter and the A-pointer.
+ */
 public class JMP implements _IOperator {
 
     @Override

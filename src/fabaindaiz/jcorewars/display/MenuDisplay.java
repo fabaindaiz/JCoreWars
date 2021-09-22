@@ -2,8 +2,14 @@ package fabaindaiz.jcorewars.display;
 
 import javax.swing.*;
 
+/**
+ * Represent a class which manage menu interface
+ */
 public class MenuDisplay extends JMenuBar {
 
+    /**
+     * @param con Parent display jpane
+     */
     public MenuDisplay(JFrame con) {
 
         con.setJMenuBar(this);

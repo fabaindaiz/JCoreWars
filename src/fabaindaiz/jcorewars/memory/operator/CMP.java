@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * CMP compares two instructions, and skips the next instruction if they are equal
+ */
 public class CMP implements _IOperator {
 
     @Override

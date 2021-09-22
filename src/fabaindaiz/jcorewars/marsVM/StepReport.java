@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.marsVM;
 import fabaindaiz.jcorewars.warrior.WarriorExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * Represents a class which report all step execution changes
+ */
 public class StepReport {
 
     public Memory[] core;
@@ -30,7 +33,8 @@ public class StepReport {
     protected final static int MAX_INCS = 5;
 
     /**
-     * Creates a StepReport object.
+     * @param core Core
+     * @param warrior Current warrior execution
      */
     public StepReport(Memory[] core, WarriorExecutor warrior) {
         this.core = core;
@@ -51,6 +55,10 @@ public class StepReport {
         wDeath = false;
     }
 
+    /**
+     * Set the core
+     * @param core Core
+     */
     public void setCore(Memory[] core) {
         this.core = core;
     }

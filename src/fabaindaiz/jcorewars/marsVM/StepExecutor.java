@@ -4,6 +4,9 @@ import fabaindaiz.jcorewars.memory.Memory;
 import fabaindaiz.jcorewars.warrior.WarriorExecutor;
 import fabaindaiz.jcorewars.warrior.WarriorManager;
 
+/**
+ * Represents a class which execute all step references
+ */
 public class StepExecutor {
 
     public WarriorManager manager;
@@ -30,6 +33,9 @@ public class StepExecutor {
     public MarsVM executer;
     public int currentInstr;
 
+    /**
+     * @param executer Redcode executor main class
+     */
     public StepExecutor(MarsVM executer) {
         this.executer = executer;
         this.core = executer.core;
@@ -41,6 +47,10 @@ public class StepExecutor {
         numProc = warrior.numProcess();
     }
 
+    /**
+     * Execute all step references
+     * @return Step report of execution
+     */
     public StepReport executeStep() {
         currentInstr = warrior.getProcess();
         instr.copy(core[currentInstr]);
@@ -66,6 +76,10 @@ public class StepExecutor {
         return report;
     }
 
+    /**
+     * Kill the current process from current warrior
+     * @param report Step report
+     */
     public void killProcess(StepReport report) {
 
         report.pDie();

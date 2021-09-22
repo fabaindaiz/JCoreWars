@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operand;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * Immediate address
+ */
 public class Hash implements _IOperand {
 
     @Override

@@ -37,6 +37,9 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.StreamTokenizer;
 
+/**
+ * Represent a class which parse and decode from redcode to this interpreter
+ */
 public class Assembler {
 
 	protected BufferedReader input;
@@ -49,7 +52,11 @@ public class Assembler {
 	// meta values
 	protected String name;
 	protected String author;
-	
+
+	/**
+	 * @param reader Redcode file reader
+	 * @param maxl Max length of file
+	 */
 	public Assembler(Reader reader, int maxl) {
 
 		input = new BufferedReader(reader);
@@ -70,7 +77,11 @@ public class Assembler {
 		for (int i=0; i<maxl; i++)
 			warrior[i] = new Memory();
 	}
-	
+
+	/**
+	 * Gets current warrior instruction set
+	 * @return Warrior instructions set
+	 */
 	public Memory[] getWarrior() {
 
 		Memory[] wMem = new Memory[IP];
@@ -79,55 +90,67 @@ public class Assembler {
 		
 		return wMem;
 	}
-	
+
+	/**
+	 * Gets current warrior offset
+	 * @return Warrior offset
+	 */
 	public int getOffset()
 	{
 		return start;
 	}
-	
-	public String getName()
-	{
+
+	/**
+	 * Gets current warrior name
+	 * @return Warrior name
+	 */
+	public String getName() {
 		if (name != null)
 			return name;
 
 		return "";
 	}
-	
-	public String getAuthor()
-	{
+
+	/**
+	 * Gets current warrior author
+	 * @return Warrior author
+	 */
+	public String getAuthor() {
 		if (author != null)
 			return author;
 
 		return "";
 	}
-	
-	public int length()
-	{
+
+	/**
+	 * Gets current warrior length
+	 * @return Warrior length
+	 */
+	public int length() {
 		return IP;
 	}
-	
-	public boolean assemble()
-	{
-		try
-		{
-			while(tokenizer.nextToken() != StreamTokenizer.TT_EOF)
-			{
+
+
+	/**
+	 * Assemble redcode into interpreter objects
+	 * @return true if assemble complete, otherwise false
+	 */
+	public boolean assemble() {
+		try {
+			while(tokenizer.nextToken() != StreamTokenizer.TT_EOF) {
 				if(tokenizer.ttype == ';')
 					pComment();
-				else if (tokenizer.ttype == StreamTokenizer.TT_WORD && tokenizer.sval.equals("org"))
-				{
+				else if (tokenizer.ttype == StreamTokenizer.TT_WORD && tokenizer.sval.equals("org")) {
 						if(tokenizer.nextToken() != StreamTokenizer.TT_NUMBER)
 							return false;
 
 						start = (int) tokenizer.nval;
-						
 						tokenizer.nextToken();
 						
 						if (tokenizer.ttype == ';')
 							pComment();
 						
-				} else if (tokenizer.ttype == StreamTokenizer.TT_WORD)
-				{
+				} else if (tokenizer.ttype == StreamTokenizer.TT_WORD) {
 					switch (tokenizer.sval) {
 						case "mov":
 							warrior[IP].operator = new MOV();
@@ -189,7 +212,6 @@ public class Assembler {
 						case "end":
 							if (tokenizer.nextToken() == StreamTokenizer.TT_NUMBER)
 								start = (int) tokenizer.nval;
-
 							return true;
 						default:
 							return false;
@@ -208,53 +230,48 @@ public class Assembler {
 					return false;
 			}
 
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println(e.toString());
 			return false;
 		}
 		
 		return true;
 	}
-	
-	void pComment()
-	{
-		// this function is in place to get meta data
-		try
-		{
-			if (tokenizer.nextToken() == StreamTokenizer.TT_WORD)
-			{ 
-				if (tokenizer.sval.equals("name"))
-				{
+
+
+	/**
+	 * Gets metadata from redcode
+	 */
+	void pComment() {
+		try {
+			if (tokenizer.nextToken() == StreamTokenizer.TT_WORD) {
+				if (tokenizer.sval.equals("name")) {
 					name = input.readLine();
-				} else if (tokenizer.sval.equals("author"))
-				{
+				} else if (tokenizer.sval.equals("author")) {
 					author = input.readLine();
-				} else
-				{
+				} else {
 					input.readLine();
 				}
-			} else
-			{
+			} else {
 				input.readLine();
 			}
 			
 			tokenizer.ttype = StreamTokenizer.TT_EOL;
 			
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println(e.toString());
 		}
 	}
-	
-	boolean pModifier()
-	{
-		try
-		{
+
+	/**
+	 * Gets instruction modifier from redcode
+	 * @return true if complete, otherwise false
+	 */
+	boolean pModifier() {
+		try {
 			if (tokenizer.nextToken() != '.')
 				return pAOperand();
-			else if (tokenizer.nextToken() == StreamTokenizer.TT_WORD)
-			{
+			else if (tokenizer.nextToken() == StreamTokenizer.TT_WORD) {
 				switch (tokenizer.sval) {
 					case "a":
 						warrior[IP].modifier = new A();
@@ -280,25 +297,25 @@ public class Assembler {
 					default:
 						return false;
 				}
-
 				tokenizer.nextToken();
 
 				return pAOperand();
 			} else 
 				return false;
 
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println(e.toString());
 			return false;
 		}
 
 	}
-	
-	boolean pAOperand()
-	{
-		switch (tokenizer.ttype)
-		{
+
+	/**
+	 * Gets A operand reference from redcode
+	 * @return true if complete, otherwise false
+	 */
+	boolean pAOperand() {
+		switch (tokenizer.ttype) {
 			case StreamTokenizer.TT_NUMBER:
 				return pAValue();
 				
@@ -339,11 +356,9 @@ public class Assembler {
 				
 		}
 		
-		try
-		{
+		try {
 			tokenizer.nextToken();
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println(e.toString());
 			return false;
 		}
@@ -352,36 +367,37 @@ public class Assembler {
 
 	}
 
-	boolean pAValue()
-	{
+	/**
+	 * Gets A reference value from redcode
+	 * @return true if complete, otherwise false
+	 */
+	boolean pAValue() {
 		if (tokenizer.ttype != StreamTokenizer.TT_NUMBER)
 			return false;
 		
 		warrior[IP].aValue = (int) tokenizer.nval;
 		
-		try
-		{
-			if (tokenizer.nextToken() != ',')
-			{
+		try {
+			if (tokenizer.nextToken() != ',') {
 				System.out.println("no comma after aValue");
 				return false;
 			}
 		
 			tokenizer.nextToken();
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println(e.toString());
 			return false;
 		}
 		
 		return pBOperand();
 	}
-	
-	
-	boolean pBOperand()
-	{
-		switch (tokenizer.ttype)
-		{
+
+	/**
+	 * Gets A operand reference from redcode
+	 * @return true if complete, otherwise false
+	 */
+	boolean pBOperand() {
+		switch (tokenizer.ttype) {
 			case StreamTokenizer.TT_NUMBER:
 				return pBValue();
 
@@ -422,11 +438,9 @@ public class Assembler {
 				
 		}
 		
-		try
-		{
+		try {
 			tokenizer.nextToken();
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println(e.toString());
 			return false;
 		}
@@ -434,18 +448,19 @@ public class Assembler {
 		return pBValue();
 	}
 
-	boolean pBValue()
-	{
+	/**
+	 * Gets B reference value from redcode
+	 * @return true if complete, otherwise false
+	 */
+	boolean pBValue() {
 		if (tokenizer.ttype != StreamTokenizer.TT_NUMBER)
 			return false;
 		
 		warrior[IP].bValue = (int) tokenizer.nval;
 		
-		try 
-		{
+		try {
 			tokenizer.nextToken();
-		} catch (IOException e)
-		{
+		} catch (IOException e) {
 			System.out.println(e.toString());
 			return false;
 		}

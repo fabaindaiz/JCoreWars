@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * SLT compares two values, and skips the next instruction if the first is lower than the second
+ */
 public class SLT implements _IOperator {
 
     @Override

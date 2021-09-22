@@ -4,6 +4,9 @@ import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 import fabaindaiz.jcorewars.memory.operator._IOperator;
 
+/**
+ * Instructions use the B-numbers of the A-instructions and the A-numbers of the B-instructions and write A-numbers.
+ */
 public class BA implements _IModifier {
 
     @Override

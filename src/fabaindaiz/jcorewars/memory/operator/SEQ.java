@@ -3,6 +3,9 @@ package fabaindaiz.jcorewars.memory.operator;
 import fabaindaiz.jcorewars.marsVM.StepExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
 
+/**
+ * SEQ compares two instructions, and skips the next instruction if they are equal
+ */
 public class SEQ implements _IOperator {
 
     @Override

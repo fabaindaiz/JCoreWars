@@ -9,6 +9,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Vector;
 
+/**
+ * Represent a class which manage process list display
+ */
 public class ProcList extends JSplitPane implements StepListener {
 
     static JPanel proc1 = new JPanel();
@@ -20,10 +23,10 @@ public class ProcList extends JSplitPane implements StepListener {
 
     /**
      * Create a new core display for a specified core size and width.
-     * @param man - Object managing the front end components.
+     * @param man Object managing the front end components.
+     * @param con Parent display jpane
      */
-    public ProcList(FrontEndManager man, JSplitPane con)
-    {
+    public ProcList(FrontEndManager man, JSplitPane con) {
 
         this.setDividerSize(0);
         this.setDividerLocation(80);
@@ -35,12 +38,15 @@ public class ProcList extends JSplitPane implements StepListener {
         this.setRightComponent(pane2);
     }
 
-    public void loadProc(Vector<WarriorProcess<Integer>> list, Vector<Color> color)
-    {
+    /**
+     * Load process list from warrior process list
+     * @param list Warrior process list
+     * @param color Warrior color representation
+     */
+    public void loadProc(Vector<WarriorProcess<Integer>> list, Vector<Color> color) {
         procList = new Vector<>();
 
-        for (int i = 0; i < Math.min(2, list.size()); i++)
-        {
+        for (int i = 0; i < Math.min(2, list.size()); i++) {
             JList<Integer> proc = new JList<>(list.get(i));
 
             proc.setFont(new Font("Droid Sans", Font.BOLD, 12));
@@ -60,24 +66,43 @@ public class ProcList extends JSplitPane implements StepListener {
 
     }
 
+    /**
+     * Update display with info from a round
+     * @param report Info from round
+     */
     @Override
     public void stepProcess(StepReport report) {
     }
 
+    /**
+     * Method called to stop every step process from report
+     * @param report Results of last step
+     */
     @Override
     public void endProcess(StepReport report) {
     }
 
 }
 
+/**
+ * Represents a class which render a process list display
+ */
 class ProcListCellRenderer extends DefaultListCellRenderer {
 
     Color procColor;
-
     public ProcListCellRenderer(Color c) {
         procColor = c;
     }
 
+    /**
+     * Paint the current process list cell
+     * @param list Process list to paint
+     * @param value Process value to print
+     * @param index Process index in list
+     * @param isSelected true if cell is selected
+     * @param cellHasFocus true if cell has focus
+     * @return Java component to paint
+     */
     @Override
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
         Component c = super.getListCellRendererComponent(list, String.format("%06d", value), index, isSelected, cellHasFocus);
