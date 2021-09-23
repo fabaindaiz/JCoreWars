@@ -26,7 +26,7 @@ public class SNE implements _IOperator {
 
     @Override
     public boolean executeI(Memory[] core, StepExecutor addr) {
-        if (! core[addr.addrA].equals(core[addr.addrB]))
+        if (!core[addr.addrA].equals(core[addr.addrB]))
             return execute(addr);
         return true;
     }

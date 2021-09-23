@@ -23,6 +23,7 @@ public class ProcList extends JSplitPane implements StepListener {
 
     /**
      * Create a new core display for a specified core size and width.
+     *
      * @param man Object managing the front end components.
      * @param con Parent display jpane
      */
@@ -40,7 +41,8 @@ public class ProcList extends JSplitPane implements StepListener {
 
     /**
      * Load process list from warrior process list
-     * @param list Warrior process list
+     *
+     * @param list  Warrior process list
      * @param color Warrior color representation
      */
     public void loadProc(Vector<WarriorProcess<Integer>> list, Vector<Color> color) {
@@ -68,6 +70,7 @@ public class ProcList extends JSplitPane implements StepListener {
 
     /**
      * Update display with info from a round
+     *
      * @param report Info from round
      */
     @Override
@@ -76,6 +79,7 @@ public class ProcList extends JSplitPane implements StepListener {
 
     /**
      * Method called to stop every step process from report
+     *
      * @param report Results of last step
      */
     @Override
@@ -90,16 +94,18 @@ public class ProcList extends JSplitPane implements StepListener {
 class ProcListCellRenderer extends DefaultListCellRenderer {
 
     Color procColor;
+
     public ProcListCellRenderer(Color c) {
         procColor = c;
     }
 
     /**
      * Paint the current process list cell
-     * @param list Process list to paint
-     * @param value Process value to print
-     * @param index Process index in list
-     * @param isSelected true if cell is selected
+     *
+     * @param list         Process list to paint
+     * @param value        Process value to print
+     * @param index        Process index in list
+     * @param isSelected   true if cell is selected
      * @param cellHasFocus true if cell has focus
      * @return Java component to paint
      */

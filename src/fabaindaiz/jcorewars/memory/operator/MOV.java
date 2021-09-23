@@ -9,7 +9,7 @@ import fabaindaiz.jcorewars.memory.Memory;
 public class MOV implements _IOperator {
 
     @Override
-    public String toString(){
+    public String toString() {
         return "MOV";
     }
 

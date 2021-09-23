@@ -9,7 +9,7 @@ import fabaindaiz.jcorewars.memory.Memory;
 public class DIV implements _IOperator {
 
     @Override
-    public String toString(){
+    public String toString() {
         return "DIV";
     }
 
@@ -43,8 +43,7 @@ public class DIV implements _IOperator {
 
     @Override
     public boolean executeA(Memory[] core, StepExecutor addr) {
-        if (addr.addrAAValue == 0)
-        {
+        if (addr.addrAAValue == 0) {
             addr.killProcess(addr.report);
             return false;
         }
@@ -54,8 +53,7 @@ public class DIV implements _IOperator {
 
     @Override
     public boolean executeB(Memory[] core, StepExecutor addr) {
-        if (addr.addrABValue == 0)
-        {
+        if (addr.addrABValue == 0) {
             addr.killProcess(addr.report);
             return false;
         }
@@ -65,8 +63,7 @@ public class DIV implements _IOperator {
 
     @Override
     public boolean executeAB(Memory[] core, StepExecutor addr) {
-        if (addr.addrAAValue == 0)
-        {
+        if (addr.addrAAValue == 0) {
             addr.killProcess(addr.report);
             return false;
         }
@@ -76,8 +73,7 @@ public class DIV implements _IOperator {
 
     @Override
     public boolean executeBA(Memory[] core, StepExecutor addr) {
-        if (addr.addrABValue == 0)
-        {
+        if (addr.addrABValue == 0) {
             addr.killProcess(addr.report);
             return false;
         }

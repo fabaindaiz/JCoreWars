@@ -10,7 +10,7 @@ import fabaindaiz.jcorewars.memory.operator._IOperator;
 public class I implements _IModifier {
 
     @Override
-    public String toString(){
+    public String toString() {
         return " .I ";
     }
 

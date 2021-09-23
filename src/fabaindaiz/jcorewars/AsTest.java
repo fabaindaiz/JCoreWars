@@ -41,40 +41,41 @@ import java.io.FileReader;
  */
 public class AsTest {
 
-	/**
-	 * Execute a assemble parse test
-	 * @param args array of command line arguments
-	 */
-	public static void main(String[] args) {
-		if (args.length < 1) {
-			System.out.println("usage: AsTest filename");
-			return;
-		}
-		
-		try {
-			FileReader file = new FileReader(args[0]);
-			Assembler parser = new Assembler(file, 100);
+    /**
+     * Execute a assemble parse test
+     *
+     * @param args array of command line arguments
+     */
+    public static void main(String[] args) {
+        if (args.length < 1) {
+            System.out.println("usage: AsTest filename");
+            return;
+        }
 
-			Memory[] warrior;
-			
-			if (!parser.assemble()) {
-				System.out.println("error in warrior file, possibly near instruction " + parser.length());
-				warrior = parser.getWarrior();
-				System.out.println("last instruction " + warrior[warrior.length-1]);
-				return;
-			}
-			
-			System.out.println(";name " + parser.getName());
-			System.out.println(";author " + parser.getAuthor() + "\n");
-			System.out.println("ORG	" + parser.getOffset());
-			warrior = parser.getWarrior();
+        try {
+            FileReader file = new FileReader(args[0]);
+            Assembler parser = new Assembler(file, 100);
 
-			for (Memory memory : warrior) {
-				System.out.println(memory);
-			}
-			
-		} catch (FileNotFoundException e) {
-			System.out.println("file could not be opened");
-		}
-	}
+            Memory[] warrior;
+
+            if (!parser.assemble()) {
+                System.out.println("error in warrior file, possibly near instruction " + parser.length());
+                warrior = parser.getWarrior();
+                System.out.println("last instruction " + warrior[warrior.length - 1]);
+                return;
+            }
+
+            System.out.println(";name " + parser.getName());
+            System.out.println(";author " + parser.getAuthor() + "\n");
+            System.out.println("ORG	" + parser.getOffset());
+            warrior = parser.getWarrior();
+
+            for (Memory memory : warrior) {
+                System.out.println(memory);
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("file could not be opened");
+        }
+    }
 }

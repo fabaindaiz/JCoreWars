@@ -1,6 +1,5 @@
 package fabaindaiz.jcorewars.marsVM;
 
-import fabaindaiz.jcorewars.warrior.WarriorExecutor;
 import fabaindaiz.jcorewars.warrior.WarriorLoader;
 
 import java.io.FileNotFoundException;
@@ -9,13 +8,13 @@ import java.util.Date;
 import java.util.Vector;
 
 /**
- * Represents a class which manage redcore execution cycles and rounds
+ * Represents a class which manage redcode execution cycles and rounds
  */
 public class MarsCore implements Runnable {
 
-    AplicationCore application;
+    public static Thread thread;
+    ApplicationCore application;
     MarsVM MARS;
-
     // Common variables
     int rounds;
     int coreSize;
@@ -24,12 +23,8 @@ public class MarsCore implements Runnable {
     int maxWarriorLength;
     int minWarriorDistance;
     int pSpaceSize;
-
     boolean pSpaceChanged = false;
     boolean pausedMode = false;
-
-    public static Thread thread;
-
     WarriorLoader[] warriors;
     Vector<String> pathWarriors;
     int numWarriors;
@@ -45,10 +40,10 @@ public class MarsCore implements Runnable {
     double totalTime;
 
     /**
-     * @param aplication Application main class
+     * @param application Application main class
      */
-    public MarsCore(AplicationCore aplication) {
-        this.application = aplication;
+    public MarsCore(ApplicationCore application) {
+        this.application = application;
 
         rounds = 10;
         coreSize = 8000;
@@ -67,14 +62,13 @@ public class MarsCore implements Runnable {
         }
         warriors = new WarriorLoader[numWarriors];
 
-        for (int i=0; i<numWarriors; i++) {
+        for (int i = 0; i < numWarriors; i++) {
             try {
                 FileReader wFile = new FileReader(pathWarriors.get(i));
                 warriors[i] = new WarriorLoader(wFile, maxWarriorLength);
                 warriors[i].initPSpace(pSpaceSize);
                 warriors[i].setPCell(0, -1);
-            } catch (FileNotFoundException e)
-            {
+            } catch (FileNotFoundException e) {
                 System.out.println("Could not find warrior file " + pathWarriors.get(i));
                 System.exit(0);
             }
@@ -90,7 +84,7 @@ public class MarsCore implements Runnable {
         warRun = 0;
 
         thread = new Thread(this);
-        thread.setPriority(Thread.NORM_PRIORITY-1);
+        thread.setPriority(Thread.NORM_PRIORITY - 1);
         thread.start();
     }
 
@@ -101,18 +95,18 @@ public class MarsCore implements Runnable {
     public void run() {
         startTime = new Date();
 
-        for (; roundNum<rounds; roundNum++)
-        {
-            for (; cycleNum<cycles; cycleNum++)
-            {
+        for (; roundNum < rounds; roundNum++) {
+            for (; cycleNum < cycles; cycleNum++) {
                 executeCycle();
 
                 endTime = new Date();
 
                 if (pausedMode) {
-                    try { thread.wait();
+                    try {
+                        thread.wait();
                     } catch (InterruptedException e) {
-                        e.printStackTrace(); }
+                        e.printStackTrace();
+                    }
                 }
 
                 if (runWarriors <= minWarriors)
@@ -122,11 +116,13 @@ public class MarsCore implements Runnable {
             application.notifyRoundListeners(roundNum);
 
             totalTime = ((double) endTime.getTime() - (double) startTime.getTime()) / 1000;
-            System.out.println("Round="+ (roundNum+1) +"  Total time="+ totalTime +"  Cycles="+ cycleNum +"  Avg. time/cycle="+ (totalTime/cycleNum));
+            System.out.println("Round=" + (roundNum + 1) + "  Total time=" + totalTime + "  Cycles=" + cycleNum + "  Avg. time/cycle=" + (totalTime / cycleNum));
 
-            try { Thread.sleep(2000);
+            try {
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
-                e.printStackTrace(); }
+                e.printStackTrace();
+            }
 
             application.coreDisplay.clear();
             startTime = new Date();
@@ -147,7 +143,7 @@ public class MarsCore implements Runnable {
         for (; warRun < runWarriors; warRun++) {
             StepReport stats = MARS.executeInstruction();
 
-            WarriorExecutor warrior = stats.warrior();
+            //WarriorExecutor warrior = stats.warrior();
             //warrior.numProc = stats.numProc();
 
             if (stats.wDeath()) {
@@ -164,6 +160,7 @@ public class MarsCore implements Runnable {
 
     /**
      * Sets core size
+     *
      * @param i Core size
      */
     public void setCoreSize(int i) {
@@ -172,6 +169,7 @@ public class MarsCore implements Runnable {
 
     /**
      * Sets max number of rounds
+     *
      * @param i Rounds
      */
     public void setRounds(int i) {
@@ -180,6 +178,7 @@ public class MarsCore implements Runnable {
 
     /**
      * Sets max number of cycles
+     *
      * @param i Cycles
      */
     public void setCycles(int i) {
@@ -187,7 +186,8 @@ public class MarsCore implements Runnable {
     }
 
     /**
-     * Sets max number of warrior proces
+     * Sets max number of warrior process
+     *
      * @param i Max number of process
      */
     public void setMaxProc(int i) {
@@ -196,6 +196,7 @@ public class MarsCore implements Runnable {
 
     /**
      * Sets max warrior length
+     *
      * @param i Max warrior length
      */
     public void setMaxWarriorLength(int i) {
@@ -204,6 +205,7 @@ public class MarsCore implements Runnable {
 
     /**
      * Sets min warrior distance
+     *
      * @param i Min warrior distance
      */
     public void setMinWarriorDistance(int i) {
@@ -212,6 +214,7 @@ public class MarsCore implements Runnable {
 
     /**
      * Sets pSpace size
+     *
      * @param i pSpace size
      */
     public void setPSpaceSize(int i) {
@@ -221,9 +224,10 @@ public class MarsCore implements Runnable {
 
     /**
      * Sets warriors num
+     *
      * @param i Warriors vector
      */
-    public void setWarriors(Vector<String> i){
+    public void setWarriors(Vector<String> i) {
         numWarriors = i.size();
         pathWarriors = i;
     }

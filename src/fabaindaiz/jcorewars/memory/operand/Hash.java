@@ -9,7 +9,7 @@ import fabaindaiz.jcorewars.memory.Memory;
 public class Hash implements _IOperand {
 
     @Override
-    public String toString(){
+    public String toString() {
         return " #";
     }
 

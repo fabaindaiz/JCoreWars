@@ -31,9 +31,10 @@ package fabaindaiz.jcorewars.listener;
  * The listener interface for receiving cycle results.
  */
 public interface CycleListener {
-	/**
-	 * called after completion of a cycle.
-	 * @param cycle Number of cycles completed in this round.
-	 */
-	void cycleFinished(int cycle);
+    /**
+     * called after completion of a cycle.
+     *
+     * @param cycle Number of cycles completed in this round.
+     */
+    void cycleFinished(int cycle);
 }

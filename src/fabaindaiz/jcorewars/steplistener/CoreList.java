@@ -16,9 +16,8 @@ import java.util.Vector;
  */
 public class CoreList extends JScrollPane implements StepListener {
 
-    FrontEndManager man;
     static JPanel panel = new JPanel();
-
+    FrontEndManager man;
     WarriorProcess<String> instr;
     Vector<Color> instrColor;
 
@@ -26,6 +25,7 @@ public class CoreList extends JScrollPane implements StepListener {
 
     /**
      * Create a new core display for a specified core size and width.
+     *
      * @param man Object managing the front end components.
      * @param con Parent display jpane
      */
@@ -39,6 +39,7 @@ public class CoreList extends JScrollPane implements StepListener {
 
     /**
      * Load core from main core
+     *
      * @param core Core memory cell array
      */
     public void loadCore(Memory[] core) {
@@ -48,7 +49,7 @@ public class CoreList extends JScrollPane implements StepListener {
 
         int i = 0;
 
-        for (Memory mem: core) {
+        for (Memory mem : core) {
             instr.addElement(String.format("%06d", i) + mem.toString());
             instrColor.add(Color.white);
             i++;
@@ -63,6 +64,7 @@ public class CoreList extends JScrollPane implements StepListener {
 
     /**
      * Update display with info from a round
+     *
      * @param report Info from round
      */
     @Override
@@ -72,6 +74,7 @@ public class CoreList extends JScrollPane implements StepListener {
 
     /**
      * Method called to stop every step process from report
+     *
      * @param report Results of last step
      */
     @Override
@@ -85,25 +88,25 @@ public class CoreList extends JScrollPane implements StepListener {
         int i;
 
         int[] addr = report.addrRead();
-        for (i=0; i < addr.length; i++) {
+        for (i = 0; i < addr.length; i++) {
             instr.set(addr[i], String.format("%06d", addr[i]) + core[i].toString());
             instrColor.set(addr[i], colors[0]);
         }
 
         addr = report.addrWrite();
-        for (i=0; i < addr.length; i++) {
+        for (i = 0; i < addr.length; i++) {
             instr.set(addr[i], String.format("%06d", addr[i]) + core[i].toString());
             instrColor.set(addr[i], colors[1]);
         }
 
         addr = report.addrDec();
-        for (i=0; i < addr.length; i++) {
+        for (i = 0; i < addr.length; i++) {
             instr.set(addr[i], String.format("%06d", addr[i]) + core[i].toString());
             instrColor.set(addr[i], colors[1]);
         }
 
         addr = report.addrInc();
-        for (i=0; i < addr.length; i++) {
+        for (i = 0; i < addr.length; i++) {
             instr.set(addr[i], String.format("%06d", addr[i]) + core[i].toString());
             instrColor.set(addr[i], colors[1]);
         }
@@ -121,7 +124,8 @@ public class CoreList extends JScrollPane implements StepListener {
 
     /**
      * Paint the current warrior instructions in core
-     * @param warrior Warrior loader reference
+     *
+     * @param warrior       Warrior loader reference
      * @param startPosition Warrior start position
      */
     public void paintWarrior(WarriorLoader warrior, int startPosition) {
@@ -139,16 +143,18 @@ public class CoreList extends JScrollPane implements StepListener {
 class coreListCellRenderer extends DefaultListCellRenderer {
 
     Vector<Color> instrColor;
+
     public coreListCellRenderer(Vector<Color> c) {
         instrColor = c;
     }
 
     /**
      * Paint the current core list cell
-     * @param list Core list to paint
-     * @param value Core value to print
-     * @param index Core index in list
-     * @param isSelected true if cell is selected
+     *
+     * @param list         Core list to paint
+     * @param value        Core value to print
+     * @param index        Core index in list
+     * @param isSelected   true if cell is selected
      * @param cellHasFocus true if cell has focus
      * @return Java component to paint
      */

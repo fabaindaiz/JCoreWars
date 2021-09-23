@@ -1,7 +1,7 @@
 package fabaindaiz.jcorewars;
 
 import fabaindaiz.jcorewars.display.DisplayManager;
-import fabaindaiz.jcorewars.marsVM.AplicationCore;
+import fabaindaiz.jcorewars.marsVM.ApplicationCore;
 import fabaindaiz.jcorewars.marsVM.MarsCore;
 
 import java.util.Vector;
@@ -13,12 +13,13 @@ public class Juno {
 
     /**
      * Start a JCoreWars windows interface
+     *
      * @param args array of command line arguments
      */
     public static void main(String[] args) {
-        AplicationCore aplicationCore = new AplicationCore();
-        MarsCore marsCore = aplicationCore.core;
-        DisplayManager mars = new DisplayManager(aplicationCore);
+        ApplicationCore applicationCore = new ApplicationCore();
+        MarsCore marsCore = applicationCore.core;
+        DisplayManager mars = new DisplayManager(applicationCore);
         mars.setMenuDisplay();
 
         Vector<String> wArgs = new Vector<>();
@@ -27,6 +28,6 @@ public class Juno {
         wArgs.add("C:/informatica/Core Wars/warriors/imp.red");
         marsCore.setWarriors(wArgs);
 
-        aplicationCore.application_start();
+        applicationCore.application_start();
     }
 }

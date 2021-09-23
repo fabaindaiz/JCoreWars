@@ -7,18 +7,17 @@ import fabaindaiz.jcorewars.marsVM.StepReport;
  */
 public class WarriorExecutor {
 
+    public StepReport lastReport;
     protected WarriorProcess<Integer> processQueue;
     protected WarriorLoader warriorLoader;
     protected int[] pSpace;
 
-    public StepReport lastReport;
-
     /**
-     * @param loader Warrior loader
+     * @param loader    Warrior loader
      * @param firstInst Warrior first instruction reference
-     * @param pSpace Warrior pSpace
+     * @param pSpace    Warrior pSpace
      */
-    public WarriorExecutor (WarriorLoader loader, int firstInst, int[] pSpace) {
+    public WarriorExecutor(WarriorLoader loader, int firstInst, int[] pSpace) {
         loader.setWarriorExecutor(this);
         warriorLoader = loader;
 
@@ -29,6 +28,7 @@ public class WarriorExecutor {
 
     /**
      * Return the current warrior loader
+     *
      * @return Warrior loader
      */
     public WarriorLoader getLoader() {
@@ -37,6 +37,7 @@ public class WarriorExecutor {
 
     /**
      * Return the warrior process queue
+     *
      * @return Process queue
      */
     public WarriorProcess<Integer> processQueue() {
@@ -45,6 +46,7 @@ public class WarriorExecutor {
 
     /**
      * Adds a instruction to warrior process queue
+     *
      * @param instr next instruction
      */
     public void addProcess(int instr) {
@@ -53,6 +55,7 @@ public class WarriorExecutor {
 
     /**
      * Gets the next instruction to execute
+     *
      * @return current instruction
      */
     public int getProcess() {
@@ -61,6 +64,7 @@ public class WarriorExecutor {
 
     /**
      * Gets the number of warrior active process
+     *
      * @return number of process
      */
     public int numProcess() {
@@ -69,6 +73,7 @@ public class WarriorExecutor {
 
     /**
      * Gets the pSpace register
+     *
      * @return pSpace register
      */
     public int[] getPSpace() {
@@ -77,20 +82,22 @@ public class WarriorExecutor {
 
     /**
      * Sets a value into pSpace register
-     * @param addr PSpace address
+     *
+     * @param addr  PSpace address
      * @param value Value to store
      */
     public void setPCell(int addr, int value) {
-        pSpace[addr%pSpace.length] = value;
+        pSpace[addr % pSpace.length] = value;
     }
 
     /**
      * Gets a value from pSpace register
+     *
      * @param addr PSpace address
      * @return Value from pSpace
      */
     public int getPCell(int addr) {
-        return pSpace[addr%pSpace.length];
+        return pSpace[addr % pSpace.length];
     }
 
 }

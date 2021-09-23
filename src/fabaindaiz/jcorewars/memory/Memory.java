@@ -1,11 +1,11 @@
 package fabaindaiz.jcorewars.memory;
 
-import fabaindaiz.jcorewars.memory.operand.Peso;
-import fabaindaiz.jcorewars.memory.operator._IOperator;
+import fabaindaiz.jcorewars.memory.modifier.F;
 import fabaindaiz.jcorewars.memory.modifier._IModifier;
+import fabaindaiz.jcorewars.memory.operand.Peso;
 import fabaindaiz.jcorewars.memory.operand._IOperand;
 import fabaindaiz.jcorewars.memory.operator.DAT;
-import fabaindaiz.jcorewars.memory.modifier.F;
+import fabaindaiz.jcorewars.memory.operator._IOperator;
 
 /**
  * Represent a class which store a memory cell in core
@@ -29,6 +29,7 @@ public class Memory {
 
     /**
      * Copy Memory content to this
+     *
      * @param src Memory source
      */
     public void copy(Memory src) {
@@ -42,6 +43,7 @@ public class Memory {
 
     /**
      * Compare if Memory is equal to this
+     *
      * @param comp Memory to compare
      * @return true if is equal, otherwise false
      */
@@ -56,6 +58,7 @@ public class Memory {
 
     /**
      * Compare if object is equal to this
+     *
      * @param obj Object to compare
      * @return true if is equal, otherwise false
      */
@@ -69,6 +72,7 @@ public class Memory {
 
     /**
      * Return string representation for operator
+     *
      * @return String representation
      */
     @Override

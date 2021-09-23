@@ -32,7 +32,7 @@ package fabaindaiz.jcorewars;/*-
  */
 
 import fabaindaiz.jcorewars.display.DisplayManager;
-import fabaindaiz.jcorewars.marsVM.AplicationCore;
+import fabaindaiz.jcorewars.marsVM.ApplicationCore;
 import fabaindaiz.jcorewars.marsVM.MarsCore;
 
 import java.util.Vector;
@@ -41,68 +41,65 @@ import java.util.Vector;
  * Represent a main class which start execution of warriors redcode
  */
 public class jMARS {
-	
-	/**
-	 * Starting function for the application. It sets up a frame and adds the applet to it.
-	 * @param args array of command line arguments
-	 */
-	public static void main(String[] args) {
-		Vector<String> wArgs = new Vector<>();
-		int numWarriors = 0;
 
-		if (args.length == 0)
-		{
-			System.out.println("usage: jMARS [options] warrior1.red [warrior2.red ...]");
-			return;
-		}
+    /**
+     * Starting function for the application. It sets up a frame and adds the applet to it.
+     *
+     * @param args array of command line arguments
+     */
+    public static void main(String[] args) {
+        Vector<String> wArgs = new Vector<>();
+        int numWarriors = 0;
 
-		AplicationCore aplicationCore = new AplicationCore();
-		MarsCore marsCore = aplicationCore.core;
-		DisplayManager mars = new DisplayManager(aplicationCore);
+        if (args.length == 0) {
+            System.out.println("usage: jMARS [options] warrior1.red [warrior2.red ...]");
+            return;
+        }
 
-		for (int i=0; i<args.length; i++)
-		{
-			if (args[i].charAt(0) == '-')
-			{
-				switch (args[i]) {
-					case "-r":
-						marsCore.setRounds(Integer.parseInt(args[++i]));
-						break;
-					case "-s":
-						marsCore.setCoreSize(Integer.parseInt(args[++i]));
-						break;
-					case "-c":
-						marsCore.setCycles(Integer.parseInt(args[++i]));
-						break;
-					case "-p":
-						marsCore.setMaxProc(Integer.parseInt(args[++i]));
-						break;
-					case "-l":
-						marsCore.setMaxWarriorLength(Integer.parseInt(args[++i]));
-						break;
-					case "-d":
-						marsCore.setMinWarriorDistance(Integer.parseInt(args[++i]));
-						break;
-					case "-S":
-						marsCore.setPSpaceSize(Integer.parseInt(args[++i]));
-						break;
-				}
-			} else
-			{
-				numWarriors++;
-				wArgs.addElement(args[i]);
-			}
-		}
+        ApplicationCore applicationCore = new ApplicationCore();
+        MarsCore marsCore = applicationCore.core;
+        DisplayManager mars = new DisplayManager(applicationCore);
 
-		if (numWarriors == 0) {
-			System.out.println("ERROR: no warrior files specified");
-			return;
-		}
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].charAt(0) == '-') {
+                switch (args[i]) {
+                    case "-r":
+                        marsCore.setRounds(Integer.parseInt(args[++i]));
+                        break;
+                    case "-s":
+                        marsCore.setCoreSize(Integer.parseInt(args[++i]));
+                        break;
+                    case "-c":
+                        marsCore.setCycles(Integer.parseInt(args[++i]));
+                        break;
+                    case "-p":
+                        marsCore.setMaxProc(Integer.parseInt(args[++i]));
+                        break;
+                    case "-l":
+                        marsCore.setMaxWarriorLength(Integer.parseInt(args[++i]));
+                        break;
+                    case "-d":
+                        marsCore.setMinWarriorDistance(Integer.parseInt(args[++i]));
+                        break;
+                    case "-S":
+                        marsCore.setPSpaceSize(Integer.parseInt(args[++i]));
+                        break;
+                }
+            } else {
+                numWarriors++;
+                wArgs.addElement(args[i]);
+            }
+        }
 
-		marsCore.setWarriors(wArgs);
-		aplicationCore.application_start();
+        if (numWarriors == 0) {
+            System.out.println("ERROR: no warrior files specified");
+            return;
+        }
 
-	}
+        marsCore.setWarriors(wArgs);
+        applicationCore.application_start();
+
+    }
 
 }
 

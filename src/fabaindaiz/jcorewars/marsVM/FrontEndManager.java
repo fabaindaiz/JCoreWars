@@ -24,7 +24,7 @@
  * SUCH DAMAGE.
  *
  */
- 
+
 package fabaindaiz.jcorewars.marsVM;
 
 import fabaindaiz.jcorewars.listener.CycleListener;
@@ -37,49 +37,56 @@ import java.awt.*;
  * Interface for the object managing the frontend components.
  */
 public interface FrontEndManager {
-	/**
-	 * Called to register a StepListener to receive step results
-	 * @param l - StepListener to register.
-	 */
-	void registerStepListener(StepListener l);
-	
-	/**
-	 * Called to register a CycleListener to receive cycle results
-	 * @param c - CycleListener to register.
-	 */
-	void registerCycleListener(CycleListener c);
-	
-	/**
-	 * Called to register a RoundListener to receive round results
-	 * @param r - RoundListener to register.
-	 */
-	void registerRoundListener(RoundListener r);
+    /**
+     * Called to register a StepListener to receive step results
+     *
+     * @param l - StepListener to register.
+     */
+    void registerStepListener(StepListener l);
 
-	/**
-	 * Gets the warrior main color
-	 * @param num Warrior number reference
-	 * @return Color
-	 */
-	Color getColor(int num);
+    /**
+     * Called to register a CycleListener to receive cycle results
+     *
+     * @param c - CycleListener to register.
+     */
+    void registerCycleListener(CycleListener c);
 
-	/**
-	 * Gets the warrior death color
-	 * @param num Warrior number reference
-	 * @return Color
-	 */
-	Color getDColor(int num);
+    /**
+     * Called to register a RoundListener to receive round results
+     *
+     * @param r - RoundListener to register.
+     */
+    void registerRoundListener(RoundListener r);
 
-	/**
-	 * Gets the warrior normal colors
-	 * @param num Warrior number reference
-	 * @return Colors array
-	 */
-	Color[] getDynColors(int num);
+    /**
+     * Gets the warrior main color
+     *
+     * @param num Warrior number reference
+     * @return Color
+     */
+    Color getColor(int num);
 
-	/**
-	 * Gets the warrior execution colors
-	 * @param num Warrior number reference
-	 * @return Colors array
-	 */
-	Color[] getColors(int num);
+    /**
+     * Gets the warrior death color
+     *
+     * @param num Warrior number reference
+     * @return Color
+     */
+    Color getDColor(int num);
+
+    /**
+     * Gets the warrior normal colors
+     *
+     * @param num Warrior number reference
+     * @return Colors array
+     */
+    Color[] getDynColors(int num);
+
+    /**
+     * Gets the warrior execution colors
+     *
+     * @param num Warrior number reference
+     * @return Colors array
+     */
+    Color[] getColors(int num);
 }

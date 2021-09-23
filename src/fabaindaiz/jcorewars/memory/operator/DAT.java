@@ -9,7 +9,7 @@ import fabaindaiz.jcorewars.memory.Memory;
 public class DAT implements _IOperator {
 
     @Override
-    public String toString(){
+    public String toString() {
         return "DAT";
     }
 

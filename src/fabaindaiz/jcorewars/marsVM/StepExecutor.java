@@ -17,18 +17,18 @@ public class StepExecutor {
     public int coreSize;
     public int numProc;
 
-    public Memory instr = new Memory();	// copy of current instruction
-    public int tempAddr;		// temporary address for use in mode evaluation
+    public Memory instr = new Memory();    // copy of current instruction
+    public int tempAddr;        // temporary address for use in mode evaluation
 
     public Memory instrA = new Memory();
-    public int addrA = 0;			// A's address
-    public int addrAAValue = 0;	// address A's A Value
-    public int addrABValue = 0;	// address B's B Value
+    public int addrA = 0;            // A's address
+    public int addrAAValue = 0;    // address A's A Value
+    public int addrABValue = 0;    // address B's B Value
 
     public Memory instrB = new Memory();
-    public int addrB = 0;			// address B
-    public int addrBAValue = 0;	// address B's A Value
-    public int addrBBValue = 0;	// address B's B Value
+    public int addrB = 0;            // address B
+    public int addrBAValue = 0;    // address B's A Value
+    public int addrBBValue = 0;    // address B's B Value
 
     public MarsVM executer;
     public int currentInstr;
@@ -49,6 +49,7 @@ public class StepExecutor {
 
     /**
      * Execute all step references
+     *
      * @return Step report of execution
      */
     public StepReport executeStep() {
@@ -64,7 +65,7 @@ public class StepExecutor {
         report.execute(currentInstr);
         instr.operator.preExecute(this);
 
-        if (! instr.modifier.execute(instr.operator, core, this)) {
+        if (!instr.modifier.execute(instr.operator, core, this)) {
             return report;
         }
 
@@ -78,6 +79,7 @@ public class StepExecutor {
 
     /**
      * Kill the current process from current warrior
+     *
      * @param report Step report
      */
     public void killProcess(StepReport report) {

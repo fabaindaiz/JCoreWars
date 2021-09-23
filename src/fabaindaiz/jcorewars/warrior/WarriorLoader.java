@@ -3,10 +3,6 @@ package fabaindaiz.jcorewars.warrior;
 import fabaindaiz.jcorewars.loader.Assembler;
 import fabaindaiz.jcorewars.memory.Memory;
 
-import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.Reader;
 
 /**
@@ -18,18 +14,17 @@ public class WarriorLoader {
 
     public Memory[] warriorInstr;
     public int warriorOffset;
-    protected int[] pSpace;
     public int num;
-
+    protected int[] pSpace;
     protected String name;
     protected String author;
     protected boolean loaded;
 
     /**
-     * @param file Redcode warrior instructions file reader
+     * @param file      Redcode warrior instructions file reader
      * @param maxLength warrior file max length
      */
-    public WarriorLoader (Reader file, int maxLength) {
+    public WarriorLoader(Reader file, int maxLength) {
 
         Assembler parser = new Assembler(file, maxLength);
 
@@ -48,6 +43,7 @@ public class WarriorLoader {
 
     /**
      * Gets the warrior instructions in array
+     *
      * @param coreSize Core size
      * @return warrior instructions array
      */
@@ -66,6 +62,7 @@ public class WarriorLoader {
 
     /**
      * Gets the warrior instructions length
+     *
      * @return warrior instructions length
      */
     public int getSize() {
@@ -74,6 +71,7 @@ public class WarriorLoader {
 
     /**
      * Gets the warrior offset
+     *
      * @return Warrior offset
      */
     public int getOffset() {
@@ -82,6 +80,7 @@ public class WarriorLoader {
 
     /**
      * Gets the warrior name
+     *
      * @return Warrior name
      */
     public String getName() {
@@ -90,6 +89,7 @@ public class WarriorLoader {
 
     /**
      * Gets the warrior author
+     *
      * @return warrior author
      */
     public String getAuthor() {
@@ -98,6 +98,7 @@ public class WarriorLoader {
 
     /**
      * Create the warrior pSpace register
+     *
      * @param length pSpace length
      */
     public void initPSpace(int length) {
@@ -106,6 +107,7 @@ public class WarriorLoader {
 
     /**
      * Gets the pSpace register
+     *
      * @return pSpace register
      */
     public int[] getPSpace() {
@@ -114,10 +116,11 @@ public class WarriorLoader {
 
     /**
      * Normalize PSpace values references
+     *
      * @param coreSize Core size
      */
     public void normalizePSpace(int coreSize) {
-        for (int i=0; i<pSpace.length; i++) {
+        for (int i = 0; i < pSpace.length; i++) {
             while (pSpace[i] < 0) {
                 pSpace[i] += coreSize;
             }
@@ -127,6 +130,7 @@ public class WarriorLoader {
 
     /**
      * Sets a value into loader pSpace register
+     *
      * @param index PSpace address
      * @param value Value to store
      */
@@ -135,6 +139,14 @@ public class WarriorLoader {
             return;
         }
         pSpace[index] = value;
+    }
+
+    /**
+     * Save warriors pSpace from warrior executer
+     * @param warrior Warrior executer
+     */
+    public void savePSpace(WarriorExecutor warrior) {
+        System.arraycopy(pSpace, 0, warrior.pSpace, 0, pSpace.length);
     }
 
     /**

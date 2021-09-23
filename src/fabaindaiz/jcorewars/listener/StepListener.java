@@ -34,15 +34,17 @@ import fabaindaiz.jcorewars.marsVM.StepReport;
  */
 public interface StepListener {
 
-	/**
-	 * Method called after every step with the results.
-	 * @param report Results of last step.
-	 */
-	void stepProcess(StepReport report);
+    /**
+     * Method called after every step with the results.
+     *
+     * @param report Results of last step.
+     */
+    void stepProcess(StepReport report);
 
-	/**
-	 * Method called to stop every step process from report
-	 * @param report Results of last step
-	 */
-	void endProcess(StepReport report);
+    /**
+     * Method called to stop every step process from report
+     *
+     * @param report Results of last step
+     */
+    void endProcess(StepReport report);
 }

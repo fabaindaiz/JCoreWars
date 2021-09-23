@@ -1,6 +1,6 @@
 package fabaindaiz.jcorewars.display;
 
-import fabaindaiz.jcorewars.marsVM.AplicationCore;
+import fabaindaiz.jcorewars.marsVM.ApplicationCore;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,15 +10,15 @@ import java.awt.*;
  */
 public class DisplayManager {
 
-    AplicationCore appCore;
+    ApplicationCore appCore;
     JFrame frame;
 
     MenuDisplay menuDisplay;
 
     /**
-     * @param core Aplication core main class
+     * @param core Application core main class
      */
-    public DisplayManager(AplicationCore core) {
+    public DisplayManager(ApplicationCore core) {
         frame = new JFrame("Juno");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new BorderLayout());
@@ -51,6 +51,7 @@ public class DisplayManager {
 
     /**
      * Gets core display manager
+     *
      * @return Core jpane
      */
     private JPanel getCorePanel() {
@@ -62,6 +63,7 @@ public class DisplayManager {
 
     /**
      * Gets data display manager
+     *
      * @return Data pane
      */
     private JSplitPane getDataPanel() {
@@ -76,6 +78,7 @@ public class DisplayManager {
 
     /**
      * Gets process list display manager
+     *
      * @return Proc list jpane
      */
     private JSplitPane getProcList() {
@@ -90,6 +93,7 @@ public class DisplayManager {
 
     /**
      * Gets core list display manager
+     *
      * @return Core list jpane
      */
     private JSplitPane getCoreList() {

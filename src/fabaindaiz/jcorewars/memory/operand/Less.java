@@ -9,7 +9,7 @@ import fabaindaiz.jcorewars.memory.Memory;
 public class Less implements _IOperand {
 
     @Override
-    public String toString(){
+    public String toString() {
         return " <";
     }
 
@@ -31,7 +31,7 @@ public class Less implements _IOperand {
     @Override
     public void executeB(Memory[] core, StepExecutor addr) {
         if (--core[addr.tempAddr].bValue < 0)
-                core[addr.tempAddr].bValue = addr.executer.coreSize - 1;
+            core[addr.tempAddr].bValue = addr.executer.coreSize - 1;
 
         addr.report.decrement(addr.tempAddr);
 

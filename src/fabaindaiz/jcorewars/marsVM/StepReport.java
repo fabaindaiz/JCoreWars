@@ -1,39 +1,34 @@
 package fabaindaiz.jcorewars.marsVM;
 
-import fabaindaiz.jcorewars.warrior.WarriorExecutor;
 import fabaindaiz.jcorewars.memory.Memory;
+import fabaindaiz.jcorewars.warrior.WarriorExecutor;
 
 /**
  * Represents a class which report all step execution changes
  */
 public class StepReport {
 
-    public Memory[] core;
-    protected WarriorExecutor warrior;
-
-    protected int[] readAddr;
-    protected int[] writeAddr;
-    protected int[] decAddr;
-    protected int[] incAddr;
-
-    protected int numRead;
-    protected int numWrite;
-    protected int numDec;
-    protected int numInc;
-
-    protected int numProc;
-    protected int execAddr;
-
-    protected boolean pDie;
-    protected boolean wDeath;
-
     protected final static int MAX_READS = 4;
     protected final static int MAX_WRITES = 4;
     protected final static int MAX_DECS = 5;
     protected final static int MAX_INCS = 5;
+    public Memory[] core;
+    protected WarriorExecutor warrior;
+    protected int[] readAddr;
+    protected int[] writeAddr;
+    protected int[] decAddr;
+    protected int[] incAddr;
+    protected int numRead;
+    protected int numWrite;
+    protected int numDec;
+    protected int numInc;
+    protected int numProc;
+    protected int execAddr;
+    protected boolean pDie;
+    protected boolean wDeath;
 
     /**
-     * @param core Core
+     * @param core    Core
      * @param warrior Current warrior execution
      */
     public StepReport(Memory[] core, WarriorExecutor warrior) {
@@ -57,6 +52,7 @@ public class StepReport {
 
     /**
      * Set the core
+     *
      * @param core Core
      */
     public void setCore(Memory[] core) {
@@ -65,6 +61,7 @@ public class StepReport {
 
     /**
      * Set the Warrior object
+     *
      * @param warrior - Warrior object of currently executing warrior.
      */
     public void warrior(WarriorExecutor warrior) {
@@ -73,6 +70,7 @@ public class StepReport {
 
     /**
      * Set a location read from.
+     *
      * @param addr - address of location read
      */
     public void read(int addr) {
@@ -82,6 +80,7 @@ public class StepReport {
 
     /**
      * Set a location that was written to
+     *
      * @param addr - address written to
      */
     public void write(int addr) {
@@ -91,6 +90,7 @@ public class StepReport {
 
     /**
      * Set a location that was decremented
+     *
      * @param addr - address that was decremented
      */
     public void decrement(int addr) {
@@ -100,6 +100,7 @@ public class StepReport {
 
     /**
      * Set a location that was incremented
+     *
      * @param addr - address that was incremented
      */
     public void increment(int addr) {
@@ -109,6 +110,7 @@ public class StepReport {
 
     /**
      * Set the location that was executed
+     *
      * @param addr - address that was executed
      */
     public void execute(int addr) {
@@ -117,6 +119,7 @@ public class StepReport {
 
     /**
      * set the number of processes in the current warrior.
+     *
      * @param numP - number of processes
      */
     public void numProc(int numP) {
@@ -139,6 +142,7 @@ public class StepReport {
 
     /**
      * Get the warrior object of the currently executing warrior
+     *
      * @return old.marsVM.WarriorObj
      */
     public WarriorExecutor warrior() {
@@ -147,46 +151,51 @@ public class StepReport {
 
     /**
      * Get the addresses read
+     *
      * @return int[] - array of addresses
      */
     public int[] addrRead() {
         int[] value = new int[numRead];
-        if (numRead >= 0) System.arraycopy(readAddr, 0, value, 0, numRead);
+        if (numRead > 0) System.arraycopy(readAddr, 0, value, 0, numRead);
         return value;
     }
 
     /**
      * Get the addresses written to
+     *
      * @return int[] - array of addresses
      */
     public int[] addrWrite() {
         int[] value = new int[numWrite];
-        if (numWrite >= 0) System.arraycopy(writeAddr, 0, value, 0, numWrite);
+        if (numWrite > 0) System.arraycopy(writeAddr, 0, value, 0, numWrite);
         return value;
     }
 
     /**
      * Get the addresses decremented
+     *
      * @return int[] - array of addresses
      */
     public int[] addrDec() {
         int[] value = new int[numDec];
-        if (numDec >= 0) System.arraycopy(decAddr, 0, value, 0, numDec);
+        if (numDec > 0) System.arraycopy(decAddr, 0, value, 0, numDec);
         return value;
     }
 
     /**
      * Get the addresses incremented
+     *
      * @return int[] - array of addresses
      */
     public int[] addrInc() {
         int[] value = new int[numInc];
-        if (numInc >= 0) System.arraycopy(incAddr, 0, value, 0, numInc);
+        if (numInc > 0) System.arraycopy(incAddr, 0, value, 0, numInc);
         return value;
     }
 
     /**
      * Get the address executed
+     *
      * @return int - address
      */
     public int addrExec() {
@@ -195,6 +204,7 @@ public class StepReport {
 
     /**
      * Get the number of processes
+     *
      * @return int - number of processes
      */
     public int numProc() {
@@ -203,6 +213,7 @@ public class StepReport {
 
     /**
      * Check to see if current process died
+     *
      * @return boolean - true if process died
      */
     public boolean pDeath() {
@@ -211,6 +222,7 @@ public class StepReport {
 
     /**
      * Check to see if warrior died
+     *
      * @return boolean - true if warrior died
      */
     public boolean wDeath() {

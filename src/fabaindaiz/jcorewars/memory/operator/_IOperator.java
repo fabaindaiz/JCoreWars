@@ -10,18 +10,21 @@ public interface _IOperator {
 
     /**
      * Pre execution tasks for instruction
+     *
      * @param addr Current step executor
      */
     void preExecute(StepExecutor addr);
 
     /**
      * Post execution tasks for instruction
+     *
      * @param addr Current step executor
      */
     void postExecute(StepExecutor addr);
 
     /**
      * Execute current instruction with operator I
+     *
      * @param core Core reference
      * @param addr Current step executor
      * @return true if execution complete, otherwise false
@@ -30,6 +33,7 @@ public interface _IOperator {
 
     /**
      * Execute current instruction with operator A
+     *
      * @param core Core reference
      * @param addr Current step executor
      * @return true if execution complete, otherwise false
@@ -38,6 +42,7 @@ public interface _IOperator {
 
     /**
      * Execute current instruction with operator B
+     *
      * @param core Core reference
      * @param addr Current step executor
      * @return true if execution complete, otherwise false
@@ -46,6 +51,7 @@ public interface _IOperator {
 
     /**
      * Execute current instruction with operator AB
+     *
      * @param core Core reference
      * @param addr Current step executor
      * @return true if execution complete, otherwise false
@@ -54,6 +60,7 @@ public interface _IOperator {
 
     /**
      * Execute current instruction with operator BA
+     *
      * @param core Core reference
      * @param addr Current step executor
      * @return true if execution complete, otherwise false
@@ -62,6 +69,7 @@ public interface _IOperator {
 
     /**
      * Execute current instruction with operator F
+     *
      * @param core Core reference
      * @param addr Current step executor
      * @return true if execution complete, otherwise false
@@ -70,6 +78,7 @@ public interface _IOperator {
 
     /**
      * Execute current instruction with operator X
+     *
      * @param core Core reference
      * @param addr Current step executor
      * @return true if execution complete, otherwise false
@@ -78,6 +87,7 @@ public interface _IOperator {
 
     /**
      * Return string representation for operator
+     *
      * @return String representation
      */
     @Override

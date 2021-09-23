@@ -60,8 +60,7 @@ public class SPL implements _IOperator {
 
     private boolean execute(StepExecutor addr) {
         addr.warrior.addProcess((addr.currentInstr + 1) % addr.executer.coreSize);
-        if (addr.warrior.numProcess() >= addr.executer.maxProc)
-        {
+        if (addr.warrior.numProcess() >= addr.executer.maxProc) {
             addr.manager.nextWarrior();
             return false;
         }

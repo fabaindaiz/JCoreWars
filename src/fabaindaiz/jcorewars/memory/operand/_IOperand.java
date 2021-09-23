@@ -10,6 +10,7 @@ public interface _IOperand {
 
     /**
      * Execute current reference evaluation with operand A
+     *
      * @param core Core reference
      * @param addr Current step executor
      */
@@ -17,6 +18,7 @@ public interface _IOperand {
 
     /**
      * Execute current reference evaluation with operand B
+     *
      * @param core Core reference
      * @param addr Current step executor
      */
@@ -24,6 +26,7 @@ public interface _IOperand {
 
     /**
      * Return string representation for instruction operand
+     *
      * @return String representation
      */
     @Override

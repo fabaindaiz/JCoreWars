@@ -24,7 +24,7 @@
  * SUCH DAMAGE.
  *
  */
- 
+
 package fabaindaiz.jcorewars.listener;
 
 /**
@@ -32,9 +32,10 @@ package fabaindaiz.jcorewars.listener;
  */
 public interface RoundListener {
 
-	/**
-	 * Called after completion of each round.
-	 * @param round Number of rounds completed in this game.
-	 */
-	void roundResults(int round);
+    /**
+     * Called after completion of each round.
+     *
+     * @param round Number of rounds completed in this game.
+     */
+    void roundResults(int round);
 }

@@ -17,7 +17,7 @@ import java.util.Vector;
 /**
  * Represents a class which manage application execution
  */
-public class AplicationCore implements FrontEndManager {
+public class ApplicationCore implements FrontEndManager {
 
     static final Color[][] wColors = {{Color.green.darker(), Color.yellow},
             {Color.cyan.darker(), Color.blue},
@@ -46,7 +46,7 @@ public class AplicationCore implements FrontEndManager {
     protected CoreList coreList;
     protected ProcList procList;
 
-    public AplicationCore() {
+    public ApplicationCore() {
         core = new MarsCore(this);
 
         stepListeners = new Vector<>();
@@ -56,6 +56,7 @@ public class AplicationCore implements FrontEndManager {
 
     /**
      * Sets core list display
+     *
      * @param con Parent display jpane
      */
     public void application_coreList(JSplitPane con) {
@@ -64,6 +65,7 @@ public class AplicationCore implements FrontEndManager {
 
     /**
      * Sets process list display
+     *
      * @param con Parent display jpane
      */
     public void application_procList(JSplitPane con) {
@@ -72,6 +74,7 @@ public class AplicationCore implements FrontEndManager {
 
     /**
      * Sets application counters
+     *
      * @param con Parent display jpane
      */
     public void application_display(Container con) {
@@ -102,7 +105,7 @@ public class AplicationCore implements FrontEndManager {
         Vector<WarriorProcess<Integer>> procs = new Vector<>();
         Vector<Color> color = new Vector<>();
 
-        for (WarriorLoader warrior:core.warriors) {
+        for (WarriorLoader warrior : core.warriors) {
             procs.add(warrior.warriorExecutor.processQueue());
             color.add(wColors[warrior.num][0]);
         }
@@ -131,25 +134,23 @@ public class AplicationCore implements FrontEndManager {
     }
 
     @Override
-    public void registerStepListener(StepListener l)
-    {
+    public void registerStepListener(StepListener l) {
         stepListeners.addElement(l);
     }
 
     @Override
-    public void registerCycleListener(CycleListener c)
-    {
+    public void registerCycleListener(CycleListener c) {
         cycleListeners.addElement(c);
     }
 
     @Override
-    public void registerRoundListener(RoundListener r)
-    {
+    public void registerRoundListener(RoundListener r) {
         roundListeners.addElement(r);
     }
 
     /**
      * Execute all process before notify step listeners
+     *
      * @param report Report of step execution
      */
     protected void notifyStepListeners(StepReport report) {
@@ -164,6 +165,7 @@ public class AplicationCore implements FrontEndManager {
 
     /**
      * Execute all process before notify cycle listeners
+     *
      * @param cycle Cycle number
      */
     protected void notifyCycleListeners(int cycle) {
@@ -172,6 +174,7 @@ public class AplicationCore implements FrontEndManager {
 
     /**
      * Execute all process before notify round listeners
+     *
      * @param round Round number
      */
     protected void notifyRoundListeners(int round) {
